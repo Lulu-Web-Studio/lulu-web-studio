@@ -1,14 +1,31 @@
-const Page = async () => {
+// import Hero from "@/components/Hero";
+
+// const Page = async () => {
+//   return (
+//     <div className="">
+
+//     <Hero/>
+
+//     </div>
+//   );
+// };
+
+// export default Page;
+// app/page.tsx
+import Hero from "@/components/Hero";
+import Image from "next/image";
+
+export default function Home() {
   return (
-    <div className="">
-      <div>
-        <h1>
-          yo
-        </h1>
-      </div>
+    <section className="relative min-h-full snap-start">
 
-    </div>
+      <Hero />
+
+      
+
+
+
+
+    </section>
   );
-};
-
-export default Page;
+}
