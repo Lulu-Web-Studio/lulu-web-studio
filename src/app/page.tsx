@@ -1,31 +1,17 @@
-// import Hero from "@/components/Hero";
+// app/page.tsx (or any route)
 
-// const Page = async () => {
-//   return (
-//     <div className="">
+import HeroParallax from "@/components/Hero";
 
-//     <Hero/>
-
-//     </div>
-//   );
-// };
-
-// export default Page;
-// app/page.tsx
-import Hero from "@/components/Hero";
-import Image from "next/image";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <section className="relative min-h-full snap-start">
-
-      <Hero />
-
-      
+    <div>
+      <HeroParallax />
+      {/* rest of content */}
 
 
+      <div className="bg-white rounded-t-[50px] h-screen z-30">
 
-
-    </section>
+      </div>
+    </div>
   );
 }

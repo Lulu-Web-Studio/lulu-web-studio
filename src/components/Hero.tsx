@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function HeroParallax() {
     return (
-        <section className="relative h-screen ">
-            <ParallaxBanner className="h-full w-full rounded-none">
+        <section className="relative h-[160vh]">
+            <ParallaxBanner className="h-full ">
                 {/* Background image layer (slow) */}
                 <ParallaxBannerLayer speed={-20}>
                     <div className="absolute inset-0">

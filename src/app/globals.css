@@ -1,5 +1,49 @@
 @import "tailwindcss";
 
+
+/* Ensure proper scroll behavior */
+html, body {
+  height: 100%;
+  overflow: hidden; /* Let the outer container handle scrolling */
+}
+
+/* Hide outer scrollbars while maintaining bounce effect */
+.outer-scroll-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.outer-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Custom scrollbar styling for the inner container (optional) */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Ensure fixed elements stay contained */
+.frame-container * {
+  position: relative;
+}
+
+.frame-container .fixed-element {
+  position: absolute;
+}
   @layer base {
     :root {
       --background: 0 0% 100%;
