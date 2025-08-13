@@ -7,10 +7,13 @@ html, body {
   overflow: hidden; /* Let the outer container handle scrolling */
 }
 
-/* Hide outer scrollbars while maintaining bounce effect */
-.outer-scroll-container {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
 }
 
 .outer-scroll-container::-webkit-scrollbar {
