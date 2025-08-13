@@ -63,7 +63,7 @@ export default function Projects() {
 
             {/* Cards: each one full screen & snap-start */}
             {projects.map((p, idx) => (
-                <ProjectSection key={idx} index={idx} {...p} />
+                <ProjectSection key={idx} index={idx} total={projects.length} {...p} />
             ))}
         </section>
     );
@@ -75,7 +75,8 @@ function ProjectSection({
     color,
     href,
     index,
-}: Project & {index: number}) {
+    total,
+}: Project & {index: number; total: number}) {
     const ref = useRef<HTMLDivElement | null>(null);
 
     // Observe this section entering the viewport to drive local animations
@@ -94,15 +95,11 @@ function ProjectSection({
     return (
         <section
             ref={ref}
-            className="snap-start w-full min-h-[100svh] flex items-stretch"
+            className="relative snap-start snap-always h-[100svh]"
         >
             <motion.div
-                style={{scale, opacity, backgroundColor: color}}
-                className="
-          relative w-full min-h-[100svh]
-          flex flex-col justify-center
-          px-6 sm:px-8 md:px-16
-        "
+                style={{scale, opacity, backgroundColor: color, zIndex: total - index}}
+                className="sticky top-0 w-full h-[100svh] flex flex-col justify-center px-6 sm:px-8 md:px-16"
             >
                 {/* Top label / index */}
                 <div className="absolute top-6 left-6 sm:top-8 sm:left-8 text-white/70 text-sm tracking-widest">

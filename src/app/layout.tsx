@@ -22,7 +22,7 @@ export default function RootLayout({
             <ClientProviders>
               <div
                 id="scroll-container"
-                className="scroll-container h-full overflow-y-auto "
+                className="scroll-container h-full overflow-y-auto snap-y snap-mandatory"
               >
                 <Header />
                 {children}
