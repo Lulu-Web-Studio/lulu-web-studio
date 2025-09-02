@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
 import {ClientProviders} from "@/components/ClientProvider";
+import SideMenu from "@/components/SideMenu";
 
 export const metadata: Metadata = {
   title: "Framed Site",
@@ -14,17 +15,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+
+  // bg-[#191919]
   return (
     <html lang="en" className="h-full">
-      <body className="h-full bg-[#191919]">
+      <body className="h-full bg-black">
         <div className="fixed inset-0 flex items-center justify-center p-4 md:p-6 lg:p-8">
-          <div className="relative w-full h-full rounded-[50px] border border-white/10 overflow-hidden">
+          <div className="relative w-full h-full rounded-[50px]  overflow-hidden">
             <ClientProviders>
               <div
                 id="scroll-container"
                 className="scroll-container h-full overflow-y-auto "
               >
+                <SideMenu />
                 <Header />
+                
                 {children}
                 <Footer />
               </div>

@@ -1,5 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @import "tailwindcss";
 
+
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/fonts/inconsolata-v17-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cousine';
+  src: url('/fonts/cousine-v17-latin-regular.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/fira-code-v9-latin-regular.woff2') format('woff2');
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono-v12-latin-regular.woff2') format('woff2');
+  font-weight: 100 200 300 400 500 600 700 800 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/work-sans-v11-latin-regular.woff2') format('woff2');
+  font-weight: 100 200 300 400 500 600 700 800 900;
+  font-style: normal;
+}
 
 /* Ensure proper scroll behavior */
 html, body {
@@ -15,7 +61,6 @@ html, body {
 html {
   scrollbar-width: none;
 }
-
 .outer-scroll-container::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
@@ -47,67 +92,27 @@ html {
 .frame-container .fixed-element {
   position: absolute;
 }
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 240 10% 3.9%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 240 10% 3.9%;
+@theme{
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 240 10% 3.9%;
 
-      --primary: 240 5.9% 10%;
-      --primary-foreground: 0 0% 98%;
+  --font-sans: 'Work Sans', sans-serif;
+  /* --font-mono: 'Inconsolata', serif; */
 
-      --secondary: 240 4.8% 95.9%;
-      --secondary-foreground: 240 5.9% 10%;
+  /* Uncomment the following lines to use different fonts */
+  --font-mono: 'Cousine', serif;
 
-      --muted: 240 4.8% 95.9%;
-      --muted-foreground: 240 3.8% 46.1%;
 
-      --accent: 240 4.8% 95.9%;
-      --accent-foreground: 240 5.9% 10%;
+  /* --font-mono: 'JetBrains Mono', serif; */
+  /* --font-mono: 'Fira Code', monospace; */
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 0 0% 98%;
 
-      --border: 240 5.9% 90%;
-      --input: 240 5.9% 90%;
-      --ring: 240 10% 3.9%;
 
-      --radius: 0.5rem;
-    }
 
-    .dark {
-      --background: 240 10% 3.9%;
-      --foreground: 0 0% 98%;
 
-      --card: 240 10% 3.9%;
-      --card-foreground: 0 0% 98%;
+}
 
-      --popover: 240 10% 3.9%;
-      --popover-foreground: 0 0% 98%;
 
-      --primary: 0 0% 98%;
-      --primary-foreground: 240 5.9% 10%;
 
-      --secondary: 240 3.7% 15.9%;
-      --secondary-foreground: 0 0% 98%;
 
-      --muted: 240 3.7% 15.9%;
-      --muted-foreground: 240 5% 64.9%;
-
-      --accent: 240 3.7% 15.9%;
-      --accent-foreground: 0 0% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-
-      --border: 240 3.7% 15.9%;
-      --input: 240 3.7% 15.9%;
-      --ring: 240 4.9% 83.9%;
-    }
-  }
 

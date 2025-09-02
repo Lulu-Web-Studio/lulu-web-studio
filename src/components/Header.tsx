@@ -76,11 +76,11 @@ export const Header: FunctionComponent = () => {
   return (
     <header className=" absolute z-50 flex items-center justify-between mt-8 md:mt-16 mb-12">
       <Link href="/">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
+        {/* <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
           {config.name.name}
-        </h1>
+        </h1> */}
       </Link>
-      <Navigation />
+      {/* <Navigation /> */}
     </header>
   );
 };
