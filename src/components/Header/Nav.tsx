@@ -17,13 +17,13 @@ export const perspective = {
             duration: 0.65,
             // delay: 0.5 + (i * 0.1),
             delay: 0.35 + i * 0.08, // slightly tighter cadence
-            ease: [.215, .61, .355, 1],
+            ease: [.215, .61, .355, 1] as const,
             opacity: {duration: 0.65} // was 0.35
         }
     }),
     exit: {
         opacity: 0,
-        transition: {duration: 0.5, type: "linear", ease: [0.76, 0, 0.24, 1]}
+        transition: {duration: 0.5, ease: [0.76, 0, 0.24, 1] as const}
     }
 }
 
@@ -38,12 +38,12 @@ export const perspective = {
         transition: {
             duration: 0.5,
             delay: 0.75 + (i * 0.1),
-            ease: [.215, .61, .355, 1]
+            ease: [.215, .61, .355, 1] as const
         }
     }),
     exit: {
         opacity: 0,
-        transition: {duration: 0.5, type: "tween", ease: "easeInOut"}
+        transition: {duration: 0.5, ease: "easeInOut" as const}
     }
 }
 
@@ -93,7 +93,7 @@ export const footerLinks = [
 export default function Nav() {
     return (
 
-        <div className="flex flex-col justify-between h-full box-border pt-24 pr-10 pb-12 pl-10">
+        <div className="flex flex-col justify-between h-full box-border p-6 sm:p-8 md:pt-16 md:px-10 md:pb-10">
             <div className="flex gap-2.5 flex-col">
                 {
                     links.map((link, i) => {
@@ -101,14 +101,13 @@ export default function Nav() {
                         return (
                             <div key={`b_${i}`} className="will-change-transform perspective-[120px] perspective-origin-bottom">
                                 <motion.div
-                                    href={href}
                                     custom={i}
                                     variants={perspective}
                                     initial="initial"
                                     animate="enter"
                                     exit="exit"
                                 >
-                                    <a className="no-underline text-black text-[32px]">
+                                    <a href={href} className="no-underline text-black text-xl sm:text-2xl md:text-3xl font-medium">
                                         {title}
                                     </a>
                                 </motion.div>
@@ -125,7 +124,7 @@ export default function Nav() {
                         const {title, href} = link;
                         return (
                             <motion.a
-                            className="w-1/2 mt-1.5"
+                            className="w-1/2 mt-1.5 text-sm sm:text-base"
                                 variants={slideIn}
                                 custom={i}
                                 initial="initial"

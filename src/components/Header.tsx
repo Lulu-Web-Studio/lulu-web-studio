@@ -9,6 +9,7 @@ import {
 import { config } from "@/config";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
@@ -74,12 +75,16 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <header className=" absolute z-50 flex items-center justify-between mt-8 md:mt-16 mb-12">
-      <Link href="/">
-        {/* <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
-          {config.name.name}
-        </h1> */}
-      </Link>
+    <header className="fixed top-8 left-8 z-50">
+      {/* <Link href="/" className="backdrop-blur-xl bg-white/10 border-white/20 p-4 rounded-2xl block">
+        <Image
+          width={150}
+          height={50}
+          alt={config.sitename}
+          src="/lulu-web-studio-icon-white.png"
+          className="h-14 w-14 md:w-28 md:h-28 transition-all duration-300"
+        />
+      </Link> */}
       {/* <Navigation /> */}
     </header>
   );

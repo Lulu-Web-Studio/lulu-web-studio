@@ -24,13 +24,13 @@ export default function RootLayout({
         <div className="fixed inset-0 flex items-center justify-center p-4 md:p-6 lg:p-8">
           <div className="relative w-full h-full rounded-[50px]  overflow-hidden">
             <ClientProviders>
+              <Header />
               <div
                 id="scroll-container"
                 className="scroll-container h-full overflow-y-auto "
               >
                 <SideMenu />
-                <Header />
-                
+
                 {children}
                 <Footer />
               </div>

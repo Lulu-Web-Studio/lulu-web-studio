@@ -2,181 +2,161 @@
 import {useRef} from "react";
 import {useScroll} from "framer-motion";
 import {ReactOriginal, NextjsOriginal, TypescriptOriginal, NodejsOriginal} from 'devicons-react';
-import Card from "../Card";
+import Card, {CardProps} from "../Card";
+import Image from "next/image";
+import SquarespaceLogo from "../icons/SquarespaceLogo";
+import WixLogo from "../icons/WixLogo";
+import StripeLogo from "../icons/StripeLogo";
 
-// Custom SVG components for platforms not in devicons
-const SquarespaceLogo = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-white">
-        {/* Add your Squarespace SVG path here */}
-        <path d="..." />
-    </svg>
-);
 
-const WixLogo = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-white">
-        {/* Add your Wix SVG path here */}
-        <path d="..." />
-    </svg>
-);
-
-export const projects = [
+export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale'>[] = [
     {
         title: "Paragon Exterior",
-        description: `
-     narbl is an advanced multi-LLM chatbot that leverages multiple language models simultaneously to provide exceptionally accurate and reliable responses. It's designed for situations when you need the highest level of precision and cannot afford misinformation.
-     `,
-        imgSrc: "/images/home/services/home.webp",
-        color: "#274f9c",
-        href: "https://l.narb.cc",
-        techStack: (
-            <>
-                <ReactOriginal size="24" />
-                <NextjsOriginal size="24" />
-                <TypescriptOriginal size="24" />
-            </>
-        )
+        slug: "paragon-exterior",
+        description: `Professional exterior contracting services specializing in roofing, siding, and home renovations. Built a modern, mobile-responsive website with project galleries, service pages, and integrated contact forms to showcase their craftsmanship and generate leads.`,
+        href: "/project/paragon-exterior",
+        externalUrl: "https://paragonexterior.com",
+        design: {
+            backgroundColor: "bg-[#152D47]",
+            textColor: "text-white",
+            accentColor: "bg-amber-600",
+            accentColor2: "bg-amber-400",
+            techStack: (
+                <>
+                    <ReactOriginal size="24" />
+                    <NextjsOriginal size="24" />
+                    <TypescriptOriginal size="24" />
+                </>
+            ),
+            imageSrc: "/images/home/clients/paragon-icon.png",
+            imageAlt: "Paragon Exterior logo"
+        }
     },
     {
         title: "The Facial Surgery Center",
-        description: `
-     narby is an innovative geo-location app designed to improve the quality of life for its users. You can choose to use it individually or join/create a group with shared values and goals.
-     `,
-        // imgSrc: "/images/home/narby-demo.png",
-        color: "#fbe8d9",
-        href: "/project/narby",
-        techStack: (
-            <>
-                <ReactOriginal size="24" />
-                <NodejsOriginal size="24" />
-                <TypescriptOriginal size="24" />
-            </>
-        )
-    },
-    {
-        title: "narb",
-        description: `
-     An autonomous AI voice assistant
-     that performs outbound phone calls on your behalf,
-     handling product inquiries and appointment scheduling with human-like precision.
-     `,
-        imgSrc: "/images/what-to-expect/consult.png",
-        color: "#4241b8",
-        href: "/project/narba",
-        techStack: (
-            <>
-                <NextjsOriginal size="24" />
-                <TypescriptOriginal size="24" />
-                <NodejsOriginal size="24" />
-            </>
-        )
-    },
-    {
-        title: "Gabby Lulu's Portfolio",
-        description: `
-     A portfolio website showcasing creative works and projects, built with modern web technologies to provide an engaging user experience.
-     `,
-        imgSrc: "/images/home/portfolio-demo.png",
-        color: "#1a1a1a",
-        href: "/project/portfolio",
-        techStack: (
-            <>
-                <SquarespaceLogo />
-                <WixLogo />
-            </>
-        )
-        
+        slug: "facial-surgery-center",
+        description: `Premier facial plastic surgery practice specializing in rhinoplasty, facelifts, and reconstructive procedures. Developed a HIPAA-compliant website with patient portal, virtual consultations, before/after galleries, and appointment scheduling system.`,
+        href: "/project/facial-surgery-center",
+        externalUrl: "https://facialsurgeryct.com",
+        design: {
+            backgroundColor: "bg-[#fbe8d9]",
+            textColor: "text-gray-900",
+            accentColor: "bg-[#005D64]",
+            accentColor2: "bg-[#005D64]",
+            techStack: (
+                <>
+                    <ReactOriginal size="24" />
+                    <NextjsOriginal size="24" />
+                    <TypescriptOriginal size="24" />
+                </>
+            ),
+            imageSrc: "/images/home/clients/fsc-icon.svg",
+            imageAlt: "Facial Surgery Center logo"
+        }
     },
     {
         title: "The Alon Group",
-        description: `
-     A portfolio website showcasing creative works and projects, built with modern web technologies to provide an engaging user experience.
-     `,
-        imgSrc: "/images/home/portfolio-demo.png",
-        color: "#1a1a1a",
-        href: "/project/portfolio",
-        techStack: (
-            <>
-                <SquarespaceLogo />
-                <WixLogo />
-            </>
-        )
+        slug: "alon-group",
+        description: `Real estate investment and development firm specializing in residential and commercial properties. Created a sleek, modern website with property listings, investor relations portal, and integrated CRM to streamline lead management and showcase their portfolio.`,
+        href: "/project/alon-group",
+        externalUrl: "https://www.thealongroup.com",
+        design: {
+            backgroundColor: "bg-[#1e1e1e]",
+            textColor: "text-white",
+            accentColor: "bg-[#a26029]",
+            accentColor2: "bg-black",
+            imageSrc: "/images/home/clients/alon-group-svg.svg",
+            techStack: (
+                <>
+                    <WixLogo size={25} />
+                </>
+            )
+        }
 
     },
     {
         title: "Ganan Landscaping",
-        description: `
-     A portfolio website showcasing creative works and projects, built with modern web technologies to provide an engaging user experience.
-     `,
-        imgSrc: "/images/home/portfolio-demo.png",
-        color: "#1a1a1a",
-        href: "/project/portfolio",
-        techStack: (
-            <>
-                <SquarespaceLogo />
-                <WixLogo />
-            </>
-        )
-
+        slug: "ganan-landscaping",
+        description: `Full-service landscaping company offering design, installation, and maintenance services for residential and commercial properties. Developed a visually stunning website with interactive project galleries, service descriptions, and integrated booking system to attract new clients and showcase their expertise.`,
+        href: "/project/ganan-landscaping",
+        externalUrl: "https://gananlandscaping.com",
+        design: {
+            backgroundColor: "bg-[#e0e0dc]",
+            textColor: "text-black",
+            accentColor: "bg-[#008002]",
+            accentColor2: "bg-[#008002]",
+            imageSrc: "/images/home/clients/ganan-land.png",
+            techStack: (
+                <>
+                    <SquarespaceLogo size={25} />
+                </>
+            )
+        }
     },
     {
-        title: "Bagel Shop",
-        description: `
-     A portfolio website showcasing creative works and projects, built with modern web technologies to provide an engaging user experience.
-     `,
-        imgSrc: "/images/home/portfolio-demo.png",
-        color: "#1a1a1a",
-        href: "/project/portfolio",
-        techStack: (
-            <>
-                <SquarespaceLogo />
-                <WixLogo />
-            </>
-        )
+        title: "ISAACC18",
+        slug: "isaacc18",
+        description: `ISAACC18 ( International Support Of Anesthesia And Critical Care in Israel ) is a dedicated international network of over 200 experienced volunteer anesthesiologists and critical care physicians committed to supporting the Israeli Anesthesia and Critical Care community with clinical staffing, education, and collaborative academic partnerships that foster excellence in medical care in Israel and around the world.`,
+        href: "/project/isaacc18",
+        externalUrl: "https://isaacc18.org",
+        design: {
+            backgroundColor: "bg-white",
+            textColor: "text-[#1f3a8a]",
+            accentColor: "bg-[#1f3a8a]",
+            accentColor2: "bg-[#1f3a8a]",
+            techStack: (
+                <>
+                    <ReactOriginal size="24" />
+                    <NextjsOriginal size="24" />
+                    <TypescriptOriginal size="24" />
+                </>
+            ),
+            imageSrc: "/images/home/clients/isaacc18.webp",
+            imageAlt: "ISAACC18 logo"
+        }
 
     },
     {
         title: "Amber's Jewelry Boutique",
-        description: `
-     A portfolio website showcasing creative works and projects, built with modern web technologies to provide an engaging user experience.
-     `,
-        imgSrc: "/images/home/portfolio-demo.png",
-        color: "#1a1a1a",
-        href: "/project/portfolio",
-        techStack: (
-            <>
-                <SquarespaceLogo />
-                <WixLogo />
-            </>
-        )
-
+        slug: "amber-jewelry",
+        description: `Elegant jewelry boutique featuring handcrafted pieces and custom designs. Created an e-commerce platform with stunning product galleries, custom jewelry configurator, secure payment processing, and appointment booking for personal consultations.`,
+        href: "https://www.ambersjewelryboutique.com",
+        design: {
+            backgroundColor: "bg-[whitesmoke]",
+            textColor: "text-gray-900",
+            accentColor: "bg-[#c42747]",
+            accentColor2: "bg-[#c42747]",
+            techStack: (
+                <>
+                    <ReactOriginal size="24" />
+                    <NextjsOriginal size="24" />
+                    <TypescriptOriginal size="24" />
+                    <StripeLogo size={24} />
+                </>
+            ),
+            imageAlt: "Amber's Jewelry Boutique logo"
+        }
     }
 ]
 
 export default function Products() {
     const container = useRef(null);
-    const {scrollYProgress} = useScroll({
-        target: container,
-        offset: ['start start', 'end end']
-    })
 
     return (
         <div ref={container} className="relative z-10 -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-28">
             {
                 projects.map((project, i) => {
-                    const targetScale = 1 - ((projects.length - i) * 0.05);
                     return (
                         <Card
-                            title={project.title}
-                            description={project.description}
-                            color={project.color}
-                            imageSrc={project.imgSrc}
-                            techStack={project.techStack}
                             key={`p_${i}`}
                             i={i}
-                            progress={scrollYProgress}
-                            range={[i * .25, 1]}
-                            targetScale={targetScale}
+                            title={project.title}
+                            slug={project.slug}
+                            description={project.description}
                             href={project.href}
+                            externalUrl={project.externalUrl}
+                            design={project.design}
+                            isLast={i === projects.length - 1}
                         />
                     )
                 })

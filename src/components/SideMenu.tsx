@@ -32,18 +32,18 @@ export default function SideMenu() {
 
 const menu = {
     open: {
-        width: "480px",
-        height: "650px",
+        width: "min(85vw, 350px)",
+        height: "min(60vh, 450px)",
         top: "-25px",
         right: "-25px",
-        transition: {duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1]}
+        transition: {duration: 0.75, ease: [0.76, 0, 0.24, 1] as const}
     },
     closed: {
         width: "100px",
         height: "40px",
         top: "0px",
         right: "0px",
-        transition: {duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1]}
+        transition: {duration: 0.75, delay: 0.35, ease: [0.76, 0, 0.24, 1] as const}
     }
 }
 
@@ -56,7 +56,7 @@ const Index = () => {
 
         <div className="fixed right-14 top-14 z-50">
             <motion.div
-                className="w-[480px] h-[650px] bg-[#c9fd74] rounded-3xl rela"
+                className="bg-[#c9fd74] rounded-3xl"
                 variants={menu}
                 animate={isActive ? "open" : "closed"}
                 initial="closed"
@@ -82,7 +82,7 @@ export function Button({
             <motion.div
                 className="relative w-full h-full"
                 animate={{top: isActive ? "-100%" : "0%"}}
-                transition={{duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1]}}
+                transition={{duration: 0.5, ease: [0.76, 0, 0.24, 1] as const}}
             >
                 {/* .el (first) */}
                 <div

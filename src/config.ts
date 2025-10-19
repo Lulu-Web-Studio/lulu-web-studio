@@ -7,6 +7,7 @@ const buildConfig = () => {
   const defaultDescription = process.env.NEXT_PUBLIC_DESCRIPTION || "Description";
 
   return {
+    sitename: process.env.NEXT_PUBLIC_SITE_NAME || "Site Name",
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
     name: {
       name,
