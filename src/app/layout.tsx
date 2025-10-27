@@ -6,8 +6,8 @@ import {ClientProviders} from "@/components/ClientProvider";
 import SideMenu from "@/components/SideMenu";
 
 export const metadata: Metadata = {
-  title: "Framed Site",
-  description: "Rounded-frame layout demo",
+  title: "Lulu Web Studio",
+  description: "We build modern, responsive websites for businesses of all sizes.",
 };
 
 export default function RootLayout({

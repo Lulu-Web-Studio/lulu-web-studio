@@ -1,3 +1,4 @@
+import {config} from "@/config";
 import {motion} from "framer-motion";
 
 
@@ -8,7 +9,7 @@ export const perspective = {
         translateY: 80,
         // translateX: -20,
     },
-    enter: (i:number) => ({
+    enter: (i: number) => ({
         opacity: 1,
         rotateX: 0,
         translateY: 0,
@@ -27,12 +28,12 @@ export const perspective = {
     }
 }
 
- const slideIn = {
+const slideIn = {
     initial: {
         opacity: 0,
         y: 20
     },
-    enter: (i:number) => ({
+    enter: (i: number) => ({
         opacity: 1,
         y: 0,
         transition: {
@@ -54,31 +55,23 @@ export const links = [
         href: "/"
     },
     {
-        title: "Agency",
-        href: "/"
-    },
-    {
-        title: "Expertise",
-        href: "/"
-    },
-    {
-        title: "Careers",
-        href: "/"
+        title: "About",
+        href: "/about"
     },
     {
         title: "Contact",
-        href: "/"
+        href: "/contact"
     }
 ]
 
 export const footerLinks = [
     {
-        title: "Facebook",
-        href: "/"
+        title: "LinkedIn",
+        href: config.links.linkedin
     },
     {
-        title: "LinkedIn",
-        href: "/"
+        title: "Instagram",
+        href: config.links.instagram
     },
     {
         title: "Instagram",
@@ -107,7 +100,7 @@ export default function Nav() {
                                     animate="enter"
                                     exit="exit"
                                 >
-                                    <a href={href} className="no-underline text-black text-xl sm:text-2xl md:text-3xl font-medium">
+                                    <a href={href} className="no-underline text-black text-xl sm:text-2xl md:text-3xl font-medium transition-all duration-300 hover:opacity-70 hover:translate-x-2 inline-block">
                                         {title}
                                     </a>
                                 </motion.div>
@@ -124,7 +117,7 @@ export default function Nav() {
                         const {title, href} = link;
                         return (
                             <motion.a
-                            className="w-1/2 mt-1.5 text-sm sm:text-base"
+                                className="w-1/2 mt-1.5 text-sm sm:text-base transition-all duration-300 hover:opacity-60 hover:translate-x-1"
                                 variants={slideIn}
                                 custom={i}
                                 initial="initial"
@@ -139,51 +132,6 @@ export default function Nav() {
                 }
             </motion.div>
         </div>
-        // <div className="flex flex-col justify-between pt-[100px] px-10 pb-[50px] h-full box-border">
-        //     <div className="flex flex-col gap-2.5">
-        //         {links.map((link, i) => {
-        //             const {title, href} = link;
-        //             return (
-        //                 <div
-        //                     key={`b_${i}`}
-        //                     className="[perspective:120px] [perspective-origin:bottom]"
-        //                 >
-        //                     <motion.a
-        //                         href={href}
-        //                         custom={i}
-        //                         variants={perspective}
-        //                         initial="initial"
-        //                         animate="enter"
-        //                         exit="exit"
-        //                         className="no-underline text-black text-[46px]"
-        //                     >
-        //                         {title}
-        //                     </motion.a>
-        //                 </div>
-        //             );
-        //         })}
-        //     </div>
 
-        //     {/* no footer styles were provided in your SCSS; keeping this minimal */}
-        //     <motion.div className="flex gap-4">
-        //         {footerLinks.map((link, i) => {
-        //             const {title, href} = link;
-        //             return (
-        //                 <motion.a
-        //                     href={href}
-        //                     variants={slideIn}
-        //                     custom={i}
-        //                     initial="initial"
-        //                     animate="enter"
-        //                     exit="exit"
-        //                     key={`f_${i}`}
-        //                     className="no-underline"
-        //                 >
-        //                     {title}
-        //                 </motion.a>
-        //             );
-        //         })}
-        //     </motion.div>
-        // </div>
     );
 }

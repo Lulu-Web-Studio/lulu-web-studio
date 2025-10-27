@@ -130,8 +130,10 @@
 import {ParallaxBanner, ParallaxBannerLayer} from "react-scroll-parallax";
 import Image from "next/image";
 import Link from "next/link";
-import HeaderText from "./Text/HeaderText";
-import SecondaryText from "./Text/BodyText";
+import SecondaryText from "../Text/BodyText";
+import HeaderText from "../Text/HeaderText";
+import {config} from "@/config";
+
 
 export default function HeroParallax() {
     return (
@@ -163,26 +165,26 @@ export default function HeroParallax() {
                             <HeaderText
                                 variant="large"
                                 as="h1"
-                                className="tracking-tight text-white font-mono text-4xl sm:text-5xl md:text-6xl"
+                                className="tracking-tight text-white"
                             >
                                 Lulu Web Studio
                             </HeaderText>
-                            <SecondaryText className="mt-4 text-white/80 text-base sm:text-lg">
-                                We create beautiful, functional websites that help your business grow.
+                            <SecondaryText className="mt-4 text-white/80 text-base ">
+                                Web development, software engineering, SEO, and digital solutions that elevate your brand and drive results.
                             </SecondaryText>
 
                             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                                 <Link
-                                    href="/get-estimate"
+                                    href="/contact"
                                     className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-black text-sm sm:text-base"
                                 >
-                                    Start Charging Today
+                                    Get Started
                                 </Link>
                                 <Link
                                     href="#how-it-works"
                                     className="inline-flex items-center justify-center rounded-full border border-white/40 px-5 py-2.5 text-white text-sm sm:text-base"
                                 >
-                                    How it works
+                                    Learn More
                                 </Link>
                             </div>
                         </div>
@@ -192,15 +194,15 @@ export default function HeroParallax() {
                             {/* Left */}
                             <div className="flex flex-col justify-center text-center md:text-left md:w-1/2">
                                 <HeaderText className="text-white text-2xl sm:text-3xl md:text-4xl">
-                                    We love &amp; live<br />architecture
+                                    We craft digital<br />experiences
                                 </HeaderText>
 
                                 <div className="mt-6 md:mt-10">
                                     <Link
-                                        href="/our-story"
+                                        href="/about"
                                         className="group inline-flex items-center gap-3 text-white"
                                     >
-                                        <span className="text-lg sm:text-xl">Our Story</span>
+                                        <span className="text-lg sm:text-xl">About Us</span>
                                         <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/40">
                                             <svg
                                                 className="h-5 w-5 transition -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -222,29 +224,30 @@ export default function HeroParallax() {
                             {/* Right */}
                             <div className="mt-8 md:mt-0 md:w-1/2 text-center md:text-left">
                                 <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                                    Arkitect creates luxurious, modern spaces where innovation
-                                    meets timeless elegance. Our designs push boundaries, blending
-                                    precision, creativity, and functionality.
+                                    Lulu Web Studio specializes in custom web development, software engineering,
+                                    mobile apps, and digital marketing solutions that transform businesses. We combine
+                                    cutting-edge technology with strategic thinking to deliver websites, applications,
+                                    and custom software that are fast, beautiful, and built to convert.
                                 </p>
                                 <p className="mt-4 sm:mt-6 text-white/90 text-base sm:text-lg leading-relaxed">
-                                    With a commitment to excellence, we craft architectural
-                                    masterpieces that inspire and endure. Every project reflects
-                                    our passion for bold ideas, meticulous craftsmanship, and the
-                                    future of contemporary living.
+                                    From responsive websites built with React and Next.js to comprehensive SEO strategies,
+                                    custom app development, and general software engineering, we provide end-to-end digital
+                                    services. Whether you need a new website, mobile app, custom software solution, or
+                                    marketing campaign, we&apos;re here to help your business thrive online.
                                 </p>
 
                                 <div className="mt-6 sm:mt-10 space-y-2 sm:space-y-3">
                                     <a
-                                        href="tel:+1234567890"
+                                        href={`tel:+${config.phoneNumber}`}
                                         className="block text-white text-lg sm:text-xl hover:opacity-90"
                                     >
-                                        +1234567890
+                                        {config.phoneNumber}
                                     </a>
                                     <a
-                                        href="mailto:hello@example.com"
+                                        href={`mailto:${config.emailAddress}`}
                                         className="inline-block border-b border-white/50 text-white text-lg sm:text-xl hover:border-white"
                                     >
-                                        hello@example.com
+                                        {config.emailAddress}
                                     </a>
                                 </div>
                             </div>

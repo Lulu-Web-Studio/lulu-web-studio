@@ -14,7 +14,7 @@ export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale
         title: "Paragon Exterior",
         slug: "paragon-exterior",
         description: `Professional exterior contracting services specializing in roofing, siding, and home renovations. Built a modern, mobile-responsive website with project galleries, service pages, and integrated contact forms to showcase their craftsmanship and generate leads.`,
-        href: "/project/paragon-exterior",
+        href: "https://paragonexterior.com",
         externalUrl: "https://paragonexterior.com",
         design: {
             backgroundColor: "bg-[#152D47]",
@@ -36,7 +36,7 @@ export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale
         title: "The Facial Surgery Center",
         slug: "facial-surgery-center",
         description: `Premier facial plastic surgery practice specializing in rhinoplasty, facelifts, and reconstructive procedures. Developed a HIPAA-compliant website with patient portal, virtual consultations, before/after galleries, and appointment scheduling system.`,
-        href: "/project/facial-surgery-center",
+        href: "https://facialsurgeryct.com",
         externalUrl: "https://facialsurgeryct.com",
         design: {
             backgroundColor: "bg-[#fbe8d9]",
@@ -58,7 +58,7 @@ export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale
         title: "The Alon Group",
         slug: "alon-group",
         description: `Real estate investment and development firm specializing in residential and commercial properties. Created a sleek, modern website with property listings, investor relations portal, and integrated CRM to streamline lead management and showcase their portfolio.`,
-        href: "/project/alon-group",
+        href: "https://www.thealongroup.com",
         externalUrl: "https://www.thealongroup.com",
         design: {
             backgroundColor: "bg-[#1e1e1e]",
@@ -78,7 +78,7 @@ export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale
         title: "Ganan Landscaping",
         slug: "ganan-landscaping",
         description: `Full-service landscaping company offering design, installation, and maintenance services for residential and commercial properties. Developed a visually stunning website with interactive project galleries, service descriptions, and integrated booking system to attract new clients and showcase their expertise.`,
-        href: "/project/ganan-landscaping",
+        href: "https://www.gananlandscaping.com",
         externalUrl: "https://gananlandscaping.com",
         design: {
             backgroundColor: "bg-[#e0e0dc]",
@@ -97,7 +97,7 @@ export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale
         title: "ISAACC18",
         slug: "isaacc18",
         description: `ISAACC18 ( International Support Of Anesthesia And Critical Care in Israel ) is a dedicated international network of over 200 experienced volunteer anesthesiologists and critical care physicians committed to supporting the Israeli Anesthesia and Critical Care community with clinical staffing, education, and collaborative academic partnerships that foster excellence in medical care in Israel and around the world.`,
-        href: "/project/isaacc18",
+        href: "https://www.isaacc18.org",
         externalUrl: "https://isaacc18.org",
         design: {
             backgroundColor: "bg-white",
@@ -134,7 +134,8 @@ export const projects: Omit<CardProps, 'i' | 'progress' | 'range' | 'targetScale
                     <StripeLogo size={24} />
                 </>
             ),
-            imageAlt: "Amber's Jewelry Boutique logo"
+            imageAlt: "Amber's Jewelry Boutique logo",
+            imageSrc: "undefined"
         }
     }
 ]

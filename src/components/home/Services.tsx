@@ -1,5 +1,6 @@
-
 import React from "react";
+import HeaderText from "@/components/Text/HeaderText";
+import SecondaryText from "@/components/Text/BodyText";
 
 const SERVICES = [
     {
@@ -62,9 +63,9 @@ export default function Services() {
         <section className="bg-white min-h-[80vh] flex items-center justify-center rounded-t-[50px] py-24 pb-40 relative z-10 -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-28">
             <div className=" w-5/6 mx-auto">
                 {/* Section Eyebrow */}
-                <p className="uppercase text-md text-neutral-500 text-center mb-10 md:mb-14 ">
+                <SecondaryText as="p" className="uppercase text-md text-neutral-500 text-center mb-10 md:mb-14 ">
                     Our Services
-                </p>
+                </SecondaryText>
                 {/* </div> */}
 
                 <div className="divide-y divide-neutral-200">
@@ -79,9 +80,9 @@ export default function Services() {
                                     {s.number}
                                 </span>
                                 {/* Title */}
-                                <h3 className="col-span-10 md:col-span-4 text-[22px] md:text-[28px] leading-tight text-neutral-900">
+                                <HeaderText as="h3" variant="small" className="col-span-10 md:col-span-4 w-3/4 leading-tight text-neutral-900">
                                     {s.title}
-                                </h3>
+                                </HeaderText>
                             </div>
 
 
@@ -89,9 +90,9 @@ export default function Services() {
                             {/* Right column: dot • blurb • list */}
                             <div className="col-span-12 md:col-span-7 md:ml-auto mt-6 md:mt-0">
 
-                                <p className="text-neutral-700 leading-relaxed text-base md:text-[17px] max-w-2xl">
+                                <SecondaryText className="text-neutral-700 leading-relaxed max-w-2xl">
                                     {s.blurb}
-                                </p>
+                                </SecondaryText>
 
                                 <ul className="mt-6 space-y-3 text-sm tracking-wide text-neutral-900">
                                     {s.items.map((it) => (

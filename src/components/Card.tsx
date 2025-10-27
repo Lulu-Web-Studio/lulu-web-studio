@@ -5,6 +5,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import {ArrowRight} from "lucide-react";
+import HeaderText from "@/components/Text/HeaderText";
+import SecondaryText from "@/components/Text/BodyText";
 
 
 export type CardDesignProps = {
@@ -13,9 +15,8 @@ export type CardDesignProps = {
     accentColor: string; // Tailwind class like "bg-blue-600"
     accentColor2: string; // Tailwind class like "bg-blue-800"
     techStack: React.ReactNode;
-    imageSrc?: string;
+    imageSrc: string;
     imageAlt?: string;
-    imageComponent?: React.ReactNode; // New: for SVG components
 }
 
 export interface CardProps {
@@ -51,33 +52,13 @@ const Card = ({
     return (
         <div ref={container} className={clsx(design.textColor, "min-h-screen flex items-center justify-center sticky top-0", isLast ? "rounded-t-[50px]" : "rounded-[50px]")}>
             <motion.div
-                //style={{scale}}
                 className={clsx(
                     design.backgroundColor,
                     "relative flex flex-col w-full h-screen origin-top overflow-hidden p-8 sm:p-10 md:p-12 lg:p-16",
                     isLast ? "rounded-t-[50px]" : "rounded-[50px]"
                 )}
             >
-                {/* Accent color bar */}
-                <div className={clsx(design.accentColor, "absolute left-0 top-0 bottom-0 w-1", isLast ? "rounded-tl-[50px]" : "rounded-l-[50px]")} />
 
-                {/* Image or Component */}
-                <div className="absolute top-8 right-8 w-40 h-40 sm:w-48 sm:h-48">
-                    {design.imageComponent ? (
-                        <></>
-                    ) : design.imageSrc ? (
-                        <Image
-                            src={design.imageSrc}
-                            alt={design.imageAlt || ""}
-                            fill
-                            priority={i === 0}
-                            sizes="(max-width: 640px) 160px, 192px"
-                            className="object-contain"
-                        />
-                    ) : null}
-                </div>
-
-                {/* Tech Stack */}
                 <motion.div
                     initial={{opacity: 0, x: -20}}
                     animate={{opacity: 1, x: 0}}
@@ -94,18 +75,34 @@ const Card = ({
                     style={{y: contentY, opacity: contentOpacity}}
                     className="relative z-10 h-full flex flex-col justify-around"
                 >
-                    <div>
-                        <div className={clsx(design.accentColor, "w-16 h-1 mb-6 sm:mb-8 rounded-full")} />
-                        <h2 className="text-left m-0 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
-                            {title}
-                        </h2>
+
+                    <div className="flex flex-row w-full justify-between items-center">
+                        <div className="w-1/2">
+                            <HeaderText as="h2" className="text-left m-0 font-bold mb-6 sm:mb-8 leading-tight">
+                                {title}
+                            </HeaderText>
+                        </div>
+
+                        <div>
+                            {design.imageSrc === "undefined"
+                                ? <></> : <Image
+                                    src={design.imageSrc}
+                                    alt={design.imageAlt || ""}
+                                    width={160}
+                                    height={160}
+                                    priority={i === 0}
+                                    className="object-contain w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"
+                                />}
+                        </div>
+
                     </div>
+
 
                     <p className="leading-relaxed text-base sm:text-lg md:text-xl max-w-3xl">
                         {description}
                     </p>
 
-                    <div>
+                    <div className="pb-6">
                         <Link
                             href={href}
                             className={clsx(
