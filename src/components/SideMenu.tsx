@@ -1,39 +1,34 @@
 "use client"
 import React, {useState} from 'react'
 import {motion} from 'framer-motion';
-import {AnimatePresence,} from 'framer-motion';
+import {AnimatePresence, } from 'framer-motion';
 import Nav from './Header/Nav';
 
-export const links = [
-    {
-        title: "Projects",
-        href: "/"
-    },
-    {
-        title: "Agency",
-        href: "/"
-    },
-    {
-        title: "Expertise",
-        href: "/"
-    },
-]
+// export const links = [
+//     {
+//         title: "Projects",
+//         href: "/projects"
+//     },
+//     {
+//         title: "Agency",
+//         href: "/"
+//     },
+//     {
+//         title: "Expertise",
+//         href: "/"
+//     },
+// ]
 
 export default function SideMenu() {
-  return (
-      <Index />
-  )
+    return (
+        <Index />
+    )
 }
-
-
-
-
-
 
 const menu = {
     open: {
-        width: "min(85vw, 350px)",
-        height: "min(60vh, 450px)",
+        width: "min(75vw, 350px)",
+        height: "min(50vh, 450px)",
         top: "-25px",
         right: "-25px",
         transition: {duration: 0.75, ease: [0.76, 0, 0.24, 1] as const}
@@ -50,10 +45,6 @@ const menu = {
 const Index = () => {
     const [isActive, setIsActive] = useState(false);
     return (
-        // <div className="fixed right-14 top-14">
-        //     <Button isActive={isActive} toggleMenu={() => {setIsActive(!isActive)}} />
-        // </div>
-
         <div className="fixed right-14 top-14 z-50">
             <motion.div
                 className="bg-[#c9fd74] rounded-3xl"

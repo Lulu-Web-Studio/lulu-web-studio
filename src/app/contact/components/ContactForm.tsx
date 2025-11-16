@@ -1,23 +1,63 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { useState } from "react";
+import {m, motion} from "framer-motion";
+import {Mail, MapPin, Phone, Send} from "lucide-react";
+import {useState} from "react";
 import HeaderText from "@/components/Text/HeaderText";
 import SecondaryText from "@/components/Text/BodyText";
+import {config} from "@/config";
+
+export type FormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      const body = JSON.stringify(formData);
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      alert("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("There was an error sending your message. Please try again later.");
+    }
   };
 
   const handleChange = (
@@ -30,7 +70,7 @@ export default function ContactForm() {
   };
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {opacity: 0},
     visible: {
       opacity: 1,
       transition: {
@@ -41,7 +81,7 @@ export default function ContactForm() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: {opacity: 0, y: 20},
     visible: {
       opacity: 1,
       y: 0,
@@ -52,6 +92,17 @@ export default function ContactForm() {
     },
   };
 
+  const socials = [
+    {
+      name: "LinkedIn",
+      href: config.links.linkedin
+    },
+    {
+      name: "Instagram",
+      href: config.links.instagram
+    }
+  ];
+
   return (
     <section className="bg-white rounded-t-[50px] relative z-10 -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-28 py-20 md:py-32 pb-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -59,7 +110,7 @@ export default function ContactForm() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{once: true, margin: "-100px"}}
           className="grid lg:grid-cols-5 gap-12 lg:gap-16"
         >
           {/* Contact Information */}
@@ -78,8 +129,7 @@ export default function ContactForm() {
             </div>
 
             <div className="space-y-6">
-              {/* Email */}
-              <motion.div
+              {/* <motion.div
                 variants={itemVariants}
                 className="flex items-start space-x-4 group"
               >
@@ -91,54 +141,15 @@ export default function ContactForm() {
                     Email
                   </p>
                   <a
-                    href="mailto:hello@luluwebstudio.com"
+                    href={`mailto:${config.emailAddress}`}
                     className="text-neutral-900 text-lg hover:text-neutral-600 transition-colors"
                   >
-                    hello@luluwebstudio.com
+                    {config.emailAddress}
                   </a>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
-              {/* Phone */}
-              <motion.div
-                variants={itemVariants}
-                className="flex items-start space-x-4 group"
-              >
-                <div className="p-3 bg-neutral-100 rounded-xl group-hover:bg-neutral-900 transition-colors duration-300">
-                  <Phone className="w-6 h-6 text-neutral-900 group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-500 uppercase tracking-wide mb-1">
-                    Phone
-                  </p>
-                  <a
-                    href="tel:+1234567890"
-                    className="text-neutral-900 text-lg hover:text-neutral-600 transition-colors"
-                  >
-                    +1 (234) 567-890
-                  </a>
-                </div>
-              </motion.div>
 
-              {/* Location */}
-              <motion.div
-                variants={itemVariants}
-                className="flex items-start space-x-4 group"
-              >
-                <div className="p-3 bg-neutral-100 rounded-xl group-hover:bg-neutral-900 transition-colors duration-300">
-                  <MapPin className="w-6 h-6 text-neutral-900 group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-500 uppercase tracking-wide mb-1">
-                    Location
-                  </p>
-                  <p className="text-neutral-900 text-lg">
-                    San Francisco, CA
-                    <br />
-                    United States
-                  </p>
-                </div>
-              </motion.div>
             </div>
 
             {/* Social Links */}
@@ -147,14 +158,15 @@ export default function ContactForm() {
                 Follow Us
               </p>
               <div className="flex space-x-4">
-                {["Twitter", "LinkedIn", "Instagram", "GitHub"].map(
-                  (social) => (
+                {socials.map(
+                  (social, idx) => (
                     <a
-                      key={social}
-                      href="#"
+                      key={idx}
+                      href={social.href}
+                      target="_blank"
                       className="text-neutral-600 hover:text-neutral-900 text-sm font-medium transition-colors"
                     >
-                      {social}
+                      {social.name}
                     </a>
                   )
                 )}
@@ -248,8 +260,8 @@ export default function ContactForm() {
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{scale: 1.02}}
+                whileTap={{scale: 0.98}}
                 className="group w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white rounded-xl font-medium text-lg hover:bg-neutral-800 transition-all duration-300 shadow-lg hover:shadow-2xl"
               >
                 Send Message

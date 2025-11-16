@@ -1,3 +1,4 @@
+/* ===== OLD PROJECTS COMPONENT - COMMENTED OUT =====
 "use client"
 import {useRef} from "react";
 import {useScroll} from "framer-motion";
@@ -164,4 +165,10 @@ export default function Products() {
             }
         </div>
     )
+}
+===== END OLD PROJECTS COMPONENT ===== */
+
+// New Projects component placeholder
+export default function Projects() {
+    return null;
 }

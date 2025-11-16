@@ -1,6 +1,6 @@
 import HeroParallax from "@/components/home/Hero";
 import Services from "@/components/home/Services";
-import Projects from "@/components/home/Projects";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 import CTA from "@/components/home/CTA";
 
 export default function HomePage() {
@@ -8,7 +8,7 @@ export default function HomePage() {
     <div>
       <HeroParallax />
       <Services />
-      <Projects />
+      <FeaturedProjects />
       <CTA />
     </div>
   );

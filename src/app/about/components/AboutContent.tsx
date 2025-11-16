@@ -32,7 +32,7 @@ export default function AboutContent() {
   const values = [
     {
       icon: Code,
-      title: "Clean Code",
+      title: "Quality work",
       description: "We build with modern frameworks and best practices, ensuring your project is scalable and maintainable.",
     },
     {
@@ -123,39 +123,6 @@ export default function AboutContent() {
               ))}
             </motion.div>
           </div>
-
-          {/* Tech Stack */}
-          <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <HeaderText as="h3" className="font-bold text-neutral-900 mb-4">
-                Technologies We Use
-              </HeaderText>
-              <SecondaryText className="text-neutral-600 max-w-2xl mx-auto">
-                We work with modern, battle-tested technologies that deliver performance,
-                scalability, and reliability.
-              </SecondaryText>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "Node.js",
-                "Python",
-                "React Native",
-                "Firebase",
-              ].map((tech) => (
-                <div
-                  key={tech}
-                  className="bg-neutral-50 rounded-xl px-6 py-4 text-center font-medium text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors duration-300"
-                >
-                  {tech}
-                </div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* CTA */}
           <motion.div variants={itemVariants} className="text-center">

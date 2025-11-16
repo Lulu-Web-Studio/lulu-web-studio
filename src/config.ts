@@ -14,10 +14,8 @@ const buildConfig = () => {
       process.env.NEXT_PUBLIC_EMAIL_ADDRESS || "info@luluwebstudio.com",
 
     links: {
-      github: process.env.NEXT_PUBLIC_GITHUB_URL || "",
-      linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
-      twitter: process.env.NEXT_PUBLIC_TWITTER_URL || "",
-      instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
+      linkedin: "https://www.linkedin.com/company/lulu-web-studio/",
+      instagram: "/"
     },
     name: {
       name,

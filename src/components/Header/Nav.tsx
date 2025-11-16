@@ -54,10 +54,10 @@ export const links = [
         title: "Projects",
         href: "/projects"
     },
-    {
-        title: "Services",
-        href: "/services"
-    },
+    // {
+    //     title: "Services",
+    //     href: "/services"
+    // },
     {
         title: "About",
         href: "/about"
@@ -77,14 +77,14 @@ export const footerLinks = [
         title: "Instagram",
         href: config.links.instagram
     },
-    {
-        title: "Instagram",
-        href: "/"
-    },
-    {
-        title: "Twitter",
-        href: "/"
-    }
+    // {
+    //     title: "Instagram",
+    //     href: "/"
+    // },
+    // {
+    //     title: "Twitter",
+    //     href: "/"
+    // }
 ]
 
 export default function Nav() {
@@ -121,11 +121,12 @@ export default function Nav() {
                         const {title, href} = link;
                         return (
                             <motion.a
-                                className="w-1/2 mt-1.5 text-sm sm:text-base transition-all duration-300 hover:opacity-60 hover:translate-x-1"
+                                className="w-1/2 mt-1.5 text-sm sm:text-base dark:text-black duration-300 hover:opacity-60 hover:translate-x-1"
                                 variants={slideIn}
                                 custom={i}
                                 initial="initial"
                                 animate="enter"
+                                href={href}
                                 exit="exit"
                                 key={`f_${i}`}
                             >
