@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     id: "paragon-exterior",
     title: "Paragon Exterior",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description: "Modern roofing company website built with Next.js and SEO optimization",
     image: "/images/projects/paragon-home.webp",
     href: "https://paragonexterior.com",
     featured: true,
@@ -21,7 +21,7 @@ export const projects: Project[] = [
   {
     id: "facial-surgery-center",
     title: "The Facial Surgery Center",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description: "Healthcare website for facial surgery practice",
     image: "/images/projects/fsc-image.webp",
     href: "https://www.facialsurgeryct.com",
     featured: true,
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     id: "alon-group",
     title: "The Alon Group",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description: "Real estate brokerage website built on Wix",
     image: "/images/projects/alon-group.webp",
     href: "https://www.thealongroup.com",
     featured: true,
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     id: "ganan-landscaping",
     title: "Ganan Landscaping",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description: "Professional landscaping services website on Squarespace",
     image: "/images/projects/ganan-home.webp",
     href: "https://www.gananlandscaping.com",
     featured: true,
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     id: "isaacc18",
     title: "ISAACC18",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description: "Non-profit organization website",
     image: "/images/projects/isaacc18-home.webp",
     href: "https://www.isaacc18.org",
     featured: false,
@@ -57,7 +57,7 @@ export const projects: Project[] = [
   {
     id: "amber-jewelry",
     title: "Amber's Jewelry Boutique",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description: "E-commerce jewelry store",
     image: "/images/projects/amber-home.webp",
     href: "https://www.ambersjewelryboutique.com",
     featured: false,

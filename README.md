@@ -1,4 +1,6 @@
-# Website Template
+# Lulu Web Studio
+
+Modern web development studio specializing in custom digital solutions.
 
 ## Installation
 

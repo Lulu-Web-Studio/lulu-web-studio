@@ -1,5 +1,6 @@
 {
-  "name": "template",
+  "name": "lulu-web-studio",
+  "description": "Professional web development studio crafting modern digital experiences",
   "version": "0.1.0",
   "private": true,
   "scripts": {
