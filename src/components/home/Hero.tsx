@@ -105,12 +105,12 @@ export default function HeroParallax() {
                                     >
                                         {config.phoneNumber}
                                     </a> */}
-                                    <a
+                                    {/* <a
                                         href={`mailto:${config.emailAddress}`}
                                         className="inline-block border-b border-white/50 text-white text-lg sm:text-xl hover:border-white"
                                     >
                                         {config.emailAddress}
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </div>
