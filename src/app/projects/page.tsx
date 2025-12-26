@@ -1,11 +1,17 @@
 "use client";
 
 import {motion} from "framer-motion";
-import {getAllProjects} from "@/data/projects";
+import {
+  getCompletedProjects,
+  getInDevelopmentProjects,
+  getForSaleProjects,
+} from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 
 export default function ProjectsPage() {
-  const allProjects = getAllProjects();
+  const completedProjects = getCompletedProjects();
+  const inDevelopmentProjects = getInDevelopmentProjects();
+  const forSaleProjects = getForSaleProjects();
 
   const containerVariants = {
     hidden: {opacity: 0},
@@ -50,17 +56,59 @@ export default function ProjectsPage() {
               </p>
             </motion.div>
 
-            {/* Projects Grid */}
-            <motion.div
-              variants={containerVariants}
-              className="grid md:grid-cols-2 gap-8 lg:gap-12"
-            >
-              {allProjects.map((project) => (
-                <motion.div key={project.id} variants={itemVariants}>
-                  <ProjectCard project={project} showTags />
+            {/* Completed Projects Grid */}
+            {completedProjects.length > 0 && (
+              <motion.div
+                variants={containerVariants}
+                className="grid md:grid-cols-2 gap-8 lg:gap-12"
+              >
+                {completedProjects.map((project) => (
+                  <motion.div key={project.id} variants={itemVariants}>
+                    <ProjectCard project={project} showTags />
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+
+            {/* In Development Section */}
+            {inDevelopmentProjects.length > 0 && (
+              <>
+                <motion.div variants={itemVariants} className="mt-24 mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold">
+                    In Development
+                  </h2>
                 </motion.div>
-              ))}
-            </motion.div>
+                <motion.div
+                  variants={containerVariants}
+                  className="grid md:grid-cols-2 gap-8 lg:gap-12"
+                >
+                  {inDevelopmentProjects.map((project) => (
+                    <motion.div key={project.id} variants={itemVariants}>
+                      <ProjectCard project={project} showTags />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </>
+            )}
+
+            {/* For Sale Section */}
+            {forSaleProjects.length > 0 && (
+              <>
+                <motion.div variants={itemVariants} className="mt-24 mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold">For Sale</h2>
+                </motion.div>
+                <motion.div
+                  variants={containerVariants}
+                  className="grid md:grid-cols-2 gap-8 lg:gap-12"
+                >
+                  {forSaleProjects.map((project) => (
+                    <motion.div key={project.id} variants={itemVariants}>
+                      <ProjectCard project={project} showTags />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </>
+            )}
           </motion.div>
         </div>
       </section>
