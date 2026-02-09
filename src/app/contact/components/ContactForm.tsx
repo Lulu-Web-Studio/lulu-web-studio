@@ -129,7 +129,7 @@ export default function ContactForm() {
             </div>
 
             <div className="space-y-6">
-              {/* <motion.div
+              <motion.div
                 variants={itemVariants}
                 className="flex items-start space-x-4 group"
               >
@@ -147,7 +147,7 @@ export default function ContactForm() {
                     {config.emailAddress}
                   </a>
                 </div>
-              </motion.div> */}
+              </motion.div>
 
 
             </div>

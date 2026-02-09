@@ -42,8 +42,10 @@ export default function HeroParallax() {
                             >
                                 Lulu Web Studio
                             </HeaderText>
-                            <SecondaryText className="mt-4 text-white/80 text-base ">
-                                Web development, software engineering, SEO, and digital solutions that elevate your brand and drive results.
+                            <SecondaryText className="mt-8 text-white/80 text-base ">
+                                We solve <span className="italic">real</span> business problems with technology and elegant design.
+                                <br /><br />
+                                Websites • Apps • Custom Software • Digital Marketing
                             </SecondaryText>
 
                             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -105,12 +107,12 @@ export default function HeroParallax() {
                                     >
                                         {config.phoneNumber}
                                     </a> */}
-                                    {/* <a
+                                    <a
                                         href={`mailto:${config.emailAddress}`}
                                         className="inline-block border-b border-white/50 text-white text-lg sm:text-xl hover:border-white"
                                     >
                                         {config.emailAddress}
-                                    </a> */}
+                                    </a>
                                 </div>
                             </div>
                         </div>

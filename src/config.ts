@@ -10,8 +10,7 @@ const buildConfig = () => {
     sitename: process.env.NEXT_PUBLIC_SITE_NAME || "Site Name",
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
     phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "123-000-0000",
-    emailAddress:
-      process.env.NEXT_PUBLIC_EMAIL_ADDRESS || "info@luluwebstudio.com",
+    emailAddress: "info@luluwebstudio.com",
 
     links: {
       linkedin: "https://www.linkedin.com/company/lulu-web-studio/",
