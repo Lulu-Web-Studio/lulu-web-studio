@@ -27,6 +27,16 @@ export const projects: Project[] = [
     tags: ["Web Development", "Next.js", "SEO"],
   },
   {
+    id: "Sonino",
+    title: "Sonino Painting & Contracting",
+    description: "Professional remodeling and painting services.",
+    image: "/images/projects/sonino-home.png",
+    href: "https://www.soninopainting.com",
+    featured: true,
+    status: ProjectStatus.Completed,
+    tags: ["Web Development", "Contracting"],
+  },
+  {
     id: "facial-surgery-center",
     title: "The Facial Surgery Center",
     description: "Healthcare website for facial surgery practice",
