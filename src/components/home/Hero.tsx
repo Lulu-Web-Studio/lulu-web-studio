@@ -96,8 +96,8 @@ export default function HeroParallax() {
                                 <p className="mt-4 sm:mt-6 text-white/90 text-base sm:text-lg leading-relaxed">
                                     From responsive websites built with React and Next.js to comprehensive SEO strategies,
                                     custom app development, and general software engineering, we provide end-to-end digital
-                                    services. Whether you need a new website, mobile app, custom software solution, or
-                                    marketing campaign, we&apos;re here to help your business thrive online.
+                                    services. Whether you need a new website, mobile app, logo design, or custom software solution,
+                                    we&apos;re here to help your business thrive online.
                                 </p>
 
                                 <div className="mt-6 sm:mt-10 space-y-2 sm:space-y-3">

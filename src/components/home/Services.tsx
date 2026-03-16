@@ -10,6 +10,7 @@ const SERVICES = [
             "We build fast, responsive, and visually engaging websites tailored to your business. Our team uses modern frameworks like React, Next.js, and Tailwind CSS to create mobile-friendly designs optimized for user experience and search engine performance. Every project is coded cleanly, ensuring scalability, speed, and long-term maintainability. In many cases, we also develop websites on platforms like Shopify, Wix, and WordPress for businesses that prefer a flexible, user-friendly content management system without custom coding.",
         items: [
             "Custom Web Design",
+            "Logo Design",
             "Responsive Development",
             "Performance Optimization",
             "Shopify, Wix & WordPress Builds",
@@ -20,13 +21,12 @@ const SERVICES = [
         number: "02",
         title: "SEO & Digital Marketing",
         blurb:
-            "We help your business rank higher and attract more customers through proven SEO strategies and digital marketing campaigns. From keyword research and on-page optimization to content strategy and local SEO, we make sure your website gets discovered. We also manage backlinks, analytics, and targeted ad campaigns to maximize visibility and ROI.",
+            "We help your business rank higher and attract more customers through proven SEO strategies and Google Ads. From keyword research and on-page optimization to technical SEO and local search, we make sure your website gets discovered. We also manage backlinks, analytics, and paid advertising to maximize visibility and ROI.",
         items: [
             "Keyword Research & Strategy",
             "On-Page & Technical SEO",
             "Local SEO Optimization",
-            "Content Marketing",
-            "PPC & Social Campaigns",
+            "Google Ads Management",
         ],
     },
     {
