@@ -4,6 +4,7 @@ import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
 import {ClientProviders} from "@/components/ClientProvider";
 import SideMenu from "@/components/SideMenu";
+import {SchemaMarkup} from "@/components/SchemaMarkup";
 
 export const metadata: Metadata = {
   title: "Lulu Web Studio",
@@ -20,6 +21,9 @@ export default function RootLayout({
   // bg-[#191919]
   return (
     <html lang="en" className="h-full">
+      <head>
+        <SchemaMarkup />
+      </head>
       <body className="h-full bg-black">
         <div className="fixed inset-0 flex items-center justify-center p-4 md:p-6 lg:p-8">
           <div className="relative w-full h-full rounded-[50px]  overflow-hidden">

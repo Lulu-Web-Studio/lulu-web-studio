@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import HeaderText from "@/components/Text/HeaderText";
 import SecondaryText from "@/components/Text/BodyText";
 
@@ -6,20 +7,20 @@ const SERVICES = [
     {
         number: "01",
         title: "Website Design & Development",
+        href: "/services/website-design",
         blurb:
             "We build fast, responsive, and visually engaging websites tailored to your business. Our team uses modern frameworks like React, Next.js, and Tailwind CSS to create mobile-friendly designs optimized for user experience and search engine performance. Every project is coded cleanly, ensuring scalability, speed, and long-term maintainability. In many cases, we also develop websites on platforms like Shopify, Wix, and WordPress for businesses that prefer a flexible, user-friendly content management system without custom coding.",
         items: [
             "Custom Web Design",
-            "Logo Design",
             "Responsive Development",
             "Performance Optimization",
             "Shopify, Wix & WordPress Builds",
         ],
     },
-
     {
         number: "02",
         title: "SEO & Digital Marketing",
+        href: "/services/seo",
         blurb:
             "We help your business rank higher and attract more customers through proven SEO strategies and Google Ads. From keyword research and on-page optimization to technical SEO and local search, we make sure your website gets discovered. We also manage backlinks, analytics, and paid advertising to maximize visibility and ROI.",
         items: [
@@ -31,7 +32,22 @@ const SERVICES = [
     },
     {
         number: "03",
+        title: "Logo Design",
+        href: "/services/logo-design",
+        blurb:
+            "Your logo is the face of your brand. We design distinctive, versatile logos that communicate your brand values and resonate with your target audience. Every logo we create is crafted to work beautifully across all mediums and sizes.",
+        items: [
+            "Brand Discovery Session",
+            "Multiple Concept Designs",
+            "Unlimited Revisions",
+            "Vector File Formats",
+            "Brand Guidelines",
+        ],
+    },
+    {
+        number: "04",
         title: "App Development",
+        href: "/services/mobile-app-development",
         blurb:
             "We design and develop scalable mobile and web applications that solve real problems and deliver seamless user experiences. Using technologies like React Native and Firebase, we build apps that are fast, secure, and cross-platform. From MVPs to enterprise solutions, we handle the full lifecycle from idea to deployment.",
         items: [
@@ -43,10 +59,11 @@ const SERVICES = [
         ],
     },
     {
-        number: "04",
+        number: "05",
         title: "Coding & Scripting Solutions",
+        href: "/services/custom-scripting",
         blurb:
-            "Need automation, custom integrations, or backend scripting? We provide coding and scripting services that streamline workflows, connect APIs, and handle repetitive tasks. Whether it’s JavaScript, Python, or Rust, our scripts are lightweight, efficient, and secure—built to save you time and keep systems running smoothly.",
+            "Need automation, custom integrations, or backend scripting? We provide coding and scripting services that streamline workflows, connect APIs, and handle repetitive tasks. Whether it's JavaScript, Python, or Rust, our scripts are lightweight, efficient, and secure—built to save you time and keep systems running smoothly.",
         items: [
             "API Integrations",
             "Automation Scripts",
@@ -70,17 +87,18 @@ export default function Services() {
 
                 <div className="divide-y divide-neutral-200">
                     {SERVICES.map((s, idx) => (
-                        <div
+                        <Link
                             key={s.number}
-                            className="py-24 sm:py-40 flex flex-col sm:flex-row justify-between items-start"
+                            href={s.href}
+                            className="py-24 sm:py-40 flex flex-col sm:flex-row justify-between items-start group block hover:bg-neutral-50 transition-colors duration-300 -mx-6 px-6 rounded-2xl"
                         >
                             {/* Number */}
                             <div className="flex flex-row gap-x-5">
-                                <span className="text-2xl md:text-3xl tabular-nums text-neutral-400">
+                                <span className="text-2xl md:text-3xl tabular-nums text-neutral-400 group-hover:text-neutral-600 transition-colors">
                                     {s.number}
                                 </span>
                                 {/* Title */}
-                                <HeaderText as="h3" variant="small" className="col-span-10 md:col-span-4 w-3/4 leading-tight text-neutral-900">
+                                <HeaderText as="h3" variant="small" className="col-span-10 md:col-span-4 w-3/4 leading-tight text-neutral-900 group-hover:text-neutral-700 transition-colors">
                                     {s.title}
                                 </HeaderText>
                             </div>
@@ -102,7 +120,7 @@ export default function Services() {
                                     ))}
                                 </ul>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

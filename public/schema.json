@@ -1,0 +1,66 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.luluwebstudio.com/#business",
+      "name": "Lulu Web Studio",
+      "url": "https://www.luluwebstudio.com",
+      "logo": "https://www.luluwebstudio.com/logo.png",
+      "image": "https://www.luluwebstudio.com/og-image.png",
+      "description": "Full-service digital agency offering website design, SEO, app development, and custom coding solutions for businesses of all sizes.",
+      "email": "info@luluwebstudio.com",
+      "sameAs": [
+        "https://www.linkedin.com/company/lulu-web-studio/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Design & Development",
+              "description": "Custom web design, responsive development, and performance optimization on platforms like Shopify, Wix, and WordPress"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO & Digital Marketing",
+              "description": "Keyword research, on-page and technical SEO, local SEO optimization, and Google Ads management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "App Development",
+              "description": "iOS and Android apps, cross-platform solutions, API development, and mobile UI/UX"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Coding & Scripting Solutions",
+              "description": "API integrations, automation scripts, custom tooling, database scripting, and serverless functions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.luluwebstudio.com/#website",
+      "name": "Lulu Web Studio",
+      "url": "https://www.luluwebstudio.com",
+      "description": "We build modern, responsive websites for businesses of all sizes.",
+      "publisher": {
+        "@id": "https://www.luluwebstudio.com/#business"
+      }
+    }
+  ]
+}

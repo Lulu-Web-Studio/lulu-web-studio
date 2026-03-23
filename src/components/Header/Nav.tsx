@@ -51,13 +51,17 @@ const slideIn = {
 
 export const links = [
     {
+        title: "Home",
+        href: "/"
+    },
+    {
         title: "Projects",
         href: "/projects"
     },
-    // {
-    //     title: "Services",
-    //     href: "/services"
-    // },
+    {
+        title: "Services",
+        href: "/services"
+    },
     {
         title: "About",
         href: "/about"
