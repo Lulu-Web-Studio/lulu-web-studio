@@ -9,6 +9,7 @@ const logos = [
   {src: "/images/home/clients/alon-group-svg.svg", alt: "The Alon Group", href: "https://www.thealongroup.com"},
   {src: "/images/home/clients/ganan-land.png", alt: "Ganan Landscaping", href: "https://www.gananlandscaping.com"},
   {src: "/images/home/clients/isaacc18.webp", alt: "ISAACC18", href: "https://www.isaacc18.org"},
+  {src: "/images/home/clients/charge-the-coast.png", alt: "Charge The Coast", href: "https://www.chargethecoast.com"},
 ];
 
 export default function LogoMarquee() {
