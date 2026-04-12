@@ -20,7 +20,7 @@ export const projects: Project[] = [
     id: "charge-the-coast",
     title: "Charge The Coast",
     description: "Electric vehicle charging solutions website",
-    image: "/images/projects/charge-the-coast1.webp",
+    image: '/images/projects/ctc-image.png',
     href: "https://www.chargethecoast.com",
     featured: true,
     status: ProjectStatus.Completed,
