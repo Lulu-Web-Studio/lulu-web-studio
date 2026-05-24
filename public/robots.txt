@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.luluwebstudio.com
-
-# Sitemaps
-Sitemap: https://www.luluwebstudio.com/sitemap.xml

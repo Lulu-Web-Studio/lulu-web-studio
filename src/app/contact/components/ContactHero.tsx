@@ -15,7 +15,7 @@ export default function ContactHero() {
           <div className="absolute inset-0">
             <Image
               src="/images/contact/contact-bg.webp"
-              alt="Contact Hero"
+              alt="Contact Lulu Web Studio to start your website, app, or SEO project"
               fill
               priority
               className="object-cover"

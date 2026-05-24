@@ -15,7 +15,7 @@ export default function AboutHero() {
           <div className="absolute inset-0">
             <Image
               src="/images/about/about-hero.jpg"
-              alt="About Hero"
+              alt="Lulu Web Studio team — designers and developers building digital experiences"
               fill
               priority
               className="object-cover"

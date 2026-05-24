@@ -16,7 +16,7 @@ export default function HeroParallax() {
                     <div className="absolute inset-0">
                         <Image
                             src="/images/home/hero.jpg"
-                            alt=""
+                            alt="Lulu Web Studio — custom web design and development agency"
                             fill
                             priority
                             className="object-cover"

@@ -8,8 +8,12 @@
       "url": "https://www.luluwebstudio.com",
       "logo": "https://www.luluwebstudio.com/logo.png",
       "image": "https://www.luluwebstudio.com/og-image.png",
-      "description": "Full-service digital agency offering website design, SEO, app development, and custom coding solutions for businesses of all sizes.",
+      "description": "Lulu Web Studio is a US-based digital agency offering custom website design, SEO, mobile app development, logo design, and custom scripting solutions for businesses of all sizes.",
       "email": "info@luluwebstudio.com",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/lulu-web-studio/"
       ],
@@ -22,6 +26,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Website Design & Development",
+              "url": "https://www.luluwebstudio.com/services/website-design",
               "description": "Custom web design, responsive development, and performance optimization on platforms like Shopify, Wix, and WordPress"
             }
           },
@@ -30,6 +35,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "SEO & Digital Marketing",
+              "url": "https://www.luluwebstudio.com/services/seo",
               "description": "Keyword research, on-page and technical SEO, local SEO optimization, and Google Ads management"
             }
           },
@@ -37,7 +43,8 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "App Development",
+              "name": "Mobile App Development",
+              "url": "https://www.luluwebstudio.com/services/mobile-app-development",
               "description": "iOS and Android apps, cross-platform solutions, API development, and mobile UI/UX"
             }
           },
@@ -45,7 +52,17 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Coding & Scripting Solutions",
+              "name": "Logo Design",
+              "url": "https://www.luluwebstudio.com/services/logo-design",
+              "description": "Memorable logo design, brand identity, vector files, and brand guidelines"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Scripting & Coding Solutions",
+              "url": "https://www.luluwebstudio.com/services/custom-scripting",
               "description": "API integrations, automation scripts, custom tooling, database scripting, and serverless functions"
             }
           }
@@ -57,7 +74,7 @@
       "@id": "https://www.luluwebstudio.com/#website",
       "name": "Lulu Web Studio",
       "url": "https://www.luluwebstudio.com",
-      "description": "We build modern, responsive websites for businesses of all sizes.",
+      "description": "Custom web design, SEO, mobile app development, and digital marketing for US businesses.",
       "publisher": {
         "@id": "https://www.luluwebstudio.com/#business"
       }

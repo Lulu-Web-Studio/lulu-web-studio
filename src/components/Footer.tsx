@@ -5,9 +5,9 @@ import React, {FunctionComponent} from 'react'
 
 
 const footerLinks = [
+  {title: "Services", href: "/services"},
   {title: "Projects", href: "/projects"},
   {title: "About", href: "/about"},
-  // {title: "Services", href: "/services"},
   {title: "Contact", href: "/contact"},
 ];
 
@@ -28,7 +28,7 @@ export const Footer: FunctionComponent = () => {
           className='flex items-center justify-center md:justify-start mb-8 md:mb-0'>
           <Image
             src="/images/footer-icon.png"
-            alt="Footer Image"
+            alt="Lulu Web Studio logo"
             width={300}
             height={300}
             className='w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain'

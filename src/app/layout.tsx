@@ -6,9 +6,46 @@ import {ClientProviders} from "@/components/ClientProvider";
 import SideMenu from "@/components/SideMenu";
 import {SchemaMarkup} from "@/components/SchemaMarkup";
 
+const SITE_URL = "https://www.luluwebstudio.com";
+
 export const metadata: Metadata = {
-  title: "Lulu Web Studio",
-  description: "We build modern, responsive websites for businesses of all sizes.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Custom Web Design & Development Agency | Lulu Web Studio",
+    template: "%s | Lulu Web Studio",
+  },
+  description:
+    "Lulu Web Studio is a US-based digital agency building custom websites, mobile apps, and SEO strategies that help businesses grow online.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Lulu Web Studio",
+    url: SITE_URL,
+    title: "Custom Web Design & Development Agency | Lulu Web Studio",
+    description:
+      "Custom websites, mobile apps, SEO, and digital marketing for US businesses. We design, build, and optimize digital experiences that convert.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Lulu Web Studio — Custom Web Design & Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Web Design & Development Agency | Lulu Web Studio",
+    description:
+      "Custom websites, mobile apps, SEO, and digital marketing for US businesses.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
