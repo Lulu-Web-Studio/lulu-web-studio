@@ -8,36 +8,53 @@ const SITE_URL = "https://www.luluwebstudio.com";
 
 function buildServiceJsonLd(service: Service) {
   const serviceUrl = `${SITE_URL}/services/${service.slug}`;
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "Service",
+      "@id": `${serviceUrl}#service`,
+      name: service.title,
+      description: service.fullDescription,
+      url: serviceUrl,
+      image: `${SITE_URL}${service.image}`,
+      provider: {"@id": `${SITE_URL}/#business`},
+      areaServed: {"@type": "Country", name: "United States"},
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: `${service.title} Features`,
+        itemListElement: service.items.map((item) => ({
+          "@type": "Offer",
+          itemOffered: {"@type": "Service", name: item},
+        })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {"@type": "ListItem", position: 1, name: "Home", item: SITE_URL},
+        {"@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services`},
+        {"@type": "ListItem", position: 3, name: service.title, item: serviceUrl},
+      ],
+    },
+  ];
+
+  if (service.faqs && service.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${serviceUrl}#faq`,
+      mainEntity: service.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "@id": `${serviceUrl}#service`,
-        name: service.title,
-        description: service.fullDescription,
-        url: serviceUrl,
-        image: `${SITE_URL}${service.image}`,
-        provider: {"@id": `${SITE_URL}/#business`},
-        areaServed: {"@type": "Country", name: "United States"},
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: `${service.title} Features`,
-          itemListElement: service.items.map((item) => ({
-            "@type": "Offer",
-            itemOffered: {"@type": "Service", name: item},
-          })),
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {"@type": "ListItem", position: 1, name: "Home", item: SITE_URL},
-          {"@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services`},
-          {"@type": "ListItem", position: 3, name: service.title, item: serviceUrl},
-        ],
-      },
-    ],
+    "@graph": graph,
   };
 }
 
@@ -67,7 +84,7 @@ export async function generateMetadata(props: {
   const canonical = `/services/${service.slug}`;
 
   return {
-    title: service.seoTitle,
+    title: {absolute: service.seoTitle},
     description: service.seoDescription,
     alternates: {canonical},
     openGraph: {

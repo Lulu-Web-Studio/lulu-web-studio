@@ -28,6 +28,7 @@
     "nodemailer": "^8.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-google-reviews": "^1.9.0",
     "react-markdown": "^10.1.0",
     "react-scroll-parallax": "^3.4.5",
     "rss": "^1.2.2",

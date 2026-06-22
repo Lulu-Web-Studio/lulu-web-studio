@@ -1,4 +1,5 @@
 import "./globals.css";
+import "react-google-reviews/dist/index.css";
 import type {Metadata} from "next";
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
@@ -82,4 +83,3 @@ export default function RootLayout({
     </html>
   );
 }
-

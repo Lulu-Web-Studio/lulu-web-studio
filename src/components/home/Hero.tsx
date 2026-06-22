@@ -34,13 +34,16 @@ export default function HeroParallax() {
                 <ParallaxBannerLayer speed={8}>
                     <div className="relative z-10 mx-auto flex h-full w-[92%] max-w-6xl flex-col items-center justify-center md:justify-around">
                         {/* Top Centered Intro */}
-                        <div className="max-w-2xl text-center px-4">
+                        <div className="max-w-3xl text-center px-4">
+                            <SecondaryText as="p" className="uppercase text-xs sm:text-sm tracking-widest text-white/70 mb-4">
+                                Lulu Web Studio
+                            </SecondaryText>
                             <HeaderText
                                 variant="large"
                                 as="h1"
                                 className="tracking-tight text-white"
                             >
-                                Lulu Web Studio
+                                Custom Websites, Apps & SEO for US Businesses
                             </HeaderText>
                             <SecondaryText className="mt-8 text-white/80 text-base ">
                                 We solve <span className="italic">real</span> business problems with technology and elegant design.

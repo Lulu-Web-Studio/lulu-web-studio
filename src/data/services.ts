@@ -5,6 +5,14 @@ export interface Service {
   title: string;
   shortDescription: string;
   fullDescription: string;
+  seoSections?: {
+    heading: string;
+    body: string;
+  }[];
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
   items: string[];
   image: string;
   seoTitle: string;
@@ -16,22 +24,58 @@ export const services: Service[] = [
     id: "website-design",
     slug: "website-design",
     number: "01",
-    title: "Custom Website Design",
+    title: "Custom Website Development",
     shortDescription:
-      "Stunning, responsive websites tailored to your brand and business goals.",
+      "Custom website development services for responsive, SEO-ready business websites.",
     fullDescription:
-      "We create beautiful, high-performing websites that capture your brand essence and convert visitors into customers. Our design process focuses on user experience, accessibility, and modern aesthetics to ensure your online presence stands out from the competition.",
+      "Our custom website development services create fast, responsive websites tailored to your brand, goals, and customer journey. As a custom website development company, Lulu Web Studio plans the structure, design, content flow, and launch details that help your site look polished, load quickly, and convert visitors into customers.",
+    seoSections: [
+      {
+        heading: "Custom Website Development Services for Growing Brands",
+        body: "A custom website should do more than look good. We build around your offer, audience, calls to action, SEO foundations, mobile experience, and long-term content needs so your site can support real business growth instead of feeling like a generic template.",
+      },
+      {
+        heading: "A Custom Website Development Company With a Practical Process",
+        body: "Every project starts with discovery, page planning, and design direction before moving into development. That keeps the work focused on the pages, features, integrations, and performance details your business actually needs.",
+      },
+      {
+        heading: "Custom Ecommerce Website Development",
+        body: "For stores and service businesses that sell online, custom ecommerce website development can include product pages, checkout planning, payment integrations, inventory-friendly structure, conversion-focused layouts, and room for future marketing campaigns.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does it cost to have a custom website built?",
+        answer:
+          "The cost of a custom website depends on the number of pages, design complexity, copywriting, ecommerce needs, integrations, and post-launch support. A small business site is usually simpler than a custom ecommerce website development project with checkout, product management, and advanced workflows.",
+      },
+      {
+        question: "Can ChatGPT build a website?",
+        answer:
+          "ChatGPT can help plan pages, draft copy, generate code, and speed up parts of website development. A professional custom website development company still adds strategy, design judgment, QA, accessibility checks, performance work, and launch support.",
+      },
+      {
+        question: "What are the 7 C's of website design?",
+        answer:
+          "The 7 C's are often described as context, content, community, customization, communication, connection, and commerce. For a business website, they are a useful reminder to build around the visitor's needs, clear messaging, conversion paths, and the systems that support the site after launch.",
+      },
+      {
+        question: "What is custom website development?",
+        answer:
+          "Custom website development is the process of planning, designing, and building a website around a specific business instead of relying on a one-size-fits-all template. It can include custom layouts, CMS setup, ecommerce features, integrations, technical SEO, performance optimization, and launch support.",
+      },
+    ],
     items: [
-      "Custom responsive design",
+      "Custom responsive website development",
       "Mobile-first development",
       "SEO-optimized structure",
       "Fast loading performance",
       "Intuitive user experience",
-      "Brand-consistent styling",
+      "Custom ecommerce website development",
     ],
     image: "/images/services/website-design.jpg",
-    seoTitle: "Custom Website Design Services | Lulu Web Studio",
-    seoDescription: "Professional custom website design services. We create stunning, responsive websites tailored to your brand that convert visitors into customers.",
+    seoTitle: "Custom Website Development Services | Lulu Web Studio",
+    seoDescription: "Custom website development services for responsive, SEO-ready sites built around your brand, goals, ecommerce needs, and customer journey.",
   },
   {
     id: "seo",
@@ -125,4 +169,8 @@ export function getAllServices(): Service[] {
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((service) => service.slug === slug);
+}
+
+export function getRelatedServices(slug: string, limit = 3): Service[] {
+  return services.filter((s) => s.slug !== slug).slice(0, limit);
 }

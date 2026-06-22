@@ -1,5 +1,7 @@
 import type {MetadataRoute} from "next";
 import {getAllServices} from "@/data/services";
+import {getProjectsWithCaseStudies} from "@/data/projects";
+import {getAllCities} from "@/data/cities";
 
 const SITE_URL = "https://www.luluwebstudio.com";
 
@@ -21,5 +23,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  const caseStudyRoutes: MetadataRoute.Sitemap = getProjectsWithCaseStudies().map(
+    (project) => ({
+      url: `${SITE_URL}/projects/${project.slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    })
+  );
+
+  const cities = getAllCities();
+  const localRoutes: MetadataRoute.Sitemap = cities.flatMap((city) => [
+    {
+      url: `${SITE_URL}/custom-website-development/${city.slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/seo/${city.slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ]);
+
+  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...localRoutes];
 }

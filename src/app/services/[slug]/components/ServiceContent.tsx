@@ -5,7 +5,7 @@ import {Check} from "lucide-react";
 import Link from "next/link";
 import HeaderText from "@/components/Text/HeaderText";
 import SecondaryText from "@/components/Text/BodyText";
-import type {Service} from "@/data/services";
+import {getRelatedServices, type Service} from "@/data/services";
 import LogoMarquee from "./LogoMarquee";
 
 interface ServiceContentProps {
@@ -13,6 +13,8 @@ interface ServiceContentProps {
 }
 
 export default function ServiceContent({service}: ServiceContentProps) {
+  const relatedServices = getRelatedServices(service.slug, 3);
+
   const containerVariants = {
     hidden: {opacity: 0},
     visible: {
@@ -51,6 +53,31 @@ export default function ServiceContent({service}: ServiceContentProps) {
           </SecondaryText>
         </motion.div>
 
+        {service.seoSections && service.seoSections.length > 0 && (
+          <div className="mb-16 space-y-10">
+            {service.seoSections.map((section) => (
+              <motion.div
+                key={section.heading}
+                initial={{opacity: 0, y: 20}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
+                transition={{duration: 0.6}}
+              >
+                <HeaderText
+                  variant="small"
+                  as="h2"
+                  className="text-neutral-900 font-bold mb-4"
+                >
+                  {section.heading}
+                </HeaderText>
+                <SecondaryText className="text-neutral-600 leading-relaxed text-lg">
+                  {section.body}
+                </SecondaryText>
+              </motion.div>
+            ))}
+          </div>
+        )}
+
         <div className="mb-16">
           <HeaderText
             variant="small"
@@ -84,6 +111,37 @@ export default function ServiceContent({service}: ServiceContentProps) {
           </motion.ul>
         </div>
 
+        {service.faqs && service.faqs.length > 0 && (
+          <div className="mb-16">
+            <HeaderText
+              variant="small"
+              as="h2"
+              className="text-neutral-900 font-bold mb-8"
+            >
+              {service.title} FAQs
+            </HeaderText>
+            <div className="space-y-5">
+              {service.faqs.map((faq) => (
+                <motion.div
+                  key={faq.question}
+                  initial={{opacity: 0, y: 16}}
+                  whileInView={{opacity: 1, y: 0}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.5}}
+                  className="rounded-2xl border border-neutral-200 bg-white p-6"
+                >
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+                    {faq.question}
+                  </h3>
+                  <SecondaryText className="text-neutral-600 leading-relaxed">
+                    {faq.answer}
+                  </SecondaryText>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {service.slug === "logo-design" && (
           <div className="mb-16 -mx-6 lg:-mx-12">
             <LogoMarquee />
@@ -116,6 +174,37 @@ export default function ServiceContent({service}: ServiceContentProps) {
             Contact Us
           </motion.a>
         </motion.div>
+
+        {relatedServices.length > 0 && (
+          <div className="mt-20">
+            <HeaderText
+              variant="small"
+              as="h2"
+              className="text-neutral-900 font-bold mb-8"
+            >
+              Related Services
+            </HeaderText>
+            <div className="grid md:grid-cols-3 gap-4">
+              {relatedServices.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/services/${related.slug}`}
+                  className="group block rounded-2xl border border-neutral-200 bg-white p-6 hover:border-neutral-900 transition-colors"
+                >
+                  <div className="text-xs uppercase tracking-widest text-neutral-500 mb-2">
+                    {related.number}
+                  </div>
+                  <div className="text-xl font-semibold text-neutral-900 mb-2 group-hover:underline">
+                    {related.title}
+                  </div>
+                  <p className="text-neutral-600 text-sm leading-relaxed">
+                    {related.shortDescription}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         <motion.div
           initial={{opacity: 0}}

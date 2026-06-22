@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import HeroParallax from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
+import GoogleReviews from "@/components/home/GoogleReviews";
 import CTA from "@/components/home/CTA";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroParallax />
       <Services />
       <FeaturedProjects />
+      <GoogleReviews />
       <CTA />
     </div>
   );

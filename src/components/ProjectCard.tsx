@@ -11,8 +11,16 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({project, showTags = false}: ProjectCardProps) {
+  const hasCaseStudy = Boolean(project.slug && project.caseStudy);
+  const linkHref = hasCaseStudy ? `/projects/${project.slug}` : project.href;
+  const isExternal = !hasCaseStudy;
+
   return (
-    <Link href={project.href} className="group block">
+    <Link
+      href={linkHref}
+      {...(isExternal ? {target: "_blank", rel: "noopener noreferrer"} : {})}
+      className="group block"
+    >
       <div className="space-y-6">
         {/* Project Image */}
         <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-gray-900">
