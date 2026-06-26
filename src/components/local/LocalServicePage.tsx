@@ -81,7 +81,7 @@ const COPY: Record<LocalServiceKind, (city: City) => ServiceCopy> = {
         a: `We've run SEO for healthcare, contractors, non-profits, real estate, and e-commerce in ${city.name} and beyond. If your customers use Google to find services like yours, SEO will work — the only question is how long and how much investment.`,
       },
     ],
-    relatedServiceSlug: "website-design",
+    relatedServiceSlug: "custom-website-development",
     relatedServiceLabel: "Web Design",
     serviceSchemaName: `SEO Services in ${city.name}, ${city.stateAbbr}`,
     serviceSchemaDescription: `Local, technical, and on-page SEO services for ${city.audienceLabel}. Higher rankings, more qualified traffic, more leads.`,
@@ -171,7 +171,7 @@ export default function LocalServicePage({kind, city}: LocalServicePageProps) {
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <Link
-            href={`/services/${kind === "custom-website-development" ? "website-design" : "seo"}`}
+            href={`/services/${kind === "custom-website-development" ? "custom-website-development" : "seo"}`}
             className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-white text-sm sm:text-base hover:border-white transition-colors"
           >
             Learn about our {kind === "custom-website-development" ? "web design" : "SEO"} process

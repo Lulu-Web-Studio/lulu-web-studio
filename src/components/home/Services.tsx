@@ -7,7 +7,7 @@ const SERVICES = [
     {
         number: "01",
         title: "Website Design & Development",
-        href: "/services/website-design",
+        href: "/services/custom-website-development",
         blurb:
             "We build fast, responsive, and visually engaging websites tailored to your business. Our team uses modern frameworks like React, Next.js, and Tailwind CSS to create mobile-friendly designs optimized for user experience and search engine performance. Every project is coded cleanly, ensuring scalability, speed, and long-term maintainability. In many cases, we also develop websites on platforms like Shopify, Wix, and WordPress for businesses that prefer a flexible, user-friendly content management system without custom coding.",
         items: [

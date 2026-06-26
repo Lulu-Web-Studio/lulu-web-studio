@@ -21,8 +21,8 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "website-design",
-    slug: "website-design",
+    id: "custom-website-development",
+    slug: "custom-website-development",
     number: "01",
     title: "Custom Website Development",
     shortDescription:
