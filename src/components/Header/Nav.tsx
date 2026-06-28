@@ -59,6 +59,10 @@ export const links = [
         href: "/projects"
     },
     {
+        title: "Blog",
+        href: "/blog"
+    },
+    {
         title: "Services",
         href: "/services"
     },
@@ -94,8 +98,8 @@ export const footerLinks = [
 export default function Nav() {
     return (
 
-        <div className="flex flex-col justify-between h-full box-border p-6 sm:p-8 md:pt-16 md:px-10 md:pb-10">
-            <div className="flex gap-2.5 flex-col">
+        <div className="flex flex-col justify-between h-full box-border p-6 sm:p-7 md:pt-14 md:px-9 md:pb-9">
+            <div className="flex gap-1.5 flex-col">
                 {
                     links.map((link, i) => {
                         const {title, href} = link;
@@ -108,7 +112,7 @@ export default function Nav() {
                                     animate="enter"
                                     exit="exit"
                                 >
-                                    <a href={href} className="no-underline text-black text-xl sm:text-2xl md:text-3xl font-medium transition-all duration-300 hover:opacity-70 hover:translate-x-2 inline-block">
+                                    <a href={href} className="no-underline text-black text-lg sm:text-xl md:text-2xl font-medium transition-all duration-300 hover:opacity-70 hover:translate-x-2 inline-block">
                                         {title}
                                     </a>
                                 </motion.div>

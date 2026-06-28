@@ -7,6 +7,7 @@ import React, {FunctionComponent} from 'react'
 const footerLinks = [
   {title: "Services", href: "/services"},
   {title: "Projects", href: "/projects"},
+  {title: "Blog", href: "/blog"},
   {title: "About", href: "/about"},
   {title: "Contact", href: "/contact"},
 ];
@@ -75,4 +76,3 @@ export const Footer: FunctionComponent = () => {
     </div>
   )
 }
-
