@@ -141,25 +141,56 @@ export const services: Service[] = [
     seoDescription: "Custom scripting and automation solutions. Bulk data transfers, PDF parsers, invoice transformation, API integrations, and workflow automation.",
   },
   {
-    id: "mobile-app-development",
-    slug: "mobile-app-development",
+    id: "mobile-app-design-services",
+    slug: "mobile-app-design-services",
     number: "05",
-    title: "Mobile App Development",
+    title: "Mobile App Design Services",
     shortDescription:
-      "Native and cross-platform mobile apps that engage users and drive results.",
+      "Mobile app design services for clear, polished iOS and Android experiences.",
     fullDescription:
-      "We design and develop mobile applications for iOS and Android that deliver exceptional user experiences. From concept to launch, we handle every aspect of app development to bring your vision to life.",
+      "Our mobile app design services help turn your idea into a clear, usable app experience before development starts. Lulu Web Studio plans the user flow, screen structure, visual direction, and interface details so your iOS or Android app feels polished, easy to use, and ready for the next stage of development.",
+    seoSections: [
+      {
+        heading: "Mobile App Design Services for iOS and Android",
+        body: "A good app starts with the way people move through it. We map the main screens, user actions, navigation, and calls to action so the app feels simple instead of confusing.",
+      },
+      {
+        heading: "UX and UI Design Before Development",
+        body: "Mobile app design is where the product gets organized. We focus on UX, UI, wireframes, visual styling, and interactive design decisions before the build gets expensive to change.",
+      },
+      {
+        heading: "From App Idea to Development-Ready Screens",
+        body: "Whether you need a prototype, MVP, or full app design, we create screens and design direction that can guide development, investor conversations, or internal planning.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What are mobile app design services?",
+        answer:
+          "Mobile app design services cover the planning and visual design of an app before or during development. That can include user flows, wireframes, UI design, prototypes, screen layouts, and design systems for iOS, Android, or cross-platform apps.",
+      },
+      {
+        question: "Do I need app design before app development?",
+        answer:
+          "In most cases, yes. Designing the app first helps clarify what needs to be built, how users will move through it, and what the final product should feel like. It also reduces expensive changes once development starts.",
+      },
+      {
+        question: "Can you design and develop the mobile app?",
+        answer:
+          "Yes. We can help with mobile app design and development planning, then support the build depending on the scope. Some clients need design files and prototypes first, while others need help taking the app through development and launch.",
+      },
+    ],
     items: [
-      "iOS & Android development",
-      "Cross-platform solutions",
-      "UI/UX design",
-      "App Store optimization",
-      "Push notifications",
-      "Analytics integration",
+      "Mobile app UX design",
+      "iOS and Android UI design",
+      "Wireframes and user flows",
+      "Clickable app prototypes",
+      "Design systems for apps",
+      "Development-ready screens",
     ],
     image: "/images/services/mobile-app.jpg",
-    seoTitle: "Mobile App Development | iOS & Android Apps | Lulu Web Studio",
-    seoDescription: "Professional mobile app development for iOS and Android. Cross-platform solutions, UI/UX design, App Store optimization, and analytics integration.",
+    seoTitle: "Mobile App Design Services | Lulu Web Studio",
+    seoDescription: "Mobile app design services for iOS and Android apps, including UX, UI, wireframes, prototypes, and development-ready screens.",
   },
 ];
 

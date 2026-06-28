@@ -47,7 +47,7 @@ const SERVICES = [
     {
         number: "04",
         title: "App Development",
-        href: "/services/mobile-app-development",
+        href: "/services/mobile-app-design-services",
         blurb:
             "We design and develop scalable mobile and web applications that solve real problems and deliver seamless user experiences. Using technologies like React Native and Firebase, we build apps that are fast, secure, and cross-platform. From MVPs to enterprise solutions, we handle the full lifecycle from idea to deployment.",
         items: [

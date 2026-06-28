@@ -192,16 +192,6 @@ export const projects: Project[] = [
     tags: ["E-commerce", "Jewelry"],
   },
   {
-    id: "rapid-ash-response",
-    title: "Rapid Ash Response",
-    description: "Fire restoration website",
-    image: "/images/projects/rapid-ash.webp",
-    href: "https://www.rapidashresponse.com",
-    featured: false,
-    status: ProjectStatus.InDevelopment,
-    tags: ["Fire Restoration", "Web Development"],
-  },
-  {
     "id": "funding-site",
     "title": "Money Lending Website",
     "description": "A website for a money lending business.",
