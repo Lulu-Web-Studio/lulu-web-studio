@@ -6,7 +6,7 @@ import {formatPostDate, wisp} from "@/lib/wisp";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: {absolute: "Blog | Lulu Web Studio"},
+  title: {absolute: "Blog"},
   description:
     "Read Lulu Web Studio articles on custom website development, SEO, design, ecommerce, and digital growth.",
   alternates: {canonical: "/blog"},
@@ -103,4 +103,3 @@ export default async function BlogPage() {
     </main>
   );
 }
-

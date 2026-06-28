@@ -60,7 +60,7 @@ export async function generateMetadata(props: {
   }
 
   const canonical = `/blog/${post.slug}`;
-  const title = `${post.title} | Lulu Web Studio`;
+  const title = post.title;
   const description =
     post.description ?? "Read the latest from Lulu Web Studio on websites, SEO, and digital growth.";
 
@@ -196,4 +196,3 @@ export default async function BlogPostPage(props: {
     </article>
   );
 }
-
