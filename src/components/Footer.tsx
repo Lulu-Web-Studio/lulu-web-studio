@@ -1,8 +1,14 @@
 import {config} from '@/config';
+import {cities} from '@/data/cities';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {FunctionComponent} from 'react'
 
+
+const locationLinks = cities.flatMap((city) => [
+  {title: `Web Design in ${city.name}`, href: `/custom-website-development/${city.slug}`},
+  {title: `SEO in ${city.name}`, href: `/seo/${city.slug}`},
+]);
 
 const footerLinks = [
   {title: "Services", href: "/services"},
@@ -72,6 +78,28 @@ export const Footer: FunctionComponent = () => {
           </p>
         </div>
       </div>
+
+      {/* Areas We Serve */}
+      <nav
+        aria-label="Areas we serve"
+        className='max-w-7xl mx-auto px-6 pb-10 text-center md:text-left'
+      >
+        <h2 className='text-white/80 text-sm font-medium uppercase tracking-widest mb-4'>
+          Areas We Serve
+        </h2>
+        <ul className='flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2'>
+          {locationLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className='text-white/60 text-xs md:text-sm hover:text-white transition-colors duration-200'
+              >
+                {link.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
     </div>
   )

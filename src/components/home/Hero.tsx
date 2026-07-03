@@ -91,25 +91,23 @@ export default function HeroParallax() {
                             {/* Right */}
                             <div className="mt-8 md:mt-0 md:w-1/2 text-center md:text-left">
                                 <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                                    Lulu Web Studio specializes in custom web development, software engineering,
-                                    mobile apps, and digital marketing solutions that transform businesses. We combine
-                                    cutting-edge technology with strategic thinking to deliver websites, applications,
-                                    and custom software that are fast, beautiful, and built to convert.
+                                    Lulu Web Studio specializes in custom website development and design, solving business challenges with technology and AI.
+                                    We create stunning websites, mobile apps, and digital marketing solutions that transform businesses.
                                 </p>
                                 <p className="mt-4 sm:mt-6 text-white/90 text-base sm:text-lg leading-relaxed">
-                                    From responsive websites built with React and Next.js to comprehensive SEO strategies,
-                                    custom app development, and general software engineering, we provide end-to-end digital
+                                    From responsive websites paired with comprehensive SEO strategies,
+                                    custom app development, and general software, we provide end-to-end digital
                                     services. Whether you need a new website, mobile app, logo design, or custom software solution,
                                     we&apos;re here to help your business thrive online.
                                 </p>
 
                                 <div className="mt-6 sm:mt-10 space-y-2 sm:space-y-3">
-                                    {/* <a
+                                    <a
                                         href={`tel:+${config.phoneNumber}`}
                                         className="block text-white text-lg sm:text-xl hover:opacity-90"
                                     >
                                         {config.phoneNumber}
-                                    </a> */}
+                                    </a>
                                     <a
                                         href={`mailto:${config.emailAddress}`}
                                         className="inline-block border-b border-white/50 text-white text-lg sm:text-xl hover:border-white"

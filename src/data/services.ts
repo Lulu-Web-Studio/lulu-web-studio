@@ -192,6 +192,63 @@ export const services: Service[] = [
     seoTitle: "Mobile App Design Services | Lulu Web Studio",
     seoDescription: "Mobile app design services for iOS and Android apps, including UX, UI, wireframes, prototypes, and development-ready screens.",
   },
+  {
+    id: "vibe-code-debugging",
+    slug: "vibe-code-debugging",
+    number: "06",
+    title: "Vibe Code Debugging & Fixes",
+    shortDescription:
+      "Stuck with a broken app you built with AI? We debug and fix vibe-coded projects — first 30 minutes free.",
+    fullDescription:
+      "AI tools like Lovable, Bolt, Replit, Cursor, and v0 make it fast to get a first version of an app running. But once something breaks — or the AI starts fixing one bug by creating three more — most vibe coders hit a wall. We read the actual codebase, find what's really wrong, and fix it, so your app is stable instead of one prompt away from breaking again.",
+    seoSections: [
+      {
+        heading: "Debugging Help for Apps Built with AI Coding Tools",
+        body: "Vibe coding gets you a working prototype fast, but debugging is where most AI-generated projects get stuck. We work directly in your Lovable, Bolt, Replit, Cursor, v0, or Base44 project, trace the actual cause of a bug instead of guessing, and fix it without breaking the rest of the app.",
+      },
+      {
+        heading: "Free 30-Minute Diagnostic Call",
+        body: "Send over your project and book a free 30-minute call. We'll look at your codebase, tell you what's actually broken and why, and give you a straight answer on what it takes to fix — no obligation to hire us afterward.",
+      },
+      {
+        heading: "From Broken Prototype to Production-Ready",
+        body: "Beyond one-off bug fixes, we clean up structure, fix security and data-handling issues common in AI-generated code, and get the app stable enough to actually launch and grow on.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is vibe coding?",
+        answer:
+          "Vibe coding is building an app by describing what you want to an AI tool instead of writing code line by line. It's fast for getting a first version running, but it can leave behind bugs, security gaps, and messy structure that are hard to fix without reading the underlying code.",
+      },
+      {
+        question: "Can you fix apps built with Lovable, Bolt, Replit, or Cursor?",
+        answer:
+          "Yes. We regularly debug and fix projects built with Lovable, Bolt, Replit, Cursor, v0, Base44, and similar AI coding tools, whether the codebase came from one tool or was patched together across several.",
+      },
+      {
+        question: "How does the free 30-minute session work?",
+        answer:
+          "Share access to your project before the call. In the first 30 minutes, we look at the code, identify what's actually causing the bug or crash, and explain it in plain terms. If it's a quick fix, we may resolve it on the spot. If it needs more work, we'll quote it clearly before starting.",
+      },
+      {
+        question: "Why does my AI-generated code keep breaking?",
+        answer:
+          "AI coding tools often fix one bug by editing code elsewhere, which can introduce new bugs without warning. Without someone reviewing the full picture, small issues compound. We audit the whole codebase, not just the one broken feature, so fixes actually hold.",
+      },
+    ],
+    items: [
+      "Free 30-minute diagnostic call",
+      "Bug fixes for Lovable, Bolt, Replit, Cursor, v0, and Base44 apps",
+      "Full codebase review and cleanup",
+      "Security and data-handling fixes",
+      "Performance and stability fixes",
+      "Ongoing support after launch",
+    ],
+    image: "/images/services/custom-scripting.jpg",
+    seoTitle: "Vibe Code Debugging & Bug Fixes | Free 30-Min Call | Lulu Web Studio",
+    seoDescription: "Stuck with a broken vibe-coded app? We debug and fix apps built with Lovable, Bolt, Replit, Cursor, and v0. First 30 minutes free.",
+  },
 ];
 
 export function getAllServices(): Service[] {

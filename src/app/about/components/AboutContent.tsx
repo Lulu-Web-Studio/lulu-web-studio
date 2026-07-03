@@ -1,7 +1,8 @@
 "use client";
 
 import {motion} from "framer-motion";
-import {Code, Rocket, Users, Lightbulb} from "lucide-react";
+import Image from "next/image";
+import {Eye, MessageCircle, Users, Code} from "lucide-react";
 import HeaderText from "@/components/Text/HeaderText";
 import SecondaryText from "@/components/Text/BodyText";
 
@@ -31,24 +32,24 @@ export default function AboutContent() {
 
   const values = [
     {
-      icon: Code,
-      title: "Quality work",
-      description: "We build with modern frameworks and best practices, ensuring your project is scalable and maintainable.",
+      icon: MessageCircle,
+      title: "Direct access",
+      description: "You talk to the people actually building your site — no account managers, no layers, no getting lost in a queue.",
     },
     {
-      icon: Rocket,
-      title: "Fast Delivery",
-      description: "From MVPs to enterprise solutions, we deliver high-quality work efficiently without compromising excellence.",
+      icon: Eye,
+      title: "An eye for what works",
+      description: "Design decisions are made by feel and by data: what looks right, and what actually gets people to click, call, or buy.",
+    },
+    {
+      icon: Code,
+      title: "Modern, maintainable code",
+      description: "Every site is built on a current stack — fast, scalable, and easy to hand off or extend later.",
     },
     {
       icon: Users,
-      title: "Client-Focused",
-      description: "Your success is our priority. We collaborate closely to understand your needs and exceed expectations.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation",
-      description: "We stay ahead of the curve with cutting-edge technologies and creative solutions that drive results.",
+      title: "Small by design",
+      description: "We stay a small team on purpose, so every project gets real attention instead of being one of a hundred accounts.",
     },
   ];
 
@@ -65,27 +66,40 @@ export default function AboutContent() {
           {/* Introduction */}
           <motion.div variants={itemVariants} className="max-w-4xl mx-auto text-center">
             <HeaderText as="h2" className="font-bold text-neutral-900 mb-6">
-              Building Digital Experiences That Matter
+              Started With an Eye for What Works
             </HeaderText>
             <SecondaryText className="text-neutral-600 leading-relaxed text-lg">
-              Lulu Web Studio is a full-service digital agency specializing in web development,
-              software engineering, mobile apps, and digital marketing. We combine technical
-              expertise with creative thinking to deliver solutions that help businesses thrive
-              in the digital world.
+              Lulu Web Studio started in college, out of a knack for noticing what made a
+              page work — what looked good, and what people actually wanted to see and click
+              on. That instinct is still the foundation of every site we build: design paired
+              with real engineering, so it looks right and performs.
             </SecondaryText>
           </motion.div>
 
-          {/* Mission Statement */}
+          {/* Founder */}
           <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
-            <div className="bg-neutral-50 rounded-3xl p-10 md:p-16">
-              <SecondaryText as="p" className="uppercase text-sm tracking-widest text-neutral-500 mb-4 text-center">
-                Our Mission
-              </SecondaryText>
-              <SecondaryText className="text-neutral-900 text-xl md:text-2xl leading-relaxed text-center">
-                To empower businesses with innovative digital solutions that are beautifully
-                designed, expertly engineered, and built to perform. We don&apos;t just write code—we
-                craft experiences that connect, engage, and convert.
-              </SecondaryText>
+            <div className="bg-neutral-50 rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-14">
+              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shrink-0 bg-neutral-200">
+                <Image
+                  src="/images/about/founder.jpg"
+                  alt="Gabriel Lulu, founder of Lulu Web Studio"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <SecondaryText as="p" className="uppercase text-sm tracking-widest text-neutral-500 mb-3">
+                  Founder
+                </SecondaryText>
+                <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">
+                  Gabriel Lulu
+                </h3>
+                <SecondaryText className="text-neutral-700 text-lg md:text-xl leading-relaxed">
+                  &ldquo;I still work directly on every project that comes through the studio.
+                  We&apos;ve kept the team small on purpose — it means you&apos;re talking to the
+                  person actually building your site, not an account manager relaying notes.&rdquo;
+                </SecondaryText>
+              </div>
             </div>
           </motion.div>
 

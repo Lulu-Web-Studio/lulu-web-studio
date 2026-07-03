@@ -2,10 +2,29 @@ import type {MetadataRoute} from "next";
 import {getAllServices} from "@/data/services";
 import {getProjectsWithCaseStudies} from "@/data/projects";
 import {getAllCities} from "@/data/cities";
+import {wisp} from "@/lib/wisp";
 
 const SITE_URL = "https://www.luluwebstudio.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Blog posts are published via Wisp without a redeploy, so refresh the
+// sitemap periodically instead of freezing it at build time.
+export const revalidate = 3600;
+
+async function getBlogPostRoutes(): Promise<MetadataRoute.Sitemap> {
+  try {
+    const result = await wisp.getPosts({limit: "all"});
+    return result.posts.map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -49,5 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...localRoutes];
+  const blogPostRoutes = await getBlogPostRoutes();
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...caseStudyRoutes,
+    ...localRoutes,
+    ...blogPostRoutes,
+  ];
 }

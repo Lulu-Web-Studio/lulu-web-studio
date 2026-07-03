@@ -9,7 +9,7 @@ const buildConfig = () => {
   return {
     sitename: process.env.NEXT_PUBLIC_SITE_NAME || "Site Name",
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
-    phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "123-000-0000",
+    phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "(215) 948-2236",
     emailAddress: "info@luluwebstudio.com",
 
     links: {
