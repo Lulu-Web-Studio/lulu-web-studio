@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lulu-web-studio",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "source ~/.nvm/nvm.sh && nvm use default >/dev/null 2>&1 && NEXT_PUBLIC_WISP_BLOG_ID=${NEXT_PUBLIC_WISP_BLOG_ID:-local-build-placeholder} npm run dev"
+      ],
+      "port": 3000
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import {motion} from "framer-motion";
-import {Check} from "lucide-react";
+import {ArrowUpRight, Plus} from "lucide-react";
 import Link from "next/link";
 import HeaderText from "@/components/Text/HeaderText";
 import SecondaryText from "@/components/Text/BodyText";
@@ -12,129 +12,72 @@ interface ServiceContentProps {
   service: Service;
 }
 
+const MONO = {fontFamily: "'JetBrains Mono', monospace"};
+
+function SectionLabel({index, children}: {index: string; children: React.ReactNode}) {
+  return (
+    <div className="flex items-baseline gap-4 mb-10">
+      <span style={MONO} className="text-sm text-neutral-400">
+        {index}
+      </span>
+      <span
+        style={MONO}
+        className="text-xs uppercase tracking-[0.25em] text-neutral-500"
+      >
+        {children}
+      </span>
+      <span className="flex-1 border-t border-neutral-200 self-center" />
+    </div>
+  );
+}
+
 export default function ServiceContent({service}: ServiceContentProps) {
   const relatedServices = getRelatedServices(service.slug, 3);
 
-  const containerVariants = {
-    hidden: {opacity: 0},
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {opacity: 0, x: -20},
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.215, 0.61, 0.355, 1] as const,
-      },
-    },
+  const reveal = {
+    initial: {opacity: 0, y: 24},
+    whileInView: {opacity: 1, y: 0},
+    viewport: {once: true, margin: "-60px"},
+    transition: {duration: 0.6, ease: [0.215, 0.61, 0.355, 1] as const},
   };
 
   return (
     <section className="bg-white rounded-t-[50px] -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-28 relative z-10 py-20 md:py-32">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12">
-        <motion.div
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{duration: 0.6}}
-          className="mb-16"
-        >
-          <SecondaryText className="text-neutral-600 leading-relaxed text-lg">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* Standfirst — oversized lead paragraph */}
+        <motion.div {...reveal} className="mb-24 md:mb-32">
+          <SectionLabel index="/01">Overview</SectionLabel>
+          <p className="text-2xl sm:text-3xl md:text-4xl leading-snug md:leading-snug font-medium text-neutral-900 max-w-4xl text-pretty">
             {service.fullDescription}
-          </SecondaryText>
+          </p>
         </motion.div>
 
+        {/* Editorial sections — heading left, body right */}
         {service.seoSections && service.seoSections.length > 0 && (
-          <div className="mb-16 space-y-10">
-            {service.seoSections.map((section) => (
-              <motion.div
-                key={section.heading}
-                initial={{opacity: 0, y: 20}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{duration: 0.6}}
-              >
-                <HeaderText
-                  variant="small"
-                  as="h2"
-                  className="text-neutral-900 font-bold mb-4"
-                >
-                  {section.heading}
-                </HeaderText>
-                <SecondaryText className="text-neutral-600 leading-relaxed text-lg">
-                  {section.body}
-                </SecondaryText>
-              </motion.div>
-            ))}
-          </div>
-        )}
-
-        <div className="mb-16">
-          <HeaderText
-            variant="small"
-            as="h2"
-            className="text-neutral-900 font-bold mb-8"
-          >
-            What&apos;s Included
-          </HeaderText>
-
-          <motion.ul
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{once: true, margin: "-50px"}}
-            className="grid gap-4 md:grid-cols-2"
-          >
-            {service.items.map((item, index) => (
-              <motion.li
-                key={index}
-                variants={itemVariants}
-                className="flex items-start gap-4 bg-neutral-50 rounded-xl p-5"
-              >
-                <div className="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-                <SecondaryText className="text-neutral-900">
-                  {item}
-                </SecondaryText>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </div>
-
-        {service.faqs && service.faqs.length > 0 && (
-          <div className="mb-16">
-            <HeaderText
-              variant="small"
-              as="h2"
-              className="text-neutral-900 font-bold mb-8"
-            >
-              {service.title} FAQs
-            </HeaderText>
-            <div className="space-y-5">
-              {service.faqs.map((faq) => (
+          <div className="mb-24 md:mb-32">
+            <SectionLabel index="/02">In Detail</SectionLabel>
+            <div>
+              {service.seoSections.map((section, i) => (
                 <motion.div
-                  key={faq.question}
-                  initial={{opacity: 0, y: 16}}
-                  whileInView={{opacity: 1, y: 0}}
-                  viewport={{once: true}}
-                  transition={{duration: 0.5}}
-                  className="rounded-2xl border border-neutral-200 bg-white p-6"
+                  key={section.heading}
+                  {...reveal}
+                  className="grid md:grid-cols-12 gap-4 md:gap-10 py-10 md:py-14 border-t border-neutral-200 first:border-t-0 first:pt-0"
                 >
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                    {faq.question}
-                  </h3>
-                  <SecondaryText className="text-neutral-600 leading-relaxed">
-                    {faq.answer}
+                  <span
+                    style={MONO}
+                    className="md:col-span-1 text-sm text-neutral-400 pt-1"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <HeaderText
+                    variant="small"
+                    as="h2"
+                    className="md:col-span-5 text-neutral-900 font-bold leading-tight text-balance"
+                  >
+                    {section.heading}
+                  </HeaderText>
+                  <SecondaryText className="md:col-span-6 text-neutral-600 leading-relaxed">
+                    {section.body}
                   </SecondaryText>
                 </motion.div>
               ))}
@@ -142,86 +85,124 @@ export default function ServiceContent({service}: ServiceContentProps) {
           </div>
         )}
 
+        {/* What's included — ruled index list */}
+        <motion.div {...reveal} className="mb-24 md:mb-32">
+          <SectionLabel index={service.seoSections?.length ? "/03" : "/02"}>
+            What&apos;s Included
+          </SectionLabel>
+          <h2 className="sr-only">What&apos;s Included</h2>
+          <ul className="grid md:grid-cols-2 md:gap-x-16">
+            {service.items.map((item, index) => (
+              <li
+                key={index}
+                className="group flex items-baseline gap-5 border-b border-neutral-200 py-5 md:py-6"
+              >
+                <span style={MONO} className="text-xs text-neutral-400">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-lg md:text-xl font-medium text-neutral-900 transition-transform duration-300 group-hover:translate-x-2">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* FAQs — ruled accordion */}
+        {service.faqs && service.faqs.length > 0 && (
+          <motion.div {...reveal} className="mb-24 md:mb-32">
+            <SectionLabel index={service.seoSections?.length ? "/04" : "/03"}>
+              Questions
+            </SectionLabel>
+            <h2 className="sr-only">{service.title} FAQs</h2>
+            <div className="border-t border-neutral-200">
+              {service.faqs.map((faq) => (
+                <details key={faq.question} className="group border-b border-neutral-200">
+                  <summary className="flex items-center justify-between gap-6 py-6 md:py-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 text-balance">
+                      {faq.question}
+                    </h3>
+                    <Plus className="w-5 h-5 flex-shrink-0 text-neutral-400 transition-transform duration-300 group-open:rotate-45" />
+                  </summary>
+                  <SecondaryText className="text-neutral-600 leading-relaxed pb-8 max-w-3xl">
+                    {faq.answer}
+                  </SecondaryText>
+                </details>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         {service.slug === "logo-design" && (
-          <div className="mb-16 -mx-6 lg:-mx-12">
+          <div className="mb-24 -mx-6 lg:-mx-12">
             <LogoMarquee />
           </div>
         )}
+      </div>
 
-        <motion.div
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{duration: 0.6, delay: 0.2}}
-          className="text-center bg-neutral-900 rounded-3xl p-12"
-        >
-          <HeaderText
-            variant="small"
-            as="h3"
-            className="text-white font-bold mb-4"
+      {/* CTA — full-bleed black band */}
+      <motion.div {...reveal} className="bg-neutral-950 py-24 md:py-36 my-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <span
+            style={MONO}
+            className="block text-xs uppercase tracking-[0.25em] text-neutral-500 mb-8"
           >
-            Ready to Get Started?
-          </HeaderText>
-          <SecondaryText className="text-neutral-400 mb-8 max-w-md mx-auto">
-            Let&apos;s discuss how we can help bring your vision to life.
-          </SecondaryText>
+            Next Step
+          </span>
+          <h3 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight max-w-4xl mb-12 text-balance">
+            Let&apos;s make this the easy part of your week.
+          </h3>
           <motion.a
             href="/contact"
             whileHover={{scale: 1.02}}
             whileTap={{scale: 0.98}}
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-900 rounded-xl font-medium text-lg hover:bg-neutral-100 transition-all duration-300 shadow-lg hover:shadow-2xl"
+            className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-neutral-950 font-medium text-lg hover:bg-neutral-200 transition-colors"
           >
-            Contact Us
+            Start the Conversation
+            <ArrowUpRight className="w-5 h-5" />
           </motion.a>
-        </motion.div>
+        </div>
+      </motion.div>
 
-        {relatedServices.length > 0 && (
-          <div className="mt-20">
-            <HeaderText
-              variant="small"
-              as="h2"
-              className="text-neutral-900 font-bold mb-8"
-            >
-              Related Services
-            </HeaderText>
-            <div className="grid md:grid-cols-3 gap-4">
-              {relatedServices.map((related) => (
-                <Link
-                  key={related.slug}
-                  href={`/services/${related.slug}`}
-                  className="group block rounded-2xl border border-neutral-200 bg-white p-6 hover:border-neutral-900 transition-colors"
-                >
-                  <div className="text-xs uppercase tracking-widest text-neutral-500 mb-2">
-                    {related.number}
-                  </div>
-                  <div className="text-xl font-semibold text-neutral-900 mb-2 group-hover:underline">
-                    {related.title}
-                  </div>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {related.shortDescription}
-                  </p>
-                </Link>
-              ))}
-            </div>
+      {/* Related services — ruled rows */}
+      {relatedServices.length > 0 && (
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 pt-16">
+          <SectionLabel index="//">More Services</SectionLabel>
+          <h2 className="sr-only">Related Services</h2>
+          <div className="border-t border-neutral-200">
+            {relatedServices.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/services/${related.slug}`}
+                className="group grid md:grid-cols-12 items-baseline gap-2 md:gap-10 border-b border-neutral-200 py-6 md:py-8"
+              >
+                <span style={MONO} className="md:col-span-1 text-sm text-neutral-400">
+                  {related.number}
+                </span>
+                <span className="md:col-span-5 text-2xl md:text-3xl font-bold text-neutral-900 transition-transform duration-300 group-hover:translate-x-2">
+                  {related.title}
+                </span>
+                <span className="md:col-span-5 text-neutral-500 text-base leading-relaxed hidden md:block">
+                  {related.shortDescription}
+                </span>
+                <span className="md:col-span-1 hidden md:flex justify-end">
+                  <ArrowUpRight className="w-6 h-6 text-neutral-300 transition-all duration-300 group-hover:text-neutral-900 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
           </div>
-        )}
 
-        <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
-          viewport={{once: true}}
-          transition={{duration: 0.6, delay: 0.3}}
-          className="mt-12 text-center"
-        >
-          <Link
-            href="/services"
-            className="text-neutral-600 hover:text-neutral-900 transition-colors inline-flex items-center gap-2"
-          >
-            <span>&larr;</span>
-            <span>Back to All Services</span>
-          </Link>
-        </motion.div>
-      </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/services"
+              className="text-neutral-500 hover:text-neutral-900 transition-colors inline-flex items-center gap-2"
+            >
+              <span>&larr;</span>
+              <span>Back to All Services</span>
+            </Link>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
