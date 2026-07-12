@@ -7,9 +7,11 @@ import HeaderText from "@/components/Text/HeaderText";
 import SecondaryText from "@/components/Text/BodyText";
 import {getRelatedServices, type Service} from "@/data/services";
 import LogoMarquee from "./LogoMarquee";
+import ServiceDisclaimer from "./ServiceDisclaimer";
 
 interface ServiceContentProps {
   service: Service;
+  debuggingCalEmbedUrl?: string | null;
 }
 
 const MONO = {fontFamily: "'JetBrains Mono', monospace"};
@@ -31,8 +33,13 @@ function SectionLabel({index, children}: {index: string; children: React.ReactNo
   );
 }
 
-export default function ServiceContent({service}: ServiceContentProps) {
+function getPublicCalUrl(embedUrl: string) {
+  return embedUrl.replace("?embed=true", "").replace("&embed=true", "");
+}
+
+export default function ServiceContent({service, debuggingCalEmbedUrl}: ServiceContentProps) {
   const relatedServices = getRelatedServices(service.slug, 3);
+  const hasDebuggingCalendar = service.slug === "vibe-code-debugging" && Boolean(debuggingCalEmbedUrl);
 
   const reveal = {
     initial: {opacity: 0, y: 24},
@@ -108,10 +115,55 @@ export default function ServiceContent({service}: ServiceContentProps) {
           </ul>
         </motion.div>
 
+        {hasDebuggingCalendar && debuggingCalEmbedUrl && (
+          <motion.div {...reveal} className="mb-24 md:mb-32">
+            <SectionLabel index="/04">Book Debugging</SectionLabel>
+            <div className="overflow-hidden rounded-[2rem] bg-neutral-950 shadow-2xl shadow-neutral-950/10">
+              <div className="grid gap-0 lg:grid-cols-[0.72fr_1.28fr]">
+                <div className="flex flex-col justify-between gap-10 p-6 text-white sm:p-8 lg:p-10">
+                  <div>
+                    <p
+                      style={MONO}
+                      className="mb-5 text-xs uppercase tracking-[0.25em] text-lime-200"
+                    >
+                      Paid Working Session
+                    </p>
+                    <h2 className="mb-5 text-3xl font-bold tracking-tight sm:text-4xl">
+                      Book the debugging call here
+                    </h2>
+                    <p className="text-base leading-relaxed text-white/70 sm:text-lg">
+                      Choose a time, pay through Cal.com, and bring the broken app,
+                      vibe-coded project, or stuck feature. We will use the session to
+                      trace the real issue and fix what we can in the time booked.
+                    </p>
+                  </div>
+                  <a
+                    href={getPublicCalUrl(debuggingCalEmbedUrl)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-lime-200 sm:text-base"
+                  >
+                    Open in Cal.com
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
+                <div className="min-h-[720px] bg-white">
+                  <iframe
+                    src={debuggingCalEmbedUrl}
+                    title="Book a debugging call with Lulu Web Studio"
+                    className="h-[760px] w-full border-0"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* FAQs — ruled accordion */}
         {service.faqs && service.faqs.length > 0 && (
           <motion.div {...reveal} className="mb-24 md:mb-32">
-            <SectionLabel index={service.seoSections?.length ? "/04" : "/03"}>
+            <SectionLabel index={hasDebuggingCalendar ? "/05" : service.seoSections?.length ? "/04" : "/03"}>
               Questions
             </SectionLabel>
             <h2 className="sr-only">{service.title} FAQs</h2>
@@ -138,6 +190,8 @@ export default function ServiceContent({service}: ServiceContentProps) {
             <LogoMarquee />
           </div>
         )}
+
+        {service.disclaimer && <ServiceDisclaimer points={service.disclaimer.points} />}
       </div>
 
       {/* CTA — full-bleed black band */}
@@ -153,12 +207,12 @@ export default function ServiceContent({service}: ServiceContentProps) {
             Let&apos;s make this the easy part of your week.
           </h3>
           <motion.a
-            href="/contact"
+            href={service.ctaHref ?? "/contact"}
             whileHover={{scale: 1.02}}
             whileTap={{scale: 0.98}}
             className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-neutral-950 font-medium text-lg hover:bg-neutral-200 transition-colors"
           >
-            Start the Conversation
+            {service.ctaLabel ?? "Start the Conversation"}
             <ArrowUpRight className="w-5 h-5" />
           </motion.a>
         </div>

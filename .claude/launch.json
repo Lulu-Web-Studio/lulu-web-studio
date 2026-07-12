@@ -6,9 +6,10 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": [
         "-c",
-        "source ~/.nvm/nvm.sh && nvm use default >/dev/null 2>&1 && NEXT_PUBLIC_WISP_BLOG_ID=${NEXT_PUBLIC_WISP_BLOG_ID:-local-build-placeholder} npm run dev"
+        "source ~/.nvm/nvm.sh && nvm use default >/dev/null 2>&1 && npm run dev"
       ],
-      "port": 3000
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }

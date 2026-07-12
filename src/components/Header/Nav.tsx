@@ -1,5 +1,6 @@
 import {config} from "@/config";
 import {motion} from "framer-motion";
+import {ArrowUpRight} from "lucide-react";
 
 
 export const perspective = {
@@ -51,28 +52,20 @@ const slideIn = {
 
 export const links = [
     {
-        title: "Home",
-        href: "/"
-    },
-    {
         title: "Projects",
         href: "/projects"
-    },
-    {
-        title: "Blog",
-        href: "/blog"
     },
     {
         title: "Services",
         href: "/services"
     },
     {
-        title: "About",
-        href: "/about"
+        title: "Blog",
+        href: "/blog"
     },
     {
-        title: "Contact",
-        href: "/contact"
+        title: "About",
+        href: "/about"
     }
 ]
 
@@ -98,7 +91,7 @@ export const footerLinks = [
 export default function Nav() {
     return (
 
-        <div className="flex flex-col justify-between h-full box-border p-6 sm:p-7 md:pt-14 md:px-9 md:pb-9">
+        <div className="flex flex-col justify-between h-full box-border p-6 sm:p-7 md:pt-9 md:px-9 md:pb-7">
             <div className="flex gap-1.5 flex-col">
                 {
                     links.map((link, i) => {
@@ -123,7 +116,43 @@ export default function Nav() {
             </div>
 
 
-            <motion.div className="flex flex-wrap">
+            <div>
+                <motion.a
+                    className="group mb-4 inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-base sm:text-lg font-semibold text-[#c9fd74] transition-all duration-300 hover:gap-3"
+                    variants={slideIn}
+                    custom={0}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    href="/contact#book"
+                >
+                    Book a Call
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </motion.a>
+                <motion.a
+                    className="block text-black text-xl sm:text-2xl md:text-3xl font-semibold duration-300 hover:opacity-60 hover:translate-x-1"
+                    variants={slideIn}
+                    custom={1}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    href={`tel:${config.phoneNumber.replace(/[^\d+]/g, "")}`}
+                >
+                    {config.phoneNumber}
+                </motion.a>
+                <motion.a
+                    className="block text-black/70 text-sm sm:text-base mt-0.5 mb-3 duration-300 hover:opacity-60 hover:translate-x-1"
+                    variants={slideIn}
+                    custom={2}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    href={`mailto:${config.emailAddress}`}
+                >
+                    {config.emailAddress}
+                </motion.a>
+
+                <motion.div className="flex flex-wrap">
                 {
                     footerLinks.map((link, i) => {
                         const {title, href} = link;
@@ -143,7 +172,8 @@ export default function Nav() {
                         )
                     })
                 }
-            </motion.div>
+                </motion.div>
+            </div>
         </div>
 
     );

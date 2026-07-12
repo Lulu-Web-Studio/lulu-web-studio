@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import {notFound} from "next/navigation";
 import {getAllServices, getServiceBySlug, type Service} from "@/data/services";
+import {calEventOptions, getCalEventUrl} from "@/lib/cal";
 import ServiceHero from "./components/ServiceHero";
 import ServiceContent from "./components/ServiceContent";
 
@@ -113,6 +114,12 @@ export default async function ServicePage(props: {
     notFound();
   }
 
+  const debuggingEvent = calEventOptions.find((event) => event.key === "debugging");
+  const debuggingCalEmbedUrl =
+    service.slug === "vibe-code-debugging"
+      ? getCalEventUrl(debuggingEvent?.eventSlug)
+      : null;
+
   return (
     <div className="min-h-screen">
       <script
@@ -120,7 +127,7 @@ export default async function ServicePage(props: {
         dangerouslySetInnerHTML={{__html: JSON.stringify(buildServiceJsonLd(service))}}
       />
       <ServiceHero service={service} />
-      <ServiceContent service={service} />
+      <ServiceContent service={service} debuggingCalEmbedUrl={debuggingCalEmbedUrl} />
     </div>
   );
 }

@@ -104,8 +104,8 @@ export default function ContactForm() {
   ];
 
   return (
-    <section className="bg-white rounded-t-[50px] relative z-10 -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-28 py-20 md:py-32 pb-40">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="message" className="bg-white pb-40">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 border-t border-neutral-200 pt-16 md:pt-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -149,7 +149,25 @@ export default function ContactForm() {
                 </div>
               </motion.div>
 
-
+              <motion.div
+                variants={itemVariants}
+                className="flex items-start space-x-4 group"
+              >
+                <div className="p-3 bg-neutral-100 rounded-xl group-hover:bg-neutral-900 transition-colors duration-300">
+                  <Phone className="w-6 h-6 text-neutral-900 group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div>
+                  <p className="text-sm text-neutral-500 uppercase tracking-wide mb-1">
+                    Phone
+                  </p>
+                  <a
+                    href={`tel:${config.phoneNumber.replace(/[^\d+]/g, "")}`}
+                    className="text-neutral-900 text-lg hover:text-neutral-600 transition-colors"
+                  >
+                    {config.phoneNumber}
+                  </a>
+                </div>
+              </motion.div>
             </div>
 
             {/* Social Links */}

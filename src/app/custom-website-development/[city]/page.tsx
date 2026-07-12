@@ -20,7 +20,7 @@ export async function generateMetadata(props: {
 
   const copy = getLocalCopy("custom-website-development", city);
   const canonical = `/custom-website-development/${city.slug}`;
-  const title = `${copy.heading} | Lulu Web Studio`;
+  const title = copy.heading;
 
   return {
     title,
@@ -31,11 +31,13 @@ export async function generateMetadata(props: {
       url: canonical,
       title,
       description: copy.serviceSchemaDescription,
+      images: [{url: "/og-image.png", width: 1200, height: 630, alt: title}],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: copy.serviceSchemaDescription,
+      images: ["/og-image.png"],
     },
   };
 }

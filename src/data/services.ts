@@ -17,6 +17,11 @@ export interface Service {
   image: string;
   seoTitle: string;
   seoDescription: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+  disclaimer?: {
+    points: string[];
+  };
 }
 
 export const services: Service[] = [
@@ -74,7 +79,7 @@ export const services: Service[] = [
       "Custom ecommerce website development",
     ],
     image: "/images/services/website-design.jpg",
-    seoTitle: "Custom Website Development Services | Lulu Web Studio",
+    seoTitle: "Custom Website Development Services",
     seoDescription: "Custom website development services for responsive, SEO-ready sites built around your brand, goals, ecommerce needs, and customer journey.",
   },
   {
@@ -95,7 +100,7 @@ export const services: Service[] = [
       "Performance monitoring",
     ],
     image: "/images/services/seo.jpg",
-    seoTitle: "SEO Services | Search Engine Optimization | Lulu Web Studio",
+    seoTitle: "SEO Services | Search Engine Optimization",
     seoDescription: "Boost your search rankings and drive organic traffic with our comprehensive SEO services. Technical audits, keyword strategy, and performance monitoring.",
   },
   {
@@ -116,7 +121,7 @@ export const services: Service[] = [
       "Social media assets",
     ],
     image: "/images/services/logo-design-hero.jpg",
-    seoTitle: "Logo Design Services | Brand Identity | Lulu Web Studio",
+    seoTitle: "Logo Design Services | Brand Identity",
     seoDescription: "Professional logo design services that capture your brand identity. Memorable, versatile logos with unlimited revisions and full brand guidelines.",
   },
   {
@@ -137,7 +142,7 @@ export const services: Service[] = [
       "Workflow automation",
     ],
     image: "/images/services/custom-scripting.jpg",
-    seoTitle: "Custom Scripting & Coding Solutions | Lulu Web Studio",
+    seoTitle: "Custom Scripting & Coding Solutions",
     seoDescription: "Custom scripting and automation solutions. Bulk data transfers, PDF parsers, invoice transformation, API integrations, and workflow automation.",
   },
   {
@@ -189,8 +194,8 @@ export const services: Service[] = [
       "Development-ready screens",
     ],
     image: "/images/services/mobile-app.jpg",
-    seoTitle: "Mobile App Design Services | Lulu Web Studio",
-    seoDescription: "Mobile app design services for iOS and Android apps, including UX, UI, wireframes, prototypes, and development-ready screens.",
+    seoTitle: "Mobile App Design Services",
+    seoDescription: "Mobile app design services for iOS and Android apps, including UX research, UI design, wireframes, clickable prototypes, and development-ready screens.",
   },
   {
     id: "vibe-code-debugging",
@@ -198,7 +203,7 @@ export const services: Service[] = [
     number: "06",
     title: "Vibe Code Debugging & Fixes",
     shortDescription:
-      "Stuck with a broken app you built with AI? We debug and fix vibe-coded projects — first 30 minutes free.",
+      "Stuck with a broken app you built with AI? Book a paid debugging session for hands-on help.",
     fullDescription:
       "AI tools like Lovable, Bolt, Replit, Cursor, and v0 make it fast to get a first version of an app running. But once something breaks — or the AI starts fixing one bug by creating three more — most vibe coders hit a wall. We read the actual codebase, find what's really wrong, and fix it, so your app is stable instead of one prompt away from breaking again.",
     seoSections: [
@@ -207,8 +212,8 @@ export const services: Service[] = [
         body: "Vibe coding gets you a working prototype fast, but debugging is where most AI-generated projects get stuck. We work directly in your Lovable, Bolt, Replit, Cursor, v0, or Base44 project, trace the actual cause of a bug instead of guessing, and fix it without breaking the rest of the app.",
       },
       {
-        heading: "Free 30-Minute Diagnostic Call",
-        body: "Send over your project and book a free 30-minute call. We'll look at your codebase, tell you what's actually broken and why, and give you a straight answer on what it takes to fix — no obligation to hire us afterward.",
+        heading: "Paid Debugging Calls for Vibe-Coded Apps",
+        body: "Book a debugging session when you need focused technical help, not another round of guesses. We look at the code, trace what is actually causing the bug, and explain the fix in plain terms while we work.",
       },
       {
         heading: "From Broken Prototype to Production-Ready",
@@ -227,9 +232,9 @@ export const services: Service[] = [
           "Yes. We regularly debug and fix projects built with Lovable, Bolt, Replit, Cursor, v0, Base44, and similar AI coding tools, whether the codebase came from one tool or was patched together across several.",
       },
       {
-        question: "How does the free 30-minute session work?",
+        question: "How does the debugging session work?",
         answer:
-          "Share access to your project before the call. In the first 30 minutes, we look at the code, identify what's actually causing the bug or crash, and explain it in plain terms. If it's a quick fix, we may resolve it on the spot. If it needs more work, we'll quote it clearly before starting.",
+          "Share access to your project before the call. During the session, we look at the code, identify what's actually causing the bug or crash, and explain it in plain terms. If it's a quick fix, we may resolve it on the spot. If it needs more work, we'll quote it clearly before starting.",
       },
       {
         question: "Why does my AI-generated code keep breaking?",
@@ -238,7 +243,7 @@ export const services: Service[] = [
       },
     ],
     items: [
-      "Free 30-minute diagnostic call",
+      "Paid debugging call for AI-built apps",
       "Bug fixes for Lovable, Bolt, Replit, Cursor, v0, and Base44 apps",
       "Full codebase review and cleanup",
       "Security and data-handling fixes",
@@ -246,8 +251,80 @@ export const services: Service[] = [
       "Ongoing support after launch",
     ],
     image: "/images/services/custom-scripting.jpg",
-    seoTitle: "Vibe Code Debugging & Bug Fixes | Free 30-Min Call | Lulu Web Studio",
-    seoDescription: "Stuck with a broken vibe-coded app? We debug and fix apps built with Lovable, Bolt, Replit, Cursor, and v0. First 30 minutes free.",
+    seoTitle: "Vibe Code Debugging & Bug Fixes",
+    seoDescription: "Stuck with a broken vibe-coded app? Book a paid debugging call for apps built with Lovable, Bolt, Replit, Cursor, v0, and similar AI coding tools.",
+    ctaHref: "/contact?event=debugging#book",
+    ctaLabel: "Book a Debugging Call",
+  },
+  {
+    id: "free-single-page-website",
+    slug: "free-single-page-website",
+    number: "07",
+    title: "Free Small Business Website",
+    shortDescription:
+      "A free website for your business — Home, About, and Contact pages. Simple doesn't mean it can't look good.",
+    fullDescription:
+      "Every business deserves a real website, not just a social media page. We build you a clean, professional site at no cost for the build itself — a homepage, an About page, and a Contact page with a working form, all in a design that actually looks good despite being simple. You get three rounds of design feedback to make sure it feels right before it goes live. Hosting and your domain name are the only ongoing costs, and they are not included in the free build.",
+    seoSections: [
+      {
+        heading: "A Free Website That Still Looks Professional",
+        body: "Simple doesn't have to mean plain. Your free site gets real design attention — clean layout, readable type, and a look that matches your business, not a generic template thrown together in minutes.",
+      },
+      {
+        heading: "More Than One Page",
+        body: "The free build isn't limited to a single screen. We put together a homepage, an About page, and a Contact page, so visitors get a real sense of who you are instead of one crowded page.",
+      },
+      {
+        heading: "Built to Actually Get You Contacted",
+        body: "Every free site includes a working contact form, so visitors can reach you directly from the page instead of hunting for your phone number or email somewhere else.",
+      },
+      {
+        heading: "Three Rounds of Design Feedback",
+        body: "You get three rounds of revisions on the design before launch, so the free site still ends up looking like something you're proud to link people to.",
+      },
+      {
+        heading: "Hosting and Domain Are Separate",
+        body: "The build itself is free, but a website still needs somewhere to live. Hosting runs about $30 a month, and you'll need to own your domain name separately. We'll walk you through both once the design is ready to go live.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is the website really free?",
+        answer:
+          "The build itself is free — design, pages, and the contact form don't cost anything upfront. The only ongoing costs are hosting, which runs about $30 a month with a 12-month minimum commitment, and your domain name, which you own separately. We explain both clearly before anything goes live.",
+      },
+      {
+        question: "What's included in the free website?",
+        answer:
+          "A homepage, an About page, and a Contact page with a working form, plus three rounds of design feedback so the final result looks the way you want. Hosting and your domain are separate costs.",
+      },
+      {
+        question: "Can I upgrade to a full multi-page site later?",
+        answer:
+          "Yes. If your business outgrows the free site's page set, we can move you into a full custom website development project with more pages, deeper SEO structure, and more advanced features as you grow.",
+      },
+    ],
+    items: [
+      "Homepage, About, and Contact pages",
+      "Clean, professional design",
+      "Working contact form",
+      "Three rounds of design feedback",
+      "Mobile-friendly layout",
+      "Fast turnaround",
+    ],
+    image: "/images/services/service-page-hero2.jpg",
+    seoTitle: "Free Small Business Website",
+    seoDescription: "Get a free small business website with Home, About, and Contact pages, plus three rounds of design feedback. Hosting is about $30/month, domain not included.",
+    disclaimer: {
+      points: [
+        "The free build covers a homepage, About page, and Contact page.",
+        "Includes three rounds of design feedback before launch.",
+        "Hosting is $30/month, billed by Lulu Web Studio, with a 12-month minimum commitment.",
+        "Domain name is not included — you'll own and purchase it separately.",
+        "Lulu Web Studio owns the site code; you can request it once the 12-month term is complete.",
+        "A limited number of free builds are taken on each month.",
+      ],
+    },
   },
 ];
 

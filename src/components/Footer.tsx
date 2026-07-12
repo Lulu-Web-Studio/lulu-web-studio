@@ -57,6 +57,22 @@ export const Footer: FunctionComponent = () => {
             ))}
           </nav>
 
+          {/* Contact */}
+          <div className='flex flex-col items-center md:items-end space-y-1'>
+            <a
+              href={`tel:${config.phoneNumber.replace(/[^\d+]/g, "")}`}
+              className='text-white text-lg md:text-xl font-medium hover:opacity-70 transition-opacity duration-200'
+            >
+              {config.phoneNumber}
+            </a>
+            <a
+              href={`mailto:${config.emailAddress}`}
+              className='text-white/80 text-sm md:text-base hover:text-white transition-colors duration-200'
+            >
+              {config.emailAddress}
+            </a>
+          </div>
+
           {/* Social Links */}
           <div className='flex flex-col md:flex-row md:gap-6 space-y-2 md:space-y-0'>
             {socialLinks.map((link) => (
@@ -70,6 +86,22 @@ export const Footer: FunctionComponent = () => {
                 {link.title}
               </a>
             ))}
+          </div>
+
+          {/* Legal Links */}
+          <div className='flex gap-4'>
+            <Link
+              href="/privacy-policy"
+              className='text-white/60 text-xs md:text-sm hover:text-white transition-colors duration-200'
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-of-service"
+              className='text-white/60 text-xs md:text-sm hover:text-white transition-colors duration-200'
+            >
+              Terms of Service
+            </Link>
           </div>
 
           {/* Copyright */}

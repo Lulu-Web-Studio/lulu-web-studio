@@ -112,7 +112,7 @@ export default function Services() {
                                     {s.blurb}
                                 </SecondaryText>
 
-                                <ul className="mt-6 space-y-3 text-sm tracking-wide text-neutral-900">
+                                <ul className="mt-6 space-y-3 text-base tracking-wide text-neutral-900">
                                     {s.items.map((it) => (
                                         <li key={it} className="uppercase">
                                             {it}

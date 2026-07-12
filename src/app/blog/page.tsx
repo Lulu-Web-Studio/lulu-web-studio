@@ -1,28 +1,34 @@
 import type {Metadata} from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {ArrowUpRight} from "lucide-react";
-import {formatPostDate, wisp} from "@/lib/wisp";
+import {formatPostDate, getAllPosts} from "@/lib/blog";
 
-export const dynamic = "force-dynamic";
+const title = "Blog — Web Design, SEO & Digital Growth Insights";
+const description =
+  "Read Lulu Web Studio articles on custom website development, SEO, design, ecommerce, and digital growth — practical thinking for growing businesses.";
 
 export const metadata: Metadata = {
-  title: {absolute: "Blog"},
-  description:
-    "Read Lulu Web Studio articles on custom website development, SEO, design, ecommerce, and digital growth.",
+  title: {absolute: title},
+  description,
   alternates: {canonical: "/blog"},
+  openGraph: {
+    type: "website",
+    url: "/blog",
+    title,
+    description,
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "Lulu Web Studio Blog"}],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og-image.png"],
+  },
 };
 
-async function getPosts() {
-  try {
-    const result = await wisp.getPosts({limit: "all"});
-    return result.posts;
-  } catch {
-    return [];
-  }
-}
-
-export default async function BlogPage() {
-  const posts = await getPosts();
+export default function BlogPage() {
+  const posts = getAllPosts();
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -44,26 +50,32 @@ export default async function BlogPage() {
           {posts.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => {
-                const date = formatPostDate(post.publishedAt ?? post.createdAt);
+                const date = formatPostDate(post.publishedAt);
 
                 return (
                   <Link
-                    key={post.id}
+                    key={post.slug}
                     href={`/blog/${post.slug}`}
                     className="group flex min-h-[420px] flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-colors hover:border-neutral-900"
                   >
-                    <div
-                      className="min-h-48 bg-neutral-100 bg-cover bg-center"
-                      style={post.image ? {backgroundImage: `url(${post.image})`} : undefined}
-                    />
+                    <div className="relative min-h-48 bg-neutral-100">
+                      {post.image && (
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
                     <div className="flex flex-1 flex-col p-7">
                       <div className="mb-4 flex flex-wrap gap-2">
                         {post.tags.slice(0, 3).map((tag) => (
                           <span
-                            key={tag.id}
+                            key={tag}
                             className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-600"
                           >
-                            {tag.name}
+                            {tag}
                           </span>
                         ))}
                       </div>
@@ -93,8 +105,8 @@ export default async function BlogPage() {
                 Blog posts are coming soon
               </h2>
               <p className="text-neutral-600 text-lg leading-relaxed">
-                The blog is connected to Wisp and ready for publishing. New posts will appear
-                here automatically as soon as they are published.
+                Drop a markdown file in <code>content/blog</code> and it will appear
+                here automatically on the next deploy.
               </p>
             </div>
           )}

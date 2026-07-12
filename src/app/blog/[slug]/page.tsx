@@ -1,59 +1,27 @@
 import type {Metadata} from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {notFound} from "next/navigation";
-import sanitizeHtml from "sanitize-html";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {ArrowUpRight} from "lucide-react";
-import {formatPostDate, wisp} from "@/lib/wisp";
+import {formatPostDate, getAllPosts, getPostBySlug} from "@/lib/blog";
 
 const SITE_URL = "https://www.luluwebstudio.com";
-
-export const dynamic = "force-dynamic";
 
 interface Params {
   slug: string;
 }
 
-async function getPost(slug: string) {
-  try {
-    const result = await wisp.getPost(slug);
-    return result.post;
-  } catch {
-    return null;
-  }
-}
-
-function sanitizePostContent(content: string) {
-  return sanitizeHtml(content, {
-    allowedTags: [
-      ...sanitizeHtml.defaults.allowedTags,
-      "img",
-      "h1",
-      "h2",
-      "h3",
-      "h4",
-      "figure",
-      "figcaption",
-    ],
-    allowedAttributes: {
-      ...sanitizeHtml.defaults.allowedAttributes,
-      a: ["href", "name", "target", "rel"],
-      img: ["src", "srcset", "alt", "title", "width", "height", "loading"],
-    },
-    allowedSchemes: ["http", "https", "mailto"],
-    transformTags: {
-      a: sanitizeHtml.simpleTransform("a", {
-        rel: "noopener noreferrer",
-        target: "_blank",
-      }),
-    },
-  });
+export function generateStaticParams() {
+  return getAllPosts().map((post) => ({slug: post.slug}));
 }
 
 export async function generateMetadata(props: {
   params: Promise<Params>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const post = await getPost(params.slug);
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     return {title: "Post Not Found"};
@@ -74,8 +42,8 @@ export async function generateMetadata(props: {
       title,
       description,
       images: post.image ? [{url: post.image, alt: post.title}] : undefined,
-      publishedTime: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-      modifiedTime: new Date(post.updatedAt).toISOString(),
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
     },
     twitter: {
       card: "summary_large_image",
@@ -90,14 +58,16 @@ export default async function BlogPostPage(props: {
   params: Promise<Params>;
 }) {
   const params = await props.params;
-  const post = await getPost(params.slug);
+  const post = getPostBySlug(params.slug);
 
-  if (!post) {
+  // Drafts aren't in generateStaticParams, so their URL still renders on
+  // demand here — useful for previewing in `next dev`. Block that fallback
+  // in production so an unpublished draft never becomes reachable.
+  if (!post || (post.draft && process.env.NODE_ENV === "production")) {
     notFound();
   }
 
-  const publishedDate = formatPostDate(post.publishedAt ?? post.createdAt);
-  const sanitizedContent = sanitizePostContent(post.content);
+  const publishedDate = formatPostDate(post.publishedAt);
   const pageUrl = `${SITE_URL}/blog/${post.slug}`;
 
   const jsonLd = {
@@ -106,11 +76,11 @@ export default async function BlogPostPage(props: {
     headline: post.title,
     description: post.description,
     image: post.image ? [post.image] : undefined,
-    datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-    dateModified: new Date(post.updatedAt).toISOString(),
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
     author: {
       "@type": "Person",
-      name: post.author.name ?? "Lulu Web Studio",
+      name: post.author,
     },
     publisher: {"@id": `${SITE_URL}/#business`},
     mainEntityOfPage: pageUrl,
@@ -148,10 +118,10 @@ export default async function BlogPostPage(props: {
           <div className="mt-8 flex flex-wrap gap-3">
             {post.tags.map((tag) => (
               <span
-                key={tag.id}
+                key={tag}
                 className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/75"
               >
-                {tag.name}
+                {tag}
               </span>
             ))}
           </div>
@@ -160,20 +130,17 @@ export default async function BlogPostPage(props: {
 
       {post.image && (
         <div className="max-w-6xl mx-auto px-6 lg:px-12 pb-16">
-          <div
-            className="aspect-[16/9] rounded-3xl bg-white/10 bg-cover bg-center"
-            style={{backgroundImage: `url(${post.image})`}}
-            aria-label={post.title}
-          />
+          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl bg-white/10">
+            <Image src={post.image} alt={post.title} fill className="object-cover" />
+          </div>
         </div>
       )}
 
       <section className="rounded-t-[50px] bg-white text-black py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6 lg:px-0">
-          <div
-            className="blog-content"
-            dangerouslySetInnerHTML={{__html: sanitizedContent}}
-          />
+          <div className="blog-content">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+          </div>
 
           <div className="mt-20 rounded-3xl bg-black p-10 md:p-12 text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

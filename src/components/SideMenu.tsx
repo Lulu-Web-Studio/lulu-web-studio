@@ -27,8 +27,8 @@ export default function SideMenu() {
 
 const menu = {
     open: {
-        width: "min(75vw, 350px)",
-        height: "min(50vh, 450px)",
+        width: "min(80vw, 360px)",
+        height: "min(80vh, 500px)",
         top: "-25px",
         right: "-25px",
         transition: {duration: 0.75, ease: [0.76, 0, 0.24, 1] as const}
@@ -47,7 +47,7 @@ const Index = () => {
     return (
         <div className="fixed right-14 top-14 z-50">
             <motion.div
-                className="bg-[#c9fd74] rounded-3xl"
+                className="bg-[#c9fd74] rounded-3xl overflow-y-auto"
                 variants={menu}
                 animate={isActive ? "open" : "closed"}
                 initial="closed"
@@ -69,29 +69,29 @@ export function Button({
     toggleMenu: () => void;
 }) {
     return (
-        <div className="absolute top-0 right-0 w-[100px] h-[40px] cursor-pointer rounded-[25px] overflow-hidden">
+        <button
+            type="button"
+            onClick={toggleMenu}
+            aria-label={isActive ? "Close menu" : "Open menu"}
+            aria-expanded={isActive}
+            className="absolute top-0 right-0 w-[100px] h-[40px] cursor-pointer rounded-[25px] overflow-hidden appearance-none border-0 p-0 bg-transparent"
+        >
             <motion.div
                 className="relative w-full h-full"
                 animate={{top: isActive ? "-100%" : "0%"}}
                 transition={{duration: 0.5, ease: [0.76, 0, 0.24, 1] as const}}
             >
                 {/* .el (first) */}
-                <div
-                    className="group w-full h-full bg-[#c9fd74] text-black"
-                    onClick={toggleMenu}
-                >
+                <div className="group w-full h-full bg-[#c9fd74] text-black">
                     <PerspectiveText label="Menu" />
                 </div>
 
                 {/* .el:nth-of-type(2) */}
-                <div
-                    className="group w-full h-full bg-black text-[#c9fd74]"
-                    onClick={toggleMenu}
-                >
+                <div className="group w-full h-full bg-black text-[#c9fd74]">
                     <PerspectiveText label="Close" />
                 </div>
             </motion.div>
-        </div>
+        </button>
     );
 }
 
