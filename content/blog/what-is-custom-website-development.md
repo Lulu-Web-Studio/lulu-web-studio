@@ -2,6 +2,7 @@
 title: "What Is Custom Website Development? Small Business Guide"
 description: "Learn what custom website development means, when it is worth it, how it compares to website builders, and how small businesses can hire safely."
 publishedAt: "2026-07-10"
+image: "/images/blog/custom-website-development.jpg"
 tags: ["Custom Website Development", "Small Business", "Web Design"]
 ---
 
