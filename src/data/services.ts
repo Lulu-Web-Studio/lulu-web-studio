@@ -257,72 +257,77 @@ export const services: Service[] = [
     ctaLabel: "Book a Debugging Call",
   },
   {
-    id: "free-single-page-website",
-    slug: "free-single-page-website",
+    id: "custom-websites-30-per-month",
+    slug: "custom-websites-30-per-month",
     number: "07",
-    title: "Free Small Business Website",
+    title: "Custom Websites for $30/Month",
     shortDescription:
-      "A free website for your business — Home, About, and Contact pages. Simple doesn't mean it can't look good.",
+      "A custom-designed website for $30/month, built around your small business, brand, and customers.",
     fullDescription:
-      "Every business deserves a real website, not just a social media page. We build you a clean, professional site at no cost for the build itself — a homepage, an About page, and a Contact page with a working form, all in a design that actually looks good despite being simple. You get three rounds of design feedback to make sure it feels right before it goes live. Hosting and your domain name are the only ongoing costs, and they are not included in the free build.",
+      "Get a custom-designed website for $30 a month with a 12-month minimum commitment. The offer is built for small businesses that need a polished, professional online home without a large upfront project cost. Your site includes a homepage, an About page, and a Contact page with a working form, all designed around your brand rather than dropped into a generic template. Small businesses are our main focus, but we can create the same kind of streamlined custom site for independent professionals, local organizations, and similar projects.",
     seoSections: [
       {
-        heading: "A Free Website That Still Looks Professional",
-        body: "Simple doesn't have to mean plain. Your free site gets real design attention — clean layout, readable type, and a look that matches your business, not a generic template thrown together in minutes.",
+        heading: "Custom Designed for Your Business",
+        body: "Your website should look like it belongs to your business. We shape the colors, typography, layout, imagery, and content flow around your brand instead of handing you the same recycled template as everyone else.",
       },
       {
-        heading: "More Than One Page",
-        body: "The free build isn't limited to a single screen. We put together a homepage, an About page, and a Contact page, so visitors get a real sense of who you are instead of one crowded page.",
+        heading: "A Focused Three-Page Website",
+        body: "Your site includes a homepage, an About page, and a Contact page. That gives customers a clear place to understand what you do, learn who they are working with, and get in touch without packing everything into one crowded page.",
       },
       {
-        heading: "Built to Actually Get You Contacted",
-        body: "Every free site includes a working contact form, so visitors can reach you directly from the page instead of hunting for your phone number or email somewhere else.",
+        heading: "Made for Small Businesses — and Similar Builds",
+        body: "This offer is designed first for small businesses, including local services, shops, and independent professionals. If you need a similarly scoped site for an organization, personal brand, or other straightforward project, we can usually adapt the same approach.",
       },
       {
-        heading: "Three Rounds of Design Feedback",
-        body: "You get three rounds of revisions on the design before launch, so the free site still ends up looking like something you're proud to link people to.",
+        heading: "Built to Turn Visitors Into Inquiries",
+        body: "Every site includes a working contact form and a mobile-friendly layout, so customers can understand your business and reach you easily from any device.",
       },
       {
-        heading: "Hosting and Domain Are Separate",
-        body: "The build itself is free, but a website still needs somewhere to live. Hosting runs about $30 a month, and you'll need to own your domain name separately. We'll walk you through both once the design is ready to go live.",
+        heading: "One Clear $30 Monthly Price",
+        body: "The custom website and hosting are $30 a month with a 12-month minimum commitment. Your domain name is separate, so you purchase it and keep it in your own name. We explain the details before work begins, with no surprise build fee at launch.",
       },
     ],
     faqs: [
       {
-        question: "Is the website really free?",
+        question: "What does the $30 monthly price include?",
         answer:
-          "The build itself is free — design, pages, and the contact form don't cost anything upfront. The only ongoing costs are hosting, which runs about $30 a month with a 12-month minimum commitment, and your domain name, which you own separately. We explain both clearly before anything goes live.",
+          "The $30 monthly price includes the custom website, hosting, a homepage, an About page, a Contact page with a working form, and three rounds of design feedback. The plan has a 12-month minimum commitment. Your domain name is purchased separately and stays in your name.",
       },
       {
-        question: "What's included in the free website?",
+        question: "Is the website actually custom designed?",
         answer:
-          "A homepage, an About page, and a Contact page with a working form, plus three rounds of design feedback so the final result looks the way you want. Hosting and your domain are separate costs.",
+          "Yes. We design the look and layout around your business, content, and brand direction. The scope stays focused so we can offer the $30 monthly price, but the finished site is not a one-size-fits-all template with your logo pasted into it.",
       },
       {
-        question: "Can I upgrade to a full multi-page site later?",
+        question: "Do you only build websites for small businesses?",
         answer:
-          "Yes. If your business outgrows the free site's page set, we can move you into a full custom website development project with more pages, deeper SEO structure, and more advanced features as you grow.",
+          "Small businesses are the main focus of this offer, but not the only fit. We can build similarly scoped custom sites for independent professionals, local organizations, personal brands, and other straightforward projects.",
+      },
+      {
+        question: "Can I add more pages or features later?",
+        answer:
+          "Yes. If you outgrow the three-page site, we can quote additional pages, deeper SEO work, ecommerce, booking tools, or other custom features separately.",
       },
     ],
     items: [
       "Homepage, About, and Contact pages",
-      "Clean, professional design",
+      "Custom design tailored to your brand",
       "Working contact form",
       "Three rounds of design feedback",
       "Mobile-friendly layout",
-      "Fast turnaround",
+      "Hosting included",
     ],
     image: "/images/services/service-page-hero2.jpg",
-    seoTitle: "Free Small Business Website",
-    seoDescription: "Get a free small business website with Home, About, and Contact pages, plus three rounds of design feedback. Hosting is about $30/month, domain not included.",
+    seoTitle: "Custom Websites for $30/Month | Small Businesses",
+    seoDescription: "Get a custom-designed small business website for $30/month, including three essential pages, hosting, a contact form, and three rounds of feedback.",
     disclaimer: {
       points: [
-        "The free build covers a homepage, About page, and Contact page.",
+        "The $30/month plan covers a custom-designed homepage, About page, and Contact page.",
         "Includes three rounds of design feedback before launch.",
-        "Hosting is $30/month, billed by Lulu Web Studio, with a 12-month minimum commitment.",
+        "The website and hosting are billed by Lulu Web Studio at $30/month with a 12-month minimum commitment.",
         "Domain name is not included — you'll own and purchase it separately.",
         "Lulu Web Studio owns the site code; you can request it once the 12-month term is complete.",
-        "A limited number of free builds are taken on each month.",
+        "A limited number of $30/month website projects are taken on each month.",
       ],
     },
   },
