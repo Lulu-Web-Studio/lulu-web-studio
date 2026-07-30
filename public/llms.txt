@@ -1,0 +1,30 @@
+# Lulu Web Studio
+
+> Lulu Web Studio provides custom website development, search engine optimization, brand design, and technical services for businesses.
+
+## Primary pages
+
+- [Home](https://www.luluwebstudio.com/): Studio overview.
+- [Services](https://www.luluwebstudio.com/services): Full service list.
+- [Projects](https://www.luluwebstudio.com/projects): Selected client work and case studies.
+- [About](https://www.luluwebstudio.com/about): Studio background.
+- [Blog](https://www.luluwebstudio.com/blog): Website, SEO, and digital strategy resources.
+- [Contact](https://www.luluwebstudio.com/contact): Project inquiries.
+
+## Key services
+
+- [Custom website development](https://www.luluwebstudio.com/services/custom-website-development)
+- [SEO](https://www.luluwebstudio.com/services/seo)
+- [Logo design](https://www.luluwebstudio.com/services/logo-design)
+- [Custom scripting and coding solutions](https://www.luluwebstudio.com/services/custom-scripting)
+- [Mobile app design](https://www.luluwebstudio.com/services/mobile-app-design-services)
+
+## Service areas
+
+Lulu Web Studio works with businesses in the following metro areas.
+
+- [New York](https://www.luluwebstudio.com/custom-website-development/new-york)
+- [Los Angeles](https://www.luluwebstudio.com/custom-website-development/los-angeles)
+- [Philadelphia](https://www.luluwebstudio.com/custom-website-development/philadelphia)
+- [Chicago](https://www.luluwebstudio.com/custom-website-development/chicago)
+- [Miami](https://www.luluwebstudio.com/custom-website-development/miami)
