@@ -44,6 +44,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "open-court",
+    title: "Open Court",
+    description: "Casual tennis and pickleball tournament brackets with live scoring",
+    image: "/images/projects/open-court-home.jpg",
+    href: "https://www.open-court.net",
+    featured: false,
+    status: ProjectStatus.Completed,
+    tags: ["Web Application", "Next.js", "TypeScript"],
+  },
+  {
+    id: "gabby-lulu-portfolio",
+    title: "Gabby Lulu Portfolio",
+    description: "Personal portfolio website for a software engineer",
+    image: "/images/projects/gabby-lulu-portfolio-home.jpg",
+    href: "https://gabbylulu.com",
+    featured: false,
+    status: ProjectStatus.Completed,
+    tags: ["Portfolio", "Web Development", "Next.js"],
+  },
+  {
     id: "charge-the-coast",
     title: "Charge The Coast",
     description: "Electric vehicle charging solutions website",
