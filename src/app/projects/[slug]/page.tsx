@@ -72,6 +72,7 @@ function buildCaseStudyJsonLd(project: Project & {slug: string; caseStudy: CaseS
       about: {
         "@type": "Organization",
         name: caseStudy.client,
+        url: project.href,
       },
     },
     {
@@ -193,6 +194,33 @@ export default async function ProjectCaseStudyPage(props: {
           <p className="text-white/80 leading-relaxed text-lg">{caseStudy.approach}</p>
         </div>
       </section>
+
+      {/* Live site pages */}
+      {caseStudy.siteLinks && caseStudy.siteLinks.length > 0 && (
+        <section className="max-w-5xl mx-auto px-8 sm:px-12 lg:px-16 pb-24 md:pb-32">
+          <h2 className="text-2xl md:text-3xl font-bold mb-5">Explore the Website</h2>
+          <p className="text-white/70 leading-relaxed text-lg max-w-3xl mb-10">
+            Explore the finished experience through key pages created for the practice.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {caseStudy.siteLinks.map((siteLink) => (
+              <a
+                key={siteLink.href}
+                href={siteLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-2xl bg-white/5 border border-white/10 p-7 md:p-8 hover:bg-white/10 hover:border-white/20 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-6 mb-3">
+                  <h3 className="text-lg font-semibold">{siteLink.title}</h3>
+                  <ArrowUpRight className="w-5 h-5 flex-shrink-0 text-white/50 group-hover:text-white transition-colors" />
+                </div>
+                <p className="text-white/65 leading-relaxed">{siteLink.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Tech stack */}
       {caseStudy.techStack.length > 0 && (

@@ -9,6 +9,12 @@ export type CaseStudyResult = {
   label: string;
 };
 
+export type CaseStudySiteLink = {
+  title: string;
+  description: string;
+  href: string;
+};
+
 export type CaseStudy = {
   client: string;
   industry: string;
@@ -17,6 +23,7 @@ export type CaseStudy = {
   problem: string;
   approach: string;
   results: CaseStudyResult[];
+  siteLinks?: CaseStudySiteLink[];
   techStack: string[];
   testimonial?: {
     quote: string;
@@ -85,13 +92,97 @@ export const projects: Project[] = [
   },
   {
     id: "facial-surgery-center",
+    slug: "facial-surgery-center",
     title: "The Facial Surgery Center",
-    description: "Healthcare website for facial surgery practice",
+    description:
+      "Patient-focused website for an oral and maxillofacial surgery practice in Trumbull, Connecticut",
     image: "/images/projects/fsc-image.webp",
     href: "https://www.facialsurgeryct.com",
     featured: true,
     status: ProjectStatus.Completed,
     tags: ["Web Development", "Healthcare", "Conversion"],
+    caseStudy: {
+      client: "The Facial Surgery Center",
+      industry: "Oral & Maxillofacial Surgery",
+      location: "Trumbull, Connecticut",
+      year: "2025",
+      problem:
+        "The Facial Surgery Center needed a modern digital home that could make a broad range of oral and maxillofacial services easier to understand without overwhelming prospective patients. The experience also had to establish trust in the surgeons, support patients before and after treatment, and make it straightforward for people throughout Fairfield County to find relevant care and request an appointment.",
+      approach:
+        "We organized the site around the questions patients ask first: who will provide their care, what a procedure involves, how to prepare, and what to do next. A responsive design, focused navigation, detailed treatment pages, surgeon profiles, patient resources, local landing pages, and consistent appointment calls to action give every visitor a clearer route from research to contact.",
+      results: [
+        {metric: "14", label: "Detailed treatment pages"},
+        {metric: "14", label: "Local service-area pages"},
+        {metric: "2", label: "Surgeon profiles centered on credentials and trust"},
+      ],
+      siteLinks: [
+        {
+          title: "About the Practice",
+          description:
+            "Learn how the practice presents more than 30 years of patient-focused care in Trumbull.",
+          href: "https://www.facialsurgeryct.com/about",
+        },
+        {
+          title: "Meet the Doctors",
+          description:
+            "See the education, credentials, and clinical experience behind the practice.",
+          href: "https://www.facialsurgeryct.com/about/meet-the-doctors",
+        },
+        {
+          title: "Dental Implants",
+          description:
+            "Explore a treatment page designed to explain the process and long-term benefits clearly.",
+          href: "https://www.facialsurgeryct.com/service/dental-implants",
+        },
+        {
+          title: "Wisdom Teeth Removal",
+          description:
+            "Review patient-friendly guidance on treatment, recovery, and aftercare.",
+          href: "https://www.facialsurgeryct.com/service/wisdom-teeth-removal",
+        },
+        {
+          title: "Orthognathic Surgery",
+          description:
+            "See how a complex corrective jaw procedure is broken into approachable information.",
+          href: "https://www.facialsurgeryct.com/service/orthognathic-surgery",
+        },
+        {
+          title: "Minimally Invasive Jaw Surgery",
+          description:
+            "Learn how the site introduces an advanced treatment option and its potential benefits.",
+          href:
+            "https://www.facialsurgeryct.com/service/minimally-invasive-orthognathic-surgery",
+        },
+        {
+          title: "Teeth in a Day",
+          description:
+            "Explore the dedicated All-On-X implant page and its clear treatment overview.",
+          href: "https://www.facialsurgeryct.com/service/teeth-in-a-day",
+        },
+        {
+          title: "What Patients Can Expect",
+          description:
+            "Follow the preparation guidance created to help patients feel informed before a visit.",
+          href: "https://www.facialsurgeryct.com/for-patients/what-to-expect",
+        },
+        {
+          title: "Areas the Practice Serves",
+          description:
+            "Browse the local hub connecting Fairfield County communities with relevant care.",
+          href: "https://www.facialsurgeryct.com/areas-we-serve",
+        },
+        {
+          title: "Contact the Practice",
+          description:
+            "See the focused appointment path that turns patient research into a clear next step.",
+          href: "https://www.facialsurgeryct.com/contact",
+        },
+      ],
+      techStack: ["Next.js", "Tailwind CSS", "Vercel", "Sanity", "Structured Data"],
+      seoTitle: "Facial Surgery Center Website Case Study | Lulu Web Studio",
+      seoDescription:
+        "See how Lulu Web Studio redesigned The Facial Surgery Center website with detailed treatment pages, surgeon profiles, local pages, and clear patient pathways.",
+    },
   },
   {
     id: "alon-group",
