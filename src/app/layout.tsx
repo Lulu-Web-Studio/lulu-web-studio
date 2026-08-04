@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    "norton-safeweb-site-verification":
+      "W9-WINM7QK4X61JKJ5RTQV1R-LC1NT8ST7689SRO4W95YS38N39OG01QC30O9WBY8FO31QN0ULDACF-6-OF18MEV4T969NGZ7Y4-6A34C9M4BCLR3LOA019V05L1-W9M",
+  },
 };
 
 export const viewport: Viewport = {
