@@ -4,7 +4,7 @@ import {config} from "@/config";
 
 const title = "Terms of Service";
 const description =
-  "The terms that govern using Lulu Web Studio's website and services, including our $30/month website plan, hosting, payment, and ownership of completed work.";
+  "The terms that govern using Lulu Web Studio's website and services, including payment and ownership of completed work.";
 
 export const metadata: Metadata = {
   title,
@@ -36,7 +36,7 @@ export default function TermsOfServicePage() {
           Terms of Service
         </h1>
         <p className="mt-8 text-lg text-white/70 max-w-2xl leading-relaxed">
-          Last updated July 22, 2026.
+          Last updated August 27, 2026.
         </p>
       </header>
 
@@ -67,53 +67,19 @@ export default function TermsOfServicePage() {
               work begins.
             </p>
 
-            <h2>The $30/Month Custom Website Plan</h2>
-            <p>
-              Our $30/month website plan works differently from a standard paid project, so the
-              terms are spelled out here specifically:
-            </p>
-            <ul>
-              <li>
-                The plan covers a custom-designed homepage, About page, and Contact page,
-                plus three rounds of design feedback before launch.
-              </li>
-              <li>
-                The website and hosting are <strong>$30/month</strong>, billed by Lulu Web
-                Studio, with a <strong>12-month minimum commitment</strong> starting from
-                launch.
-              </li>
-              <li>
-                Domain name registration is not included. You are responsible for owning
-                and purchasing your own domain.
-              </li>
-              <li>
-                We take on a limited number of $30/month website projects each month.
-                Availability is not guaranteed and the plan may be paused or changed at
-                any time.
-              </li>
-              <li>
-                Lulu Web Studio owns the code for websites created under this plan. You can
-                use your live site as an active client, and you may request the code once the
-                12-month minimum term is complete. If you cancel before that term is up, you
-                may be billed for the remaining balance of the term.
-              </li>
-            </ul>
-
             <h2>Payment</h2>
             <p>
               Paid services are billed according to the agreement made at the start of a
-              project or booking. Recurring services, including the $30/month custom
-              website plan, are billed monthly until canceled in accordance with any
-              applicable minimum term.
+              project or booking. Recurring services are billed until canceled in accordance
+              with the applicable agreement.
             </p>
 
             <h2>Ownership and Intellectual Property</h2>
             <p>
-              For website and mobile app projects — including the $30/month website plan —
-              Lulu Web Studio retains ownership of the underlying code. You receive a
-              license to use your live site or app as an active client. Once the applicable
-              contract or minimum term is complete, you may request the code; we&apos;ll work
-              out that transfer at that time.
+              For website and mobile app projects, Lulu Web Studio retains ownership of the
+              underlying code. You receive a license to use your live site or app as an active
+              client. Once the applicable contract is complete, you may request the code;
+              we&apos;ll work out that transfer at that time.
             </p>
             <p>
               For custom scripting, automation, and coding-solution projects, you own the
