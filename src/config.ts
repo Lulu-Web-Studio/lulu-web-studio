@@ -1,6 +1,6 @@
 const buildConfig = () => {
 
-  const name = process.env.NEXT_PUBLIC_DISPLAY_NAME || "Display Name.";
+  const name = process.env.NEXT_PUBLIC_DISPLAY_NAME || "Lulu Web Studio";
   const copyright = process.env.NEXT_PUBLIC_COPYRIGHT || "Copyright";
 
   return {
