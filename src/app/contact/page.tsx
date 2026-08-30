@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import ContactHero from "./components/ContactHero";
-import ContactBooking from "./components/ContactBooking";
+import ContactBookingCta from "./components/ContactBookingCta";
 import ContactForm from "./components/ContactForm";
 import ContactReview from "./components/ContactReview";
 
@@ -31,7 +31,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       <ContactHero />
-      <ContactBooking />
+      <ContactBookingCta />
       <ContactForm />
       <ContactReview />
     </div>

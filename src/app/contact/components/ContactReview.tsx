@@ -15,7 +15,7 @@ export default function ContactReview() {
               {Array.from({length: 5}).map((_, index) => (
                 <Star
                   key={index}
-                  className="size-6 fill-[#0034ff] text-[#0034ff]"
+                  className="size-6 fill-[#c9fd74] text-[#c9fd74]"
                 />
               ))}
             </div>
@@ -41,7 +41,7 @@ export default function ContactReview() {
               href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-8 flex w-full items-center justify-between rounded-2xl bg-[#0034ff] px-6 py-5 text-lg font-semibold text-white transition-colors hover:bg-[#002bd6] sm:w-fit sm:min-w-80"
+              className="group mt-8 flex w-full items-center justify-between rounded-2xl bg-[#c9fd74] px-6 py-5 text-lg font-semibold text-black transition-colors hover:bg-white sm:w-fit sm:min-w-80"
             >
               Leave a Google review
               <ArrowUpRight className="size-6 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
