@@ -72,19 +72,31 @@ export default async function BlogPostPage(props: {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.description,
-    image: post.image ? [post.image] : undefined,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
-    author: {
-      "@type": "Person",
-      name: post.author,
-    },
-    publisher: {"@id": `${SITE_URL}/#business`},
-    mainEntityOfPage: pageUrl,
-    url: pageUrl,
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        image: post.image ? [post.image] : undefined,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt,
+        author: {
+          "@type": "Person",
+          name: post.author,
+        },
+        publisher: {"@id": `${SITE_URL}/#business`},
+        mainEntityOfPage: pageUrl,
+        url: pageUrl,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {"@type": "ListItem", position: 1, name: "Home", item: SITE_URL},
+          {"@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog`},
+          {"@type": "ListItem", position: 3, name: post.title, item: pageUrl},
+        ],
+      },
+    ],
   };
 
   return (
@@ -131,7 +143,13 @@ export default async function BlogPostPage(props: {
       {post.image && (
         <div className="max-w-6xl mx-auto px-6 lg:px-12 pb-16">
           <div className="relative aspect-[16/9] overflow-hidden rounded-3xl bg-white/10">
-            <Image src={post.image} alt={post.title} fill className="object-cover" />
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(min-width: 1152px) 1152px, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       )}

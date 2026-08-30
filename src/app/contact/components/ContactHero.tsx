@@ -17,6 +17,7 @@ export default function ContactHero() {
               src="/images/contact/contact-bg.webp"
               alt="Contact Lulu Web Studio to start your website, app, or SEO project"
               fill
+              sizes="100vw"
               priority
               className="object-cover"
             />

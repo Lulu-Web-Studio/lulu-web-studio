@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import ServicesHero from "./components/ServicesHero";
 import ServicesGrid from "./components/ServicesGrid";
 
-const title = "Our Services";
+const title = "Our Services | Web Design, SEO & App Development";
 const description =
   "Explore our comprehensive digital services: custom website design, SEO, mobile app development, logo design, and custom scripting solutions.";
 

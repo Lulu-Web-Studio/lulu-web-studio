@@ -52,6 +52,10 @@ const slideIn = {
 
 export const links = [
     {
+        title: "Home",
+        href: "/"
+    },
+    {
         title: "Projects",
         href: "/projects"
     },
@@ -66,6 +70,10 @@ export const links = [
     {
         title: "About",
         href: "/about"
+    },
+    {
+        title: "Contact",
+        href: "/contact"
     }
 ]
 

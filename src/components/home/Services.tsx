@@ -80,7 +80,7 @@ export default function Services() {
         <section className="bg-white min-h-[80vh] flex items-center justify-center rounded-t-[50px] py-24 pb-40 relative z-10 -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-28">
             <div className=" w-5/6 mx-auto">
                 {/* Section Eyebrow */}
-                <SecondaryText as="p" className="uppercase text-md text-neutral-500 text-center mb-10 md:mb-14 ">
+                <SecondaryText as="h2" className="uppercase text-md text-neutral-500 text-center mb-10 md:mb-14 ">
                     Our Services
                 </SecondaryText>
                 {/* </div> */}

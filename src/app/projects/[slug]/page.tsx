@@ -129,6 +129,7 @@ export default async function ProjectCaseStudyPage(props: {
             src={project.image}
             alt={`${project.title} — ${caseStudy.industry} website by Lulu Web Studio`}
             fill
+            sizes="100vw"
             priority
             className="object-cover"
           />

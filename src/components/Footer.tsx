@@ -92,20 +92,20 @@ export const Footer: FunctionComponent = () => {
           <div className='flex gap-4'>
             <Link
               href="/privacy-policy"
-              className='text-white/60 text-xs md:text-sm hover:text-white transition-colors duration-200'
+              className='text-white/80 text-xs md:text-sm hover:text-white transition-colors duration-200'
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
-              className='text-white/60 text-xs md:text-sm hover:text-white transition-colors duration-200'
+              className='text-white/80 text-xs md:text-sm hover:text-white transition-colors duration-200'
             >
               Terms of Service
             </Link>
           </div>
 
           {/* Copyright */}
-          <p className='text-white/60 text-xs md:text-sm'>
+          <p className='text-white/80 text-xs md:text-sm'>
             © {new Date().getFullYear()} {config.name.name}. All rights reserved.
           </p>
         </div>
@@ -124,7 +124,7 @@ export const Footer: FunctionComponent = () => {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className='text-white/60 text-xs md:text-sm hover:text-white transition-colors duration-200'
+                className='text-white/80 text-xs md:text-sm hover:text-white transition-colors duration-200'
               >
                 {link.title}
               </Link>

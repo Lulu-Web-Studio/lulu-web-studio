@@ -1,5 +1,3 @@
-"use client";
-
 import {ArrowUpRight} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,6 +26,7 @@ export default function ProjectCard({project, showTags = false}: ProjectCardProp
             src={project.image}
             alt={project.title}
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
         </div>

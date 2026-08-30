@@ -84,6 +84,7 @@ export default function AboutContent() {
                   src="/images/about/founder.jpg"
                   alt="Gabriel Lulu, founder of Lulu Web Studio"
                   fill
+                  sizes="(max-width: 768px) 160px, 192px"
                   className="object-cover"
                 />
               </div>

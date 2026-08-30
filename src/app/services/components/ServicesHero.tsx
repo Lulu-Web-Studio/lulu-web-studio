@@ -17,6 +17,7 @@ export default function ServicesHero() {
               src="/images/services/new-hero-service.jpg"
               alt="Our Services"
               fill
+              sizes="100vw"
               priority
               className="object-cover"
             />

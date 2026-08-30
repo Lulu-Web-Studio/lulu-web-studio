@@ -46,6 +46,7 @@ export default function LogoMarquee() {
                   src={logo.src}
                   alt={logo.alt}
                   fill
+                  sizes="128px"
                   className="object-contain"
                 />
               </a>

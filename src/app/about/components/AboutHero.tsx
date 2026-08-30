@@ -17,6 +17,7 @@ export default function AboutHero() {
               src="/images/about/about-hero.jpg"
               alt="Lulu Web Studio team — designers and developers building digital experiences"
               fill
+              sizes="100vw"
               priority
               className="object-cover"
             />

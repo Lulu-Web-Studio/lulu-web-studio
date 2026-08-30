@@ -30,6 +30,7 @@ export default function ProjectHero({
                             src={imageSrc}
                             alt={imageAlt}
                             fill
+                            sizes="100vw"
                             priority
                             className="object-cover"
                         />

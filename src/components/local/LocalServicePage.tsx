@@ -20,9 +20,9 @@ type ServiceCopy = {
 const COPY: Record<LocalServiceKind, (city: City) => ServiceCopy> = {
   "custom-website-development": (city) => ({
     heading: `Web Design in ${city.name}, ${city.stateAbbr}`,
-    intro: `Lulu Web Studio designs and builds custom websites for ${city.audienceLabel}. From small local shops to growing companies across ${city.metroDescription}, we build fast, mobile-first sites that rank on Google and turn visitors into customers.`,
+    intro: `Lulu Web Studio designs and builds custom websites for ${city.audienceLabel} — from ${city.industries[0]} to ${city.industries[1]}. Across ${city.metroDescription}, we build fast, mobile-first sites that rank on Google and turn visitors into customers.`,
     bullets: [
-      `Custom design tailored to your ${city.name} brand and audience`,
+      `Custom design built around what ${city.industries[0]} and ${city.industries[2]} in ${city.name} actually need`,
       "Mobile-first development and accessibility built in",
       "Core Web Vitals optimization for fast load times",
       "On-page SEO baked into every page (titles, schema, internal links)",
@@ -32,15 +32,15 @@ const COPY: Record<LocalServiceKind, (city: City) => ServiceCopy> = {
     faqs: [
       {
         q: `How much does a custom website cost in ${city.name}?`,
-        a: `Most ${city.name} small-business sites we build range from $4,000 to $15,000 depending on scope — number of pages, custom features, e-commerce, and integrations. We provide a fixed quote after a short discovery call.`,
+        a: `Most ${city.name} small-business sites we build range from ${city.webDesignPriceRange} depending on scope — number of pages, custom features, e-commerce, and integrations. We provide a fixed quote after a short discovery call.`,
       },
       {
         q: `How long does it take to build a website?`,
         a: `A standard marketing site for a ${city.name} business typically takes 4–8 weeks from kickoff to launch. More complex builds — e-commerce, custom apps, multi-language — take 8–16 weeks.`,
       },
       {
-        q: `Do you work with businesses outside of ${city.name}?`,
-        a: `Yes. We work with clients across ${city.metroDescription} and throughout the United States. Most of our work is remote, with optional on-site visits for ${city.name}-based clients.`,
+        q: `What kinds of ${city.name} businesses do you work with?`,
+        a: `We spend a lot of our time in ${city.metroDescription} working with ${city.industries[0]}, ${city.industries[1]}, and ${city.industries[3]}, alongside independent shops and growing local brands. We tailor the site structure and content strategy to how your specific industry gets found and chosen.`,
       },
       {
         q: `What technology do you build on?`,
@@ -54,7 +54,7 @@ const COPY: Record<LocalServiceKind, (city: City) => ServiceCopy> = {
   }),
   seo: (city) => ({
     heading: `SEO Services in ${city.name}, ${city.stateAbbr}`,
-    intro: `Lulu Web Studio runs technical, on-page, and local SEO campaigns for ${city.audienceLabel}. We help companies in ${city.metroDescription} climb the rankings, capture qualified search traffic, and turn it into real revenue.`,
+    intro: `Lulu Web Studio runs technical, on-page, and local SEO campaigns for ${city.audienceLabel}. We help ${city.industries[0]} and ${city.industries[3]} across ${city.metroDescription} climb the rankings, capture qualified search traffic, and turn it into real revenue.`,
     bullets: [
       `Local SEO targeting ${city.name} metro keywords and the map pack`,
       "Technical audits — Core Web Vitals, crawlability, structured data",
@@ -66,7 +66,7 @@ const COPY: Record<LocalServiceKind, (city: City) => ServiceCopy> = {
     faqs: [
       {
         q: `How much does SEO cost in ${city.name}?`,
-        a: `Most ${city.name} clients invest $1,500–$5,000 per month for ongoing SEO depending on competition and goals. We also offer one-time audits starting at $1,500 if you just want to know where you stand.`,
+        a: `Most ${city.name} clients invest ${city.seoPriceRange} per month for ongoing SEO depending on competition and goals. We also offer one-time audits starting at $1,500 if you just want to know where you stand.`,
       },
       {
         q: `How long until I see results from SEO?`,
@@ -78,7 +78,7 @@ const COPY: Record<LocalServiceKind, (city: City) => ServiceCopy> = {
       },
       {
         q: `Will SEO work for my industry?`,
-        a: `We've run SEO for healthcare, contractors, non-profits, real estate, and e-commerce in ${city.name} and beyond. If your customers use Google to find services like yours, SEO will work — the only question is how long and how much investment.`,
+        a: `We've run SEO for ${city.industries[0]}, ${city.industries[1]}, and ${city.industries[2]} in ${city.name} and beyond. If your customers use Google to find services like yours, SEO will work — the only question is how long and how much investment.`,
       },
     ],
     relatedServiceSlug: "custom-website-development",

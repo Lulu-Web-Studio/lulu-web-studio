@@ -18,6 +18,7 @@ export default function HeroParallax() {
                             src="/images/home/hero.jpg"
                             alt="Lulu Web Studio — custom web design and development agency"
                             fill
+                            sizes="100vw"
                             priority
                             className="object-cover"
                         />

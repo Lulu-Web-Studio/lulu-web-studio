@@ -91,6 +91,42 @@ export const services: Service[] = [
       "Boost your search rankings and drive organic traffic to your website.",
     fullDescription:
       "Our comprehensive SEO services help your business get found by the right customers. We combine technical optimization, content strategy, and link building to improve your search engine rankings and increase organic traffic that converts.",
+    seoSections: [
+      {
+        heading: "Technical SEO That Fixes What's Holding You Back",
+        body: "Before we write a word of content, we audit crawlability, site speed, Core Web Vitals, structured data, and indexation. Most ranking problems trace back to technical issues Google can't see past — we find and fix those first.",
+      },
+      {
+        heading: "On-Page and Content Optimization Built Around Intent",
+        body: "We map keyword research to what your customers actually search for at each stage of their decision, then optimize titles, headings, internal links, and page content so every page has a clear job to do in search results.",
+      },
+      {
+        heading: "Local SEO for Businesses That Serve a Service Area",
+        body: "For businesses with a physical location or service area, we build out Google Business Profile optimization, local schema, and citation consistency so you show up in the map pack, not just the organic results below it.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How long does SEO take to work?",
+        answer:
+          "Local SEO often shows measurable movement in 60–90 days. Competitive national keywords usually take 6–12 months of consistent technical and content work. We report monthly so you can see qualified traffic and rankings move over time.",
+      },
+      {
+        question: "What's included in an SEO audit?",
+        answer:
+          "A technical crawl for indexation and Core Web Vitals issues, an on-page review of titles, headings, and content for every key page, a backlink and competitor gap analysis, and a prioritized action plan ranked by impact.",
+      },
+      {
+        question: "Do you guarantee first-page rankings?",
+        answer:
+          "No legitimate SEO provider can guarantee specific rankings — search algorithms change constantly and rankings depend on factors outside anyone's full control. We guarantee transparent reporting, consistent technical and content work, and steady improvement in qualified organic traffic.",
+      },
+      {
+        question: "Is SEO better than paid ads?",
+        answer:
+          "They solve different problems. Paid ads produce traffic immediately but stop the moment you stop paying. SEO takes longer to build but compounds — pages you rank for keep sending traffic without an ongoing per-click cost. Most businesses benefit from both, weighted differently depending on budget and timeline.",
+      },
+    ],
     items: [
       "Technical SEO audit",
       "Keyword research & strategy",
@@ -112,6 +148,42 @@ export const services: Service[] = [
       "Memorable logos that capture your brand identity and make a lasting impression.",
     fullDescription:
       "Your logo is the face of your brand. We design distinctive, versatile logos that communicate your brand values and resonate with your target audience. Every logo we create is crafted to work beautifully across all mediums and sizes.",
+    seoSections: [
+      {
+        heading: "Logo Design Grounded in Brand Strategy",
+        body: "Before we sketch a single concept, we talk through your audience, positioning, and competitors. A logo that isn't grounded in strategy is just decoration — ours are built to actually represent what makes your business different.",
+      },
+      {
+        heading: "Multiple Concepts, Not One Guess",
+        body: "We present several distinct directions rather than one design and a hope. That gives you real options to react to instead of a single take-it-or-leave-it logo.",
+      },
+      {
+        heading: "Delivered Ready to Use Everywhere",
+        body: "Every final logo ships as vector files (SVG, EPS, AI) plus PNG exports, with a brand guidelines document covering color codes, spacing, and usage rules so it looks consistent on your website, packaging, and social channels.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does professional logo design cost?",
+        answer:
+          "Logo design pricing depends on the number of concepts, revision rounds, and whether you need a full brand identity system (color palette, typography, guidelines) alongside the mark itself. We provide a fixed quote after a short discovery call.",
+      },
+      {
+        question: "How many logo concepts will I see?",
+        answer:
+          "We typically present multiple distinct concept directions in the first round, then refine your chosen direction through unlimited revisions until it's right.",
+      },
+      {
+        question: "What files do I get with my final logo?",
+        answer:
+          "You receive vector formats (SVG, EPS, AI) for anything that needs to scale — print, signage, merchandise — plus PNG exports for web and social use, along with a brand guidelines document.",
+      },
+      {
+        question: "Can you design a full brand identity, not just a logo?",
+        answer:
+          "Yes. Alongside the logo we can develop a color palette, typography system, and social media assets so your brand looks consistent everywhere it shows up.",
+      },
+    ],
     items: [
       "Brand discovery session",
       "Multiple concept designs",
@@ -133,6 +205,42 @@ export const services: Service[] = [
       "Powerful automation and data processing solutions tailored to your business needs.",
     fullDescription:
       "We build custom scripts and coding solutions that automate repetitive tasks, process large datasets, and integrate disparate systems. Our solutions save you time, reduce errors, and streamline your operations. Some examples include data migration scripts, API integrations, custom PDF parsers, Shopify Liquid customizations, and workflow automations with Zapier.",
+    seoSections: [
+      {
+        heading: "Automation Built Around Your Actual Workflow",
+        body: "We start by mapping the manual, repetitive steps costing your team the most time — bulk data transfers, invoice processing, order syncing — then script around your existing tools instead of asking you to replace them.",
+      },
+      {
+        heading: "Custom Integrations Between Systems That Don't Talk",
+        body: "Most businesses run on a mix of platforms that were never designed to work together. We write the API integrations and data transformations that connect them, so information moves automatically instead of through manual copy-paste.",
+      },
+      {
+        heading: "Reliable Scripts, Not Fragile One-Offs",
+        body: "Scripts that break silently cost more than the manual work they replaced. We build with error handling, logging, and clear documentation so automations keep running and are easy to hand off or extend later.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What kinds of tasks can be automated with custom scripting?",
+        answer:
+          "Common examples include bulk data transfers between systems, custom PDF parsing and invoice transformation, data migrations between platforms, API integrations that sync inventory or orders, and Zapier-style workflow automations for repetitive manual tasks.",
+      },
+      {
+        question: "What languages and tools do you use?",
+        answer:
+          "We build with JavaScript/TypeScript and Python most often, depending on the task, and integrate with platforms like Shopify (Liquid), Zapier, and whatever APIs your existing systems expose.",
+      },
+      {
+        question: "Can you connect two systems that don't normally work together?",
+        answer:
+          "Yes — this is one of the most common requests we get. If both systems expose an API or allow data export/import, we can typically build a script or integration that keeps them in sync automatically.",
+      },
+      {
+        question: "How do you price custom scripting projects?",
+        answer:
+          "Pricing depends on the complexity of the data, how many systems are involved, and whether the automation needs to run on a schedule or handle edge cases and errors gracefully. We scope the task on a call and provide a fixed quote before starting.",
+      },
+    ],
     items: [
       "Bulk data transfers",
       "Custom PDF parsers",

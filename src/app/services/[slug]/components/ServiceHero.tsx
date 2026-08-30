@@ -22,6 +22,7 @@ export default function ServiceHero({service}: ServiceHeroProps) {
               src={service.image}
               alt={service.title}
               fill
+              sizes="100vw"
               priority
               className="object-cover"
             />

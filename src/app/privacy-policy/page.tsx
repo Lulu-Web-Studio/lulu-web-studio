@@ -3,7 +3,7 @@ import {config} from "@/config";
 
 const title = "Privacy Policy";
 const description =
-  "How Lulu Web Studio collects, uses, and protects the information you share with us through our contact form, call bookings, and other tools we use to run this site.";
+  "How Lulu Web Studio collects, uses, and protects the information you share through our contact form and call bookings, and how we handle it.";
 
 export const metadata: Metadata = {
   title,
