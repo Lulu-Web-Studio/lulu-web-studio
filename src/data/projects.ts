@@ -51,6 +51,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "all-heart-care",
+    title: "All Heart Care",
+    description:
+      "Evidence-based adult psychiatric care website for a nurse practitioner in Jenkintown, Pennsylvania",
+    image: "/images/projects/all-heart-care.png",
+    href: "https://www.lisaberkowitzcrnp.com",
+    featured: true,
+    status: ProjectStatus.Completed,
+    tags: ["Healthcare", "Next.js", "Sanity"],
+  },
+  {
     id: "open-court",
     title: "Open Court",
     description: "Casual tennis and pickleball tournament brackets with live scoring",
