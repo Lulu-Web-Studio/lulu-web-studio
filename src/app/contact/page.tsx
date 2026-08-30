@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import ContactHero from "./components/ContactHero";
 import ContactBooking from "./components/ContactBooking";
 import ContactForm from "./components/ContactForm";
+import ContactReview from "./components/ContactReview";
 
 const title = "Contact Lulu Web Studio | Book a Call or Start Your Project";
 const description =
@@ -32,6 +33,7 @@ export default function ContactPage() {
       <ContactHero />
       <ContactBooking />
       <ContactForm />
+      <ContactReview />
     </div>
   );
 }
