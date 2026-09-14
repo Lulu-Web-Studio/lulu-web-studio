@@ -61,7 +61,7 @@ export const projects: Project[] = [
     status: ProjectStatus.Completed,
     tags: ["Healthcare", "Next.js", "Sanity"],
   },
-  {
+  /* {
     id: "open-court",
     title: "Open Court",
     description: "Casual tennis and pickleball tournament brackets with live scoring",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     featured: false,
     status: ProjectStatus.Completed,
     tags: ["Web Application", "Next.js", "TypeScript"],
-  },
+  }, */
   {
     id: "gabby-lulu-portfolio",
     title: "Gabby Lulu Portfolio",
