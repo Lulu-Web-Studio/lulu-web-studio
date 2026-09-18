@@ -10,7 +10,7 @@ const SITE_URL = "https://www.luluwebstudio.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Custom Web Design & Development Agency",
+  title: "Custom Web Design & Development Agency | Lulu Web Studio",
   description:
     "Lulu Web Studio is a US-based digital agency building custom websites, mobile apps, and SEO strategies that help businesses launch, grow, and convert online.",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Lulu Web Studio",
     url: SITE_URL,
-    title: "Custom Web Design & Development Agency",
+    title: "Custom Web Design & Development Agency | Lulu Web Studio",
     description:
       "Custom websites, mobile apps, SEO, and digital marketing for US businesses. We design, build, and optimize digital experiences that convert.",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Web Design & Development Agency",
+    title: "Custom Web Design & Development Agency | Lulu Web Studio",
     description:
       "Custom websites, mobile apps, SEO, and digital marketing for US businesses.",
     images: ["/og-image.png"],
@@ -64,7 +64,7 @@ export default function RootLayout({
 
   // bg-[#191919]
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
         <link
           rel="alternate"

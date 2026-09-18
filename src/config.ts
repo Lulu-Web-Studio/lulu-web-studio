@@ -11,7 +11,6 @@ const buildConfig = () => {
 
     links: {
       linkedin: "https://www.linkedin.com/company/lulu-web-studio/",
-      instagram: "/"
     },
     name: {
       name,

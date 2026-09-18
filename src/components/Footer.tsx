@@ -21,7 +21,6 @@ const footerLinks = [
 const socialLinks = [
   // {title: "Twitter", href: "https://twitter.com"},
   {title: "LinkedIn", href: config.links.linkedin},
-  {title: "Instagram", href: config.links.instagram},
   // {title: "GitHub", href: "https://github.com"},
 ];
 

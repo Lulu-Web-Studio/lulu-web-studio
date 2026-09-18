@@ -15,7 +15,7 @@ export default function ServicesHero() {
           <div className="absolute inset-0">
             <Image
               src="/images/services/new-hero-service.jpg"
-              alt="Our Services"
+              alt="Lulu Web Studio digital services — web design, SEO, and app development"
               fill
               sizes="100vw"
               priority

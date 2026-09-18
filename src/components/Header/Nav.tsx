@@ -82,14 +82,6 @@ export const footerLinks = [
         title: "LinkedIn",
         href: config.links.linkedin
     },
-    {
-        title: "Instagram",
-        href: config.links.instagram
-    },
-    // {
-    //     title: "Instagram",
-    //     href: "/"
-    // },
     // {
     //     title: "Twitter",
     //     href: "/"

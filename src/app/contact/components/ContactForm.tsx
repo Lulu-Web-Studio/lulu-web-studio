@@ -96,10 +96,6 @@ export default function ContactForm() {
     {
       name: "LinkedIn",
       href: config.links.linkedin
-    },
-    {
-      name: "Instagram",
-      href: config.links.instagram
     }
   ];
 

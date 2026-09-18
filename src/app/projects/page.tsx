@@ -6,7 +6,7 @@ import {
 } from "@/data/projects";
 import ProjectsClient from "./components/ProjectsClient";
 
-const title = "Our Projects Portfolio";
+const title = "Our Projects Portfolio | Lulu Web Studio Case Studies";
 const description =
   "Browse Lulu Web Studio's portfolio of websites, mobile apps, and digital products built for US businesses across web development, design, and marketing.";
 
