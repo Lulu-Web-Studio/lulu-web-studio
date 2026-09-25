@@ -364,6 +364,63 @@ export const services: Service[] = [
     ctaHref: "/contact?event=debugging#book",
     ctaLabel: "Book a Debugging Call",
   },
+  {
+    id: "meta-ads",
+    slug: "meta-ads",
+    number: "07",
+    title: "Meta Ads",
+    shortDescription:
+      "Facebook and Instagram ad campaigns built to generate leads and sales, not just clicks.",
+    fullDescription:
+      "Our Meta Ads services plan, launch, and manage Facebook and Instagram advertising campaigns built around your actual sales goals. We handle audience targeting, creative, pixel and conversion tracking, and ongoing optimization so ad spend goes toward leads and sales instead of vanity metrics.",
+    seoSections: [
+      {
+        heading: "Meta Ads Management Built Around ROI",
+        body: "We don't just launch campaigns and check back weekly. We set up proper conversion tracking, test audiences and creative, and reallocate budget toward what's actually driving leads and sales, so your ad spend keeps working instead of stalling out.",
+      },
+      {
+        heading: "Facebook and Instagram Ads From One Team",
+        body: "Meta's ad platform runs Facebook and Instagram from the same campaigns. We build creative and targeting that work across both placements, so you're not paying two agencies to manage what's really one ad account.",
+      },
+      {
+        heading: "Pixel Setup and Conversion Tracking Done Right",
+        body: "Most underperforming ad accounts trace back to broken or missing conversion tracking. We set up the Meta Pixel and Conversions API correctly from day one, so the algorithm is optimizing toward real leads and purchases, not guesses.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much should I budget for Meta Ads?",
+        answer:
+          "Ad spend and management fees are separate, and the right budget depends on your industry, offer, and sales cycle. We typically recommend starting with a testing budget to find what works before scaling spend behind winning campaigns.",
+      },
+      {
+        question: "What's the difference between Facebook Ads and Meta Ads?",
+        answer:
+          "Meta Ads is the current name for the platform that runs both Facebook and Instagram advertising from a single ad account and campaign structure. \"Facebook Ads\" is still the more common term people search for, but they refer to the same system.",
+      },
+      {
+        question: "How long until Meta Ads produce results?",
+        answer:
+          "Unlike SEO, Meta Ads can start driving traffic and leads within days of launch. The first few weeks are typically spent testing audiences and creative before we scale budget behind what's converting.",
+      },
+      {
+        question: "Do you handle the ad creative too?",
+        answer:
+          "Yes. We can design ad creative and write ad copy, or work with creative you already have. Either way, we test multiple variations to see what actually resonates with your audience.",
+      },
+    ],
+    items: [
+      "Facebook & Instagram campaign setup",
+      "Audience research & targeting",
+      "Meta Pixel & conversion tracking",
+      "Ad creative & copywriting",
+      "A/B testing",
+      "Ongoing optimization & reporting",
+    ],
+    image: "/images/services/meta-ads.jpg",
+    seoTitle: "Meta Ads Management | Facebook & Instagram Advertising",
+    seoDescription: "Meta Ads management for Facebook and Instagram. Audience targeting, ad creative, pixel setup, and ongoing optimization built around leads and sales.",
+  },
 ];
 
 export function getAllServices(): Service[] {

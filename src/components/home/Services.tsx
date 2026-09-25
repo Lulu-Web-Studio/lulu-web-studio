@@ -72,6 +72,20 @@ const SERVICES = [
             "Cloud Functions & Serverless",
         ],
     },
+    {
+        number: "06",
+        title: "Meta Ads",
+        href: "/services/meta-ads",
+        blurb:
+            "We plan, launch, and manage Facebook and Instagram ad campaigns built around your sales goals, not just clicks. From audience targeting and ad creative to pixel setup and conversion tracking, we handle the full campaign lifecycle and keep optimizing so your ad spend keeps working.",
+        items: [
+            "Facebook & Instagram Campaigns",
+            "Audience Targeting",
+            "Meta Pixel & Conversion Tracking",
+            "Ad Creative & Copywriting",
+            "Ongoing Optimization & Reporting",
+        ],
+    },
 ];
 
 
