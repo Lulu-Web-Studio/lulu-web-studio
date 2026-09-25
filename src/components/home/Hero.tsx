@@ -42,7 +42,7 @@ export default function HeroParallax() {
                             <HeaderText
                                 variant="large"
                                 as="h1"
-                                className="tracking-tight text-white"
+                                className="tracking-tight leading-[1.15] sm:leading-[1.1] text-white"
                             >
                                 Custom Websites, Apps & SEO for US Businesses
                             </HeaderText>
