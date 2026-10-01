@@ -10,7 +10,7 @@ import {ArrowUpRight} from "lucide-react";
 
 export default function HeroParallax() {
     return (
-        <section className="relative h-[90vh] md:h-[180vh]">
+        <section className="relative h-[100svh] md:h-[180vh]">
             <ParallaxBanner className="h-full">
                 <ParallaxBannerLayer speed={-20}>
                     <div className="absolute inset-0">
@@ -33,7 +33,7 @@ export default function HeroParallax() {
 
                 {/* Foreground */}
                 <ParallaxBannerLayer speed={8}>
-                    <div className="relative z-10 mx-auto flex h-full w-[92%] max-w-6xl flex-col items-center justify-center md:justify-around">
+                    <div className="relative z-10 mx-auto flex h-full w-[92%] max-w-6xl flex-col items-center justify-center pt-24 pb-16 md:py-0 md:justify-around">
                         {/* Top Centered Intro */}
                         <div className="max-w-3xl text-center px-4">
                             <SecondaryText as="p" className="uppercase text-xs sm:text-sm tracking-widest text-white/70 mb-4">
@@ -42,7 +42,7 @@ export default function HeroParallax() {
                             <HeaderText
                                 variant="large"
                                 as="h1"
-                                className="tracking-tight leading-[1.15] sm:leading-[1.1] text-white"
+                                className="max-sm:text-4xl! tracking-tight leading-[1.15] sm:leading-[1.1] text-white"
                             >
                                 Custom Websites, Apps & SEO for US Businesses
                             </HeaderText>
