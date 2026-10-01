@@ -122,7 +122,7 @@ export default function Services() {
                             {/* Right column: dot • blurb • list */}
                             <div className="col-span-12 md:col-span-7 md:ml-auto mt-6 md:mt-0">
 
-                                <SecondaryText className="text-neutral-700 leading-relaxed max-w-2xl">
+                                <SecondaryText className="max-sm:text-base! text-neutral-700 leading-relaxed max-w-2xl">
                                     {s.blurb}
                                 </SecondaryText>
 
