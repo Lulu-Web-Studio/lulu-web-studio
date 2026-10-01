@@ -104,7 +104,7 @@ export default function Services() {
                         <Link
                             key={s.number}
                             href={s.href}
-                            className="py-24 sm:py-40 flex flex-col sm:flex-row justify-between items-start group block hover:bg-neutral-50 transition-colors duration-300 -mx-6 px-6 rounded-2xl"
+                            className="py-12 sm:py-40 flex flex-col sm:flex-row justify-between items-start group block hover:bg-neutral-50 transition-colors duration-300 -mx-6 px-6 rounded-2xl"
                         >
                             {/* Number */}
                             <div className="flex flex-row gap-x-5">
