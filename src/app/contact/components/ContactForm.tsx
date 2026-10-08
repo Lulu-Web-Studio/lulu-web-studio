@@ -12,6 +12,7 @@ export type FormData = {
   email: string;
   subject: string;
   message: string;
+  website: string;
 };
 
 export default function ContactForm() {
@@ -20,6 +21,7 @@ export default function ContactForm() {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,6 +54,7 @@ export default function ContactForm() {
         email: "",
         subject: "",
         message: "",
+        website: "",
       });
 
     } catch (error) {
@@ -191,6 +194,22 @@ export default function ContactForm() {
           {/* Contact Form */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div
+                aria-hidden="true"
+                className="absolute -left-[10000px] h-px w-px overflow-hidden"
+              >
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Name and Email */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

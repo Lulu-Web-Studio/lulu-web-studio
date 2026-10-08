@@ -7,8 +7,13 @@ export async function POST(request: NextRequest) {
     try {
 
         const body = await request.json();
+        const {name, email, subject, message, website} = body as FormData;
+
+        if (website) {
+            return NextResponse.json({message: 'Success. Email was sent'});
+        }
+
         console.log("Received contact form data:", body);
-        const {name, email, subject, message} = body as FormData;
 
         const smtpTransport = nodemailer.createTransport({
             service: 'Gmail',
