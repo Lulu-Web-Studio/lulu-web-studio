@@ -15,6 +15,15 @@ export type CaseStudySiteLink = {
   href: string;
 };
 
+export type CaseStudyMarketingAsset = {
+  title: string;
+  description: string;
+  /** Preview image shown on the case study page. */
+  image: string;
+  /** Downloadable file, e.g. a print-ready PDF. */
+  href: string;
+};
+
 export type CaseStudy = {
   client: string;
   industry: string;
@@ -24,6 +33,7 @@ export type CaseStudy = {
   approach: string;
   results: CaseStudyResult[];
   siteLinks?: CaseStudySiteLink[];
+  marketing?: CaseStudyMarketingAsset[];
   techStack: string[];
   testimonial?: {
     quote: string;
@@ -50,6 +60,46 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "naz-group",
+    slug: "naz-group",
+    title: "NAZ Group of PA",
+    description:
+      "Website and print flyer for an ODP-certified disability services provider serving five Pennsylvania counties",
+    image: "/images/projects/naz-group.webp",
+    href: "https://www.nazgroupusa.com",
+    featured: true,
+    status: ProjectStatus.Completed,
+    tags: ["Disability Services", "Next.js", "Print Marketing"],
+    caseStudy: {
+      client: "NAZ Group of PA",
+      industry: "Disability Services",
+      location: "Philadelphia, Pennsylvania",
+      year: "2026",
+      problem:
+        "NAZ Group of PA supports adults with intellectual and developmental disabilities and autism through Pennsylvania's Office of Developmental Programs. Families and support coordinators needed a clear way to understand the services, check ODP eligibility and waivers, and reach the team quickly. The provider also needed printed material that its team could share in the community.",
+      approach:
+        "We built the site around the questions families ask first: what services are offered, who qualifies through ODP, and how to get started. Dedicated pages cover in-home and community services, nursing, and respite, along with an ODP and waivers guide and a resources page. Every page has a call to action with the phone number. To match the website, we designed a letter-size flyer with the same brand, a summary of services, and a QR code that links to the site.",
+      results: [
+        {metric: "5", label: "Pennsylvania counties served"},
+        {metric: "3", label: "Dedicated service pages"},
+        {metric: "1", label: "Print-ready flyer to match the website"},
+      ],
+      marketing: [
+        {
+          title: "Service Flyer",
+          description:
+            "A letter-size flyer covering services, the Individual Support Plan approach, leadership, and a QR code that links to the website.",
+          image: "/images/projects/naz-group-flyer.webp",
+          href: "/files/naz-group-flyer.pdf",
+        },
+      ],
+      techStack: ["Next.js", "Tailwind CSS", "Sanity"],
+      seoTitle: "NAZ Group of PA Website & Flyer Case Study | Lulu Web Studio",
+      seoDescription:
+        "See how Lulu Web Studio built the NAZ Group of PA website and a matching print flyer for an ODP-certified disability services provider in Pennsylvania.",
+    },
+  },
   {
     id: "all-heart-care",
     title: "All Heart Care",

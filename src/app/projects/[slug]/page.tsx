@@ -223,6 +223,44 @@ export default async function ProjectCaseStudyPage(props: {
         </section>
       )}
 
+      {/* Marketing materials */}
+      {caseStudy.marketing && caseStudy.marketing.length > 0 && (
+        <section className="max-w-5xl mx-auto px-8 sm:px-12 lg:px-16 pb-24 md:pb-32">
+          <h2 className="text-2xl md:text-3xl font-bold mb-5">Marketing</h2>
+          <p className="text-white/70 leading-relaxed text-lg max-w-3xl mb-10">
+            Print and digital materials designed to match the website.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {caseStudy.marketing.map((asset) => (
+              <a
+                key={asset.href}
+                href={asset.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-2xl bg-white/5 border border-white/10 overflow-hidden hover:bg-white/10 hover:border-white/20 transition-colors"
+              >
+                <div className="relative aspect-[17/22] bg-white">
+                  <Image
+                    src={asset.image}
+                    alt={`${asset.title} for ${caseStudy.client}`}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+                <div className="p-7 md:p-8">
+                  <div className="flex items-start justify-between gap-6 mb-3">
+                    <h3 className="text-lg font-semibold">{asset.title}</h3>
+                    <ArrowUpRight className="w-5 h-5 flex-shrink-0 text-white/50 group-hover:text-white transition-colors" />
+                  </div>
+                  <p className="text-white/65 leading-relaxed">{asset.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Tech stack */}
       {caseStudy.techStack.length > 0 && (
         <section className="max-w-5xl mx-auto px-8 sm:px-12 lg:px-16 pb-24 md:pb-32">
