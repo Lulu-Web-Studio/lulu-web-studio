@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {notFound} from "next/navigation";
-import {ArrowUpRight} from "lucide-react";
+import {ArrowUpRight, TrendingUp} from "lucide-react";
 import {
   getProjectBySlug,
   getProjectsWithCaseStudies,
@@ -165,6 +165,62 @@ export default async function ProjectCaseStudyPage(props: {
           </div>
         </div>
       </header>
+
+      {/* Search performance */}
+      {caseStudy.seoPerformance && (
+        <section className="max-w-5xl mx-auto px-8 sm:px-12 lg:px-16 pt-24 md:pt-32">
+          <h2 className="text-2xl md:text-3xl font-bold mb-5">Search Performance</h2>
+          <p className="text-white/70 leading-relaxed text-lg max-w-3xl mb-10">
+            Organic growth from Google Search. Source: {caseStudy.seoPerformance.source},{" "}
+            {caseStudy.seoPerformance.period.toLowerCase()}.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {caseStudy.seoPerformance.metrics.map((m) => (
+              <div
+                key={m.label}
+                className="rounded-2xl bg-white/5 border border-white/10 p-10 md:p-12"
+              >
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-4">
+                  <span className="text-5xl md:text-6xl font-bold">{m.value}</span>
+                  <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold">
+                    <TrendingUp className="w-4 h-4" aria-hidden="true" />
+                    {m.change}
+                  </span>
+                </div>
+                <div className="text-white/70 text-sm leading-relaxed">{m.label}</div>
+              </div>
+            ))}
+          </div>
+          {caseStudy.seoPerformance.topPage && (
+            <a
+              href={caseStudy.seoPerformance.topPage.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 rounded-2xl bg-white/5 border border-white/10 p-7 md:p-8 hover:bg-white/10 hover:border-white/20 transition-colors"
+            >
+              <div>
+                <p className="uppercase text-xs tracking-widest text-white/50 mb-2">
+                  Top-performing page
+                </p>
+                <h3 className="text-lg font-semibold">
+                  {caseStudy.seoPerformance.topPage.title}
+                </h3>
+              </div>
+              <div className="flex items-center gap-6 flex-shrink-0">
+                <div className="sm:text-right">
+                  <div className="text-2xl font-bold">
+                    {caseStudy.seoPerformance.topPage.clicks} clicks
+                  </div>
+                  <div className="text-emerald-400 text-sm font-semibold">
+                    {caseStudy.seoPerformance.topPage.change}
+                  </div>
+                </div>
+                <ArrowUpRight className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+              </div>
+            </a>
+          )}
+        </section>
+      )}
 
       {/* Results metrics */}
       {caseStudy.results.length > 0 && (

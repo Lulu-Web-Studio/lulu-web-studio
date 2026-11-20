@@ -24,6 +24,27 @@ export type CaseStudyMarketingAsset = {
   href: string;
 };
 
+export type CaseStudySeoMetric = {
+  value: string;
+  label: string;
+  /** Change versus the previous period, e.g. "+263%". */
+  change: string;
+};
+
+export type CaseStudySeoPerformance = {
+  /** Where the numbers come from, e.g. "Google Search Console". */
+  source: string;
+  /** Reporting window and comparison, e.g. "Last 3 months vs. previous 3 months". */
+  period: string;
+  metrics: CaseStudySeoMetric[];
+  topPage?: {
+    title: string;
+    href: string;
+    clicks: string;
+    change: string;
+  };
+};
+
 export type CaseStudy = {
   client: string;
   industry: string;
@@ -32,6 +53,7 @@ export type CaseStudy = {
   problem: string;
   approach: string;
   results: CaseStudyResult[];
+  seoPerformance?: CaseStudySeoPerformance;
   siteLinks?: CaseStudySiteLink[];
   marketing?: CaseStudyMarketingAsset[];
   techStack: string[];
@@ -176,6 +198,20 @@ export const projects: Project[] = [
         {metric: "14", label: "Local service-area pages"},
         {metric: "2", label: "Surgeon profiles centered on credentials and trust"},
       ],
+      seoPerformance: {
+        source: "Google Search Console",
+        period: "Last 3 months vs. the previous 3 months",
+        metrics: [
+          {value: "2.89K", label: "Clicks from Google Search", change: "+263%"},
+          {value: "419K", label: "Impressions in Google Search", change: "+1,899%"},
+        ],
+        topPage: {
+          title: "What to Eat After Tooth Extraction: Day 1–7 Guide",
+          href: "https://www.facialsurgeryct.com/blog/what-to-eat-after-tooth-extraction",
+          clicks: "1.89K",
+          change: "+23,538%",
+        },
+      },
       siteLinks: [
         {
           title: "About the Practice",
